@@ -8,44 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selection: Tab = .home
-
-
-    enum Tab {
-        case home
-        case discover
-        case bookmark
-        case profile
-    }
+    @State private var selectedTab: Tabs = .home
     
     var body: some View {
-        TabView(selection: $selection) {
-            HomePage()
-                .tabItem {
-                    Label("Featured", systemImage: "star")
-                }
-                .tag(Tab.home)
-
-
-            DiscoverPage()
-                .tabItem {
-                    Label("Discover", systemImage: "list.bullet")
-                }
-                .tag(Tab.discover)
-            
-            BookmarkPage()
-                .tabItem {
-                    Label("Bookmark", systemImage: "list.bullet")
-                }
-                .tag(Tab.bookmark)
-            
-            ProfilePage()
-                .tabItem {
-                    Label("Profile", systemImage: "list.bullet")
-                }
-                .tag(Tab.profile)
+        VStack(spacing: 0) {
+            switch selectedTab {
+                case .home:
+                    HomePage()
+                case .discover:
+                    DiscoverPage()
+                case .bookmark:
+                    BookmarkPage()
+                case .profile:
+                    ProfilePage()
+            }
+            Spacer()
+            CustomTabBar(selectedTab: $selectedTab)
         }
     }
+
 }
 
 #Preview {

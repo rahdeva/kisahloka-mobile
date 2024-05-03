@@ -7,70 +7,75 @@
 
 import SwiftUI
 
+enum Tabs : Int{
+    case home = 0
+    case discover = 1
+    case bookmark = 2
+    case profile = 3
+}
+
 struct CustomTabBar: View {
+    
+    @Binding var selectedTab: Tabs
+    
     var body: some View {
-        HStack{
-            Button {
+        VStack {
+            Divider()
+                .frame(height: 1)
+                .shadow(radius: 1)
+            HStack(alignment: .center){
+                Button {
+                    selectedTab = .home
+                } label: {
+                    TabBarButton(
+                        buttonText: "Home",
+                        iconActive: "house.fill",
+                        iconNonActive: "house",
+                        isActive: selectedTab == .home
+                    )
+                }
                 
-            } label: {
-                VStack (alignment: .center, spacing: 4) {
-                    Image(systemName: "house")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 32, height: 32)
-                    Text("Home")
-                        .font(.title3)
-                        .foregroundColor(.secondary700)
+                Button {
+                    selectedTab = .discover
+                } label: {
+                    TabBarButton(
+                        buttonText: "Discover",
+                        iconActive: "safari.fill",
+                        iconNonActive: "safari",
+                        isActive: selectedTab == .discover
+                    )
+                }
+                
+                Button {
+                    selectedTab = .bookmark
+                } label: {
+                    TabBarButton(
+                        buttonText: "Bookmark",
+                        iconActive: "book.fill",
+                        iconNonActive: "book",
+                        isActive: selectedTab == .bookmark
+                    )
+                }
+                
+                Button {
+                    selectedTab = .profile
+                } label: {
+                    TabBarButton(
+                        buttonText: "Profile",
+                        iconActive: "person.fill",
+                        iconNonActive: "person",
+                        isActive: selectedTab == .profile
+                    )
                 }
             }
-            .tint(Color.primary)
-            
-            Button {
-                
-            } label: {
-                VStack (alignment: .center, spacing: 4) {
-                    Image(systemName: "safari")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 32, height: 32)
-                    Text("Discover")
-                        .font(.title3)
-                }
-            }
-            .tint(.gray)
-            
-            Button {
-                
-            } label: {
-                VStack (alignment: .center, spacing: 4) {
-                    Image(systemName: "book")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 32, height: 32)
-                    Text("Bookmark")
-                        .font(.title3)
-                }
-            }
-            .tint(.gray)
-            
-            Button {
-                
-            } label: {
-                VStack (alignment: .center, spacing: 4) {
-                    Image(systemName: "person")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 32, height: 32)
-                    Text("Profile")
-                        .font(.title3)
-                }
-            }
-            .tint(.gray)
+            .frame(height: 66)
+            .padding(.bottom, 12)
+            .padding(.horizontal, 12)
+            .background(.white)
         }
-        .frame(height: 32)
     }
 }
 
 #Preview {
-    CustomTabBar()
+    CustomTabBar(selectedTab: .constant(Tabs.home))
 }
