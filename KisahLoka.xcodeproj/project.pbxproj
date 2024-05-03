@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		040830FA2BE4B02B00663028 /* KisahLokaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040830F92BE4B02B00663028 /* KisahLokaApp.swift */; };
+		040830FC2BE4B02B00663028 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040830FB2BE4B02B00663028 /* ContentView.swift */; };
+		040830FE2BE4B02C00663028 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 040830FD2BE4B02C00663028 /* Assets.xcassets */; };
+		040831012BE4B02C00663028 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 040831002BE4B02C00663028 /* Preview Assets.xcassets */; };
+		0408310B2BE4B02D00663028 /* KisahLokaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0408310A2BE4B02D00663028 /* KisahLokaTests.swift */; };
+		040831152BE4B02D00663028 /* KisahLokaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040831142BE4B02D00663028 /* KisahLokaUITests.swift */; };
+		040831172BE4B02D00663028 /* KisahLokaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040831162BE4B02D00663028 /* KisahLokaUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		040831072BE4B02D00663028 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 040830EE2BE4B02B00663028 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 040830F52BE4B02B00663028;
+			remoteInfo = KisahLoka;
+		};
+		040831112BE4B02D00663028 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 040830EE2BE4B02B00663028 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 040830F52BE4B02B00663028;
+			remoteInfo = KisahLoka;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		040830F62BE4B02B00663028 /* KisahLoka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KisahLoka.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		040830F92BE4B02B00663028 /* KisahLokaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KisahLokaApp.swift; sourceTree = "<group>"; };
+		040830FB2BE4B02B00663028 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		040830FD2BE4B02C00663028 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		040831002BE4B02C00663028 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		040831062BE4B02D00663028 /* KisahLokaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KisahLokaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0408310A2BE4B02D00663028 /* KisahLokaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KisahLokaTests.swift; sourceTree = "<group>"; };
+		040831102BE4B02D00663028 /* KisahLokaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KisahLokaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		040831142BE4B02D00663028 /* KisahLokaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KisahLokaUITests.swift; sourceTree = "<group>"; };
+		040831162BE4B02D00663028 /* KisahLokaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KisahLokaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		040830F32BE4B02B00663028 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		040831032BE4B02D00663028 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0408310D2BE4B02D00663028 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		040830ED2BE4B02B00663028 = {
+			isa = PBXGroup;
+			children = (
+				040830F82BE4B02B00663028 /* KisahLoka */,
+				040831092BE4B02D00663028 /* KisahLokaTests */,
+				040831132BE4B02D00663028 /* KisahLokaUITests */,
+				040830F72BE4B02B00663028 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		040830F72BE4B02B00663028 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				040830F62BE4B02B00663028 /* KisahLoka.app */,
+				040831062BE4B02D00663028 /* KisahLokaTests.xctest */,
+				040831102BE4B02D00663028 /* KisahLokaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		040830F82BE4B02B00663028 /* KisahLoka */ = {
+			isa = PBXGroup;
+			children = (
+				040830F92BE4B02B00663028 /* KisahLokaApp.swift */,
+				040830FB2BE4B02B00663028 /* ContentView.swift */,
+				040830FD2BE4B02C00663028 /* Assets.xcassets */,
+				040830FF2BE4B02C00663028 /* Preview Content */,
+			);
+			path = KisahLoka;
+			sourceTree = "<group>";
+		};
+		040830FF2BE4B02C00663028 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				040831002BE4B02C00663028 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		040831092BE4B02D00663028 /* KisahLokaTests */ = {
+			isa = PBXGroup;
+			children = (
+				0408310A2BE4B02D00663028 /* KisahLokaTests.swift */,
+			);
+			path = KisahLokaTests;
+			sourceTree = "<group>";
+		};
+		040831132BE4B02D00663028 /* KisahLokaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				040831142BE4B02D00663028 /* KisahLokaUITests.swift */,
+				040831162BE4B02D00663028 /* KisahLokaUITestsLaunchTests.swift */,
+			);
+			path = KisahLokaUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		040830F52BE4B02B00663028 /* KisahLoka */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0408311A2BE4B02D00663028 /* Build configuration list for PBXNativeTarget "KisahLoka" */;
+			buildPhases = (
+				040830F22BE4B02B00663028 /* Sources */,
+				040830F32BE4B02B00663028 /* Frameworks */,
+				040830F42BE4B02B00663028 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KisahLoka;
+			productName = KisahLoka;
+			productReference = 040830F62BE4B02B00663028 /* KisahLoka.app */;
+			productType = "com.apple.product-type.application";
+		};
+		040831052BE4B02D00663028 /* KisahLokaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0408311D2BE4B02D00663028 /* Build configuration list for PBXNativeTarget "KisahLokaTests" */;
+			buildPhases = (
+				040831022BE4B02D00663028 /* Sources */,
+				040831032BE4B02D00663028 /* Frameworks */,
+				040831042BE4B02D00663028 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				040831082BE4B02D00663028 /* PBXTargetDependency */,
+			);
+			name = KisahLokaTests;
+			productName = KisahLokaTests;
+			productReference = 040831062BE4B02D00663028 /* KisahLokaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0408310F2BE4B02D00663028 /* KisahLokaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 040831202BE4B02D00663028 /* Build configuration list for PBXNativeTarget "KisahLokaUITests" */;
+			buildPhases = (
+				0408310C2BE4B02D00663028 /* Sources */,
+				0408310D2BE4B02D00663028 /* Frameworks */,
+				0408310E2BE4B02D00663028 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				040831122BE4B02D00663028 /* PBXTargetDependency */,
+			);
+			name = KisahLokaUITests;
+			productName = KisahLokaUITests;
+			productReference = 040831102BE4B02D00663028 /* KisahLokaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		040830EE2BE4B02B00663028 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					040830F52BE4B02B00663028 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					040831052BE4B02D00663028 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 040830F52BE4B02B00663028;
+					};
+					0408310F2BE4B02D00663028 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 040830F52BE4B02B00663028;
+					};
+				};
+			};
+			buildConfigurationList = 040830F12BE4B02B00663028 /* Build configuration list for PBXProject "KisahLoka" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 040830ED2BE4B02B00663028;
+			productRefGroup = 040830F72BE4B02B00663028 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				040830F52BE4B02B00663028 /* KisahLoka */,
+				040831052BE4B02D00663028 /* KisahLokaTests */,
+				0408310F2BE4B02D00663028 /* KisahLokaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		040830F42BE4B02B00663028 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				040831012BE4B02C00663028 /* Preview Assets.xcassets in Resources */,
+				040830FE2BE4B02C00663028 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		040831042BE4B02D00663028 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0408310E2BE4B02D00663028 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		040830F22BE4B02B00663028 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				040830FC2BE4B02B00663028 /* ContentView.swift in Sources */,
+				040830FA2BE4B02B00663028 /* KisahLokaApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		040831022BE4B02D00663028 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0408310B2BE4B02D00663028 /* KisahLokaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0408310C2BE4B02D00663028 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				040831172BE4B02D00663028 /* KisahLokaUITestsLaunchTests.swift in Sources */,
+				040831152BE4B02D00663028 /* KisahLokaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		040831082BE4B02D00663028 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 040830F52BE4B02B00663028 /* KisahLoka */;
+			targetProxy = 040831072BE4B02D00663028 /* PBXContainerItemProxy */;
+		};
+		040831122BE4B02D00663028 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 040830F52BE4B02B00663028 /* KisahLoka */;
+			targetProxy = 040831112BE4B02D00663028 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		040831182BE4B02D00663028 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		040831192BE4B02D00663028 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0408311B2BE4B02D00663028 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"KisahLoka/Preview Content\"";
+				DEVELOPMENT_TEAM = LGQ9K24DNA;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adev.KisahLoka;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0408311C2BE4B02D00663028 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"KisahLoka/Preview Content\"";
+				DEVELOPMENT_TEAM = LGQ9K24DNA;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adev.KisahLoka;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0408311E2BE4B02D00663028 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LGQ9K24DNA;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adev.KisahLokaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KisahLoka.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/KisahLoka";
+			};
+			name = Debug;
+		};
+		0408311F2BE4B02D00663028 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LGQ9K24DNA;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adev.KisahLokaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KisahLoka.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/KisahLoka";
+			};
+			name = Release;
+		};
+		040831212BE4B02D00663028 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LGQ9K24DNA;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adev.KisahLokaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = KisahLoka;
+			};
+			name = Debug;
+		};
+		040831222BE4B02D00663028 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LGQ9K24DNA;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adev.KisahLokaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = KisahLoka;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		040830F12BE4B02B00663028 /* Build configuration list for PBXProject "KisahLoka" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				040831182BE4B02D00663028 /* Debug */,
+				040831192BE4B02D00663028 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0408311A2BE4B02D00663028 /* Build configuration list for PBXNativeTarget "KisahLoka" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0408311B2BE4B02D00663028 /* Debug */,
+				0408311C2BE4B02D00663028 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0408311D2BE4B02D00663028 /* Build configuration list for PBXNativeTarget "KisahLokaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0408311E2BE4B02D00663028 /* Debug */,
+				0408311F2BE4B02D00663028 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		040831202BE4B02D00663028 /* Build configuration list for PBXNativeTarget "KisahLokaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				040831212BE4B02D00663028 /* Debug */,
+				040831222BE4B02D00663028 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 040830EE2BE4B02B00663028 /* Project object */;
+}
