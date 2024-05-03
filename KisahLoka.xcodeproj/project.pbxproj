@@ -14,6 +14,7 @@
 		0408310B2BE4B02D00663028 /* KisahLokaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0408310A2BE4B02D00663028 /* KisahLokaTests.swift */; };
 		040831152BE4B02D00663028 /* KisahLokaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040831142BE4B02D00663028 /* KisahLokaUITests.swift */; };
 		040831172BE4B02D00663028 /* KisahLokaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040831162BE4B02D00663028 /* KisahLokaUITestsLaunchTests.swift */; };
+		040831282BE4BC8200663028 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040831272BE4BC8200663028 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		040831102BE4B02D00663028 /* KisahLokaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KisahLokaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		040831142BE4B02D00663028 /* KisahLokaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KisahLokaUITests.swift; sourceTree = "<group>"; };
 		040831162BE4B02D00663028 /* KisahLokaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KisahLokaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		040831272BE4BC8200663028 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,9 +97,12 @@
 			isa = PBXGroup;
 			children = (
 				040830F92BE4B02B00663028 /* KisahLokaApp.swift */,
-				040830FB2BE4B02B00663028 /* ContentView.swift */,
 				040830FD2BE4B02C00663028 /* Assets.xcassets */,
 				040830FF2BE4B02C00663028 /* Preview Content */,
+				040831262BE4BC3E00663028 /* Model */,
+				040831252BE4BC3600663028 /* Resources */,
+				040831242BE4BC1A00663028 /* Themes */,
+				040831232BE4BC1300663028 /* Views */,
 			);
 			path = KisahLoka;
 			sourceTree = "<group>";
@@ -125,6 +130,36 @@
 				040831162BE4B02D00663028 /* KisahLokaUITestsLaunchTests.swift */,
 			);
 			path = KisahLokaUITests;
+			sourceTree = "<group>";
+		};
+		040831232BE4BC1300663028 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				040830FB2BE4B02B00663028 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		040831242BE4BC1A00663028 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				040831272BE4BC8200663028 /* Color.swift */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
+		040831252BE4BC3600663028 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		040831262BE4BC3E00663028 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +294,7 @@
 			files = (
 				040830FC2BE4B02B00663028 /* ContentView.swift in Sources */,
 				040830FA2BE4B02B00663028 /* KisahLokaApp.swift in Sources */,
+				040831282BE4BC8200663028 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
