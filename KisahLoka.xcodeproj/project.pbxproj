@@ -15,6 +15,17 @@
 		040831152BE4B02D00663028 /* KisahLokaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040831142BE4B02D00663028 /* KisahLokaUITests.swift */; };
 		040831172BE4B02D00663028 /* KisahLokaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040831162BE4B02D00663028 /* KisahLokaUITestsLaunchTests.swift */; };
 		040831282BE4BC8200663028 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040831272BE4BC8200663028 /* Color.swift */; };
+		040831302BE4C25900663028 /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0408312A2BE4C25900663028 /* Poppins-ExtraBold.ttf */; };
+		040831312BE4C25900663028 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0408312B2BE4C25900663028 /* Poppins-Medium.ttf */; };
+		040831322BE4C25900663028 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0408312C2BE4C25900663028 /* Poppins-Bold.ttf */; };
+		040831332BE4C25900663028 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0408312D2BE4C25900663028 /* Poppins-Light.ttf */; };
+		040831342BE4C25900663028 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0408312E2BE4C25900663028 /* Poppins-Regular.ttf */; };
+		040831352BE4C25900663028 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0408312F2BE4C25900663028 /* Poppins-SemiBold.ttf */; };
+		0408313E2BE4C7C100663028 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0408313D2BE4C7C100663028 /* HomePage.swift */; };
+		040831412BE4C7E600663028 /* DiscoverPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040831402BE4C7E600663028 /* DiscoverPage.swift */; };
+		040831432BE4C7F800663028 /* BookmarkPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040831422BE4C7F800663028 /* BookmarkPage.swift */; };
+		040831452BE4C80C00663028 /* ProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040831442BE4C80C00663028 /* ProfilePage.swift */; };
+		040831482BE4CB3500663028 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040831472BE4CB3500663028 /* CustomTabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +57,18 @@
 		040831142BE4B02D00663028 /* KisahLokaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KisahLokaUITests.swift; sourceTree = "<group>"; };
 		040831162BE4B02D00663028 /* KisahLokaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KisahLokaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		040831272BE4BC8200663028 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		0408312A2BE4C25900663028 /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
+		0408312B2BE4C25900663028 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		0408312C2BE4C25900663028 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		0408312D2BE4C25900663028 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
+		0408312E2BE4C25900663028 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		0408312F2BE4C25900663028 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		040831362BE4C2E700663028 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0408313D2BE4C7C100663028 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		040831402BE4C7E600663028 /* DiscoverPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverPage.swift; sourceTree = "<group>"; };
+		040831422BE4C7F800663028 /* BookmarkPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkPage.swift; sourceTree = "<group>"; };
+		040831442BE4C80C00663028 /* ProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePage.swift; sourceTree = "<group>"; };
+		040831472BE4CB3500663028 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,12 +119,13 @@
 		040830F82BE4B02B00663028 /* KisahLoka */ = {
 			isa = PBXGroup;
 			children = (
+				040831362BE4C2E700663028 /* Info.plist */,
 				040830F92BE4B02B00663028 /* KisahLokaApp.swift */,
 				040830FD2BE4B02C00663028 /* Assets.xcassets */,
 				040830FF2BE4B02C00663028 /* Preview Content */,
-				040831262BE4BC3E00663028 /* Model */,
 				040831252BE4BC3600663028 /* Resources */,
 				040831242BE4BC1A00663028 /* Themes */,
+				040831262BE4BC3E00663028 /* Model */,
 				040831232BE4BC1300663028 /* Views */,
 			);
 			path = KisahLoka;
@@ -136,6 +160,11 @@
 			isa = PBXGroup;
 			children = (
 				040830FB2BE4B02B00663028 /* ContentView.swift */,
+				040831372BE4C74400663028 /* Home */,
+				040831382BE4C74E00663028 /* Discover */,
+				040831392BE4C75500663028 /* Bookmark */,
+				0408313C2BE4C77C00663028 /* Profile */,
+				040831462BE4CB1B00663028 /* Helper */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -151,6 +180,7 @@
 		040831252BE4BC3600663028 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				040831292BE4C21B00663028 /* Fonts */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -160,6 +190,59 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		040831292BE4C21B00663028 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0408312C2BE4C25900663028 /* Poppins-Bold.ttf */,
+				0408312A2BE4C25900663028 /* Poppins-ExtraBold.ttf */,
+				0408312D2BE4C25900663028 /* Poppins-Light.ttf */,
+				0408312B2BE4C25900663028 /* Poppins-Medium.ttf */,
+				0408312E2BE4C25900663028 /* Poppins-Regular.ttf */,
+				0408312F2BE4C25900663028 /* Poppins-SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		040831372BE4C74400663028 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0408313D2BE4C7C100663028 /* HomePage.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		040831382BE4C74E00663028 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				040831402BE4C7E600663028 /* DiscoverPage.swift */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		040831392BE4C75500663028 /* Bookmark */ = {
+			isa = PBXGroup;
+			children = (
+				040831422BE4C7F800663028 /* BookmarkPage.swift */,
+			);
+			path = Bookmark;
+			sourceTree = "<group>";
+		};
+		0408313C2BE4C77C00663028 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				040831442BE4C80C00663028 /* ProfilePage.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		040831462BE4CB1B00663028 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				040831472BE4CB3500663028 /* CustomTabBar.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +350,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				040831012BE4B02C00663028 /* Preview Assets.xcassets in Resources */,
+				040831332BE4C25900663028 /* Poppins-Light.ttf in Resources */,
+				040831342BE4C25900663028 /* Poppins-Regular.ttf in Resources */,
+				040831312BE4C25900663028 /* Poppins-Medium.ttf in Resources */,
+				040831322BE4C25900663028 /* Poppins-Bold.ttf in Resources */,
+				040831352BE4C25900663028 /* Poppins-SemiBold.ttf in Resources */,
+				040831302BE4C25900663028 /* Poppins-ExtraBold.ttf in Resources */,
 				040830FE2BE4B02C00663028 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,8 +382,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				040830FC2BE4B02B00663028 /* ContentView.swift in Sources */,
+				040831412BE4C7E600663028 /* DiscoverPage.swift in Sources */,
 				040830FA2BE4B02B00663028 /* KisahLokaApp.swift in Sources */,
+				040831452BE4C80C00663028 /* ProfilePage.swift in Sources */,
+				040831482BE4CB3500663028 /* CustomTabBar.swift in Sources */,
 				040831282BE4BC8200663028 /* Color.swift in Sources */,
+				040831432BE4C7F800663028 /* BookmarkPage.swift in Sources */,
+				0408313E2BE4C7C100663028 /* HomePage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +555,7 @@
 				DEVELOPMENT_TEAM = LGQ9K24DNA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = KisahLoka/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -490,6 +585,7 @@
 				DEVELOPMENT_TEAM = LGQ9K24DNA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = KisahLoka/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
