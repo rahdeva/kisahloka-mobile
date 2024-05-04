@@ -20,7 +20,8 @@ struct TabBarButton: View {
                 Rectangle()
                     .foregroundColor(isActive ? .primaryColor : .white)
                     .frame(width: geo.size.width/1.25, height: 2)
-                
+                    .clipShape(
+                     .rect(cornerRadii: RectangleCornerRadii(bottomLeading: 2, bottomTrailing: 2)))
                 
                 Image(systemName: isActive ? iconActive : iconNonActive)
                     .resizable()
@@ -31,7 +32,7 @@ struct TabBarButton: View {
                     .foregroundColor(isActive ? .primaryColor : .slate500)
                 
                 Text(buttonText)
-                    .font(.body)
+                    .font(.custom("Poppins-Regular", size: 14))
                     .foregroundColor(isActive ? .primaryColor : .slate500)
                     .bold(isActive)
             }
