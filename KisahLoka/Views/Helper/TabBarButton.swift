@@ -32,7 +32,7 @@ struct TabBarButton: View {
                     .foregroundColor(isActive ? .primaryColor : .slate500)
                 
                 Text(buttonText)
-                    .font(.custom("Poppins-Regular", size: 14))
+                    .font(.poppinsSubheadline)
                     .foregroundColor(isActive ? .primaryColor : .slate500)
                     .bold(isActive)
             }

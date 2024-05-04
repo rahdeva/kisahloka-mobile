@@ -27,6 +27,7 @@
 		040831452BE4C80C00663028 /* ProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040831442BE4C80C00663028 /* ProfilePage.swift */; };
 		040831482BE4CB3500663028 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040831472BE4CB3500663028 /* CustomTabBar.swift */; };
 		0408314A2BE4E85900663028 /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040831492BE4E85900663028 /* TabBarButton.swift */; };
+		0408314C2BE5F2CB00663028 /* TextStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0408314B2BE5F2CB00663028 /* TextStyles.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		040831442BE4C80C00663028 /* ProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePage.swift; sourceTree = "<group>"; };
 		040831472BE4CB3500663028 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		040831492BE4E85900663028 /* TabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
+		0408314B2BE5F2CB00663028 /* TextStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyles.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				040831272BE4BC8200663028 /* Color.swift */,
+				0408314B2BE5F2CB00663028 /* TextStyles.swift */,
 			);
 			path = Themes;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 			files = (
 				040830FC2BE4B02B00663028 /* ContentView.swift in Sources */,
 				040831412BE4C7E600663028 /* DiscoverPage.swift in Sources */,
+				0408314C2BE5F2CB00663028 /* TextStyles.swift in Sources */,
 				040830FA2BE4B02B00663028 /* KisahLokaApp.swift in Sources */,
 				040831452BE4C80C00663028 /* ProfilePage.swift in Sources */,
 				040831482BE4CB3500663028 /* CustomTabBar.swift in Sources */,
