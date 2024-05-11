@@ -1,5 +1,5 @@
 //
-//  DiscoverPage.swift
+//  BookmarkPage.swift
 //  KisahLoka
 //
 //  Created by MacBook Air on 03/05/24.
@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct DiscoverPage: View {
+struct BookmarkPageView: View {
     var body: some View {
-        Text("Discover Page")
+        Text("Bookmark Page")
     }
 }
 
 #Preview {
-    DiscoverPage()
+    BookmarkPageView()
 }

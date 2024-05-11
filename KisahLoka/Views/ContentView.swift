@@ -11,16 +11,16 @@ struct ContentView: View {
     @State private var selectedTab: Tabs = .home
     
     var body: some View {
-        VStack(spacing: 0) {
+        VStack() {
             switch selectedTab {
                 case .home:
-                    HomePage()
+                    HomePageView()
                 case .discover:
-                    DiscoverPage()
+                    DiscoverPageView()
                 case .bookmark:
-                    BookmarkPage()
+                    BookmarkPageView()
                 case .profile:
-                    ProfilePage()
+                    ProfilePageView()
             }
             Spacer()
             CustomTabBar(selectedTab: $selectedTab)

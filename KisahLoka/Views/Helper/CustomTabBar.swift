@@ -51,8 +51,8 @@ struct CustomTabBar: View {
                 } label: {
                     TabBarButton(
                         buttonText: "Bookmark",
-                        iconActive: "book.fill",
-                        iconNonActive: "book",
+                        iconActive: "books.vertical.fill",
+                        iconNonActive: "books.vertical",
                         isActive: selectedTab == .bookmark
                     )
                 }
@@ -69,7 +69,7 @@ struct CustomTabBar: View {
                 }
             }
             .frame(height: 66)
-            .padding(.bottom, 12)
+//            .padding(.bottom, 4)
             .padding(.horizontal, 12)
             .background(.white)
         }
