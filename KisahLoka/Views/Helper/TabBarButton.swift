@@ -16,7 +16,7 @@ struct TabBarButton: View {
     
     var body: some View {
         GeometryReader { geo in
-            VStack (alignment: .center, spacing: 8) {
+            VStack (alignment: .center, spacing: 4) {
                 Rectangle()
                     .foregroundColor(isActive ? .primaryColor : .white)
                     .frame(width: geo.size.width/1.25, height: 2)
@@ -26,15 +26,22 @@ struct TabBarButton: View {
                 Image(systemName: isActive ? iconActive : iconNonActive)
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 24, height: 24)
-                    .padding(.bottom, 4)
+                    .frame(width: 18, height: 18)
+//                    .padding(.bottom, 2)
                     .padding(.top, 4)
                     .foregroundColor(isActive ? .primaryColor : .slate500)
                 
                 Text(buttonText)
-                    .font(.poppinsSubheadline)
+                    .font(.poppinsCaption1)
                     .foregroundColor(isActive ? .primaryColor : .slate500)
                     .bold(isActive)
+               
+//                if isActive {
+//                    Text(buttonText)
+//                        .font(.poppinsSubheadline)
+//                        .foregroundColor(isActive ? .primaryColor : .slate500)
+//                        .bold()
+//                }
             }
             .frame(width: geo.size.width, height: geo.size.height)
         }

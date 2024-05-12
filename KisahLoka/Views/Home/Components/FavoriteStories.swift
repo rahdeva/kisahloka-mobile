@@ -12,31 +12,48 @@ struct FavoriteStories: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Favorite Story")
+            Text("Cerita Favorit")
                 .font(.poppinsHeadline)
                 .foregroundColor(.slate800)
-                .padding(.leading, 16)
+                .padding(.leading, 24)
                 .padding(.bottom, 8)
-                .padding(.top, 24)
+                .padding(.top, 16)
 
             if homeVM.favoriteStoriesData.isEmpty{
                 ProgressView()
-                    .padding(.leading, 16)
+                    .padding(.leading, 24)
             } else {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(alignment: .top, spacing: 0) {
                         ForEach(homeVM.favoriteStoriesData, id: \.self) { item in
                             VStack {
-                                Image(item.thumbnail_image!)
-                                    .resizable()
-                                    .frame(width: 120, height: 120)
-                                    .cornerRadius(12)
+                                AsyncImage(url: URL(string: item.thumbnail_image!)){ image in
+                                    image.resizable()
+                                } placeholder: {
+                                    ProgressView()
+                                }
+                                .cornerRadius(4)
+                                .frame(width: 167, height: 107)
+                                .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+                                
+                                VStack (alignment: .leading){
+                                    Text(item.origin_name ?? "-")
+                                        .font(.poppinsCaption2)
+                                        .foregroundColor(.secondary500)
+                                        .fontWeight(.medium)
+                                    Text(item.title ?? "-")
+                                        .font(.poppinsCaption1)
+                                        .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
+                                        .foregroundColor(.slate800)
+                                        .frame(width: 167, alignment: .leading)
+                                        .fontWeight(.regular)
+                                }
                             }
-                            .padding(.leading, 16)
+                            .padding(.leading, 24)
+                            .padding(.trailing, item == homeVM.favoriteStoriesData.last ? 24 : 0)
                         }
                     }
                 }
-                .frame(height: 120)
             }
         }
     }

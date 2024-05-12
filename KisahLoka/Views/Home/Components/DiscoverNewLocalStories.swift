@@ -12,27 +12,34 @@ struct DiscoverNewLocalStories: View {
     
     var body: some View {
         VStack (alignment: .leading){
-            Text("Temukan Cerita Daerah Baru")
+            Text("Temukan Cerita Terbaru")
                 .font(.poppinsHeadline)
                 .foregroundColor(.slate800)
-                .padding(.leading, 16)
+                .padding(.leading, 24)
                 .padding(.bottom, 8)
                 .padding(.top, 8)
             
             if homeVM.highlightStoriesData.isEmpty{
                 ProgressView()
-                    .padding(.leading, 16)
+                    .padding(.leading, 24)
             } else {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(alignment: .top, spacing: 0) {
                         ForEach(homeVM.highlightStoriesData, id: \.self){ item in
-                            Image(item.thumbnail_image!)
-                                .cornerRadius(12)
-                                .padding(.leading, 16)
+                            AsyncImage(url: URL(string: item.thumbnail_image!)){ image in
+                                image
+                                    .resizable()
+                                    
+                            } placeholder: {
+                                ProgressView()
+                            }
+                            .cornerRadius(12)
+                            .padding(.leading, 24)
+                            .frame(width: 345, height: 172)
+                            .padding(.trailing, item == homeVM.highlightStoriesData.last ? 24 : 0)
                         }
                     }
                 }
-                .frame(height: 120)
             }
         }
     }

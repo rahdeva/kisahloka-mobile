@@ -39,7 +39,7 @@ struct CustomTabBar: View {
                     selectedTab = .discover
                 } label: {
                     TabBarButton(
-                        buttonText: "Discover",
+                        buttonText: "Explore",
                         iconActive: "safari.fill",
                         iconNonActive: "safari",
                         isActive: selectedTab == .discover
@@ -68,7 +68,7 @@ struct CustomTabBar: View {
                     )
                 }
             }
-            .frame(height: 66)
+            .frame(height: 44)
 //            .padding(.bottom, 4)
             .padding(.horizontal, 12)
             .background(.white)

@@ -16,7 +16,7 @@ struct ContentView: View {
                 case .home:
                     HomePageView()
                 case .discover:
-                    DiscoverPageView()
+                    ExplorePageView()
                 case .bookmark:
                     BookmarkPageView()
                 case .profile:

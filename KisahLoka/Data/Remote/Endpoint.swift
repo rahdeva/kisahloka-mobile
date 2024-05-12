@@ -3,8 +3,12 @@ import Foundation
 class Environments {
     static let PRODUCTION = ""
     static let DEV = "http://188.166.210.146:4009/jdi/api/v1"
-    static let LOCAL = "http://10.62.52.30:4000/api/v1" // Apple
+//    static let LOCAL = "http://10.62.52.30:4000/api/v1" // Apple
+//    static let LOCAL = "http://192.168.0.158:4000/api/v1" // Wifi Kost
+    static let LOCAL = "http://192.168.0.113:4000/api/v1" // Wifi Kogu
 //    static let LOCAL = "http://172.20.10.2:4000/api/v1" // Hotspot
+    
+    
 
     static var currentEnvironment = Environments.LOCAL
 
@@ -52,6 +56,7 @@ class BaseURL {
     
     // Story
     static let story = "\(baseURL)/story"
+    static let storyExplore = "\(baseURL)/story_preview"
     static func storyByID(storyID: Int?) -> String {
         return "\(baseURL)/story/\(storyID ?? 0)"
     }
