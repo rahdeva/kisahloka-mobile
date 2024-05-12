@@ -52,6 +52,7 @@
 		040831972BF0AEF100663028 /* ExploreStoriesGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040831962BF0AEF100663028 /* ExploreStoriesGrid.swift */; };
 		0408319B2BF0B3C600663028 /* DetailPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0408319A2BF0B3C600663028 /* DetailPageView.swift */; };
 		0408319D2BF0B86000663028 /* DetailPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0408319C2BF0B85F00663028 /* DetailPageViewModel.swift */; };
+		0408319F2BF0BA5300663028 /* DetailStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0408319E2BF0BA5300663028 /* DetailStory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 		040831962BF0AEF100663028 /* ExploreStoriesGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreStoriesGrid.swift; sourceTree = "<group>"; };
 		0408319A2BF0B3C600663028 /* DetailPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageView.swift; sourceTree = "<group>"; };
 		0408319C2BF0B85F00663028 /* DetailPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageViewModel.swift; sourceTree = "<group>"; };
+		0408319E2BF0BA5300663028 /* DetailStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +253,7 @@
 				040831882BEF2DEB00663028 /* Type.swift */,
 				0408318A2BEF592B00663028 /* Home.swift */,
 				040831932BF0AD9600663028 /* Explore.swift */,
+				0408319E2BF0BA5300663028 /* DetailStory.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -527,6 +530,7 @@
 				040831852BEF2BC500663028 /* URLSession.swift in Sources */,
 				040831892BEF2DEB00663028 /* Type.swift in Sources */,
 				040831902BF0AA0100663028 /* ExplorePageView.swift in Sources */,
+				0408319F2BF0BA5300663028 /* DetailStory.swift in Sources */,
 				040831872BEF2C9C00663028 /* Interceptor.swift in Sources */,
 				0408317F2BEF2A0E00663028 /* Response.swift in Sources */,
 				040831972BF0AEF100663028 /* ExploreStoriesGrid.swift in Sources */,

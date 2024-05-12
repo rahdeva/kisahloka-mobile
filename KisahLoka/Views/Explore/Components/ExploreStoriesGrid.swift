@@ -16,7 +16,7 @@ struct ExploreStoriesGrid: View {
                 ForEach(exploreVM.exploreStoriesData, id: \.self) { item in
                     NavigationLink(
                         destination: DetailPageView(
-                            storyId: item.story_id
+                            storyId: item.story_id!
                         )
                     ){
                         VStack (alignment: .leading){

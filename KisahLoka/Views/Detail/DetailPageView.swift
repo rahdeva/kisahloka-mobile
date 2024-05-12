@@ -9,13 +9,14 @@ import SwiftUI
 
 struct DetailPageView: View {
     let storyId : Int
+    @StateObject var detailVM = DetailPageViewModel()
     
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-            .navigationTitle(title: )
+            .navigationTitle("Detil Cerita")
     }
 }
 
 #Preview {
-    DetailPageView()
+    DetailPageView(storyId: 1)
 }

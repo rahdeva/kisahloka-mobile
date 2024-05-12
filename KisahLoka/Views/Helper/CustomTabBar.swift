@@ -15,7 +15,6 @@ enum Tabs : Int{
 }
 
 struct CustomTabBar: View {
-    
     @Binding var selectedTab: Tabs
     
     var body: some View {

@@ -49,7 +49,8 @@ struct FavoriteStories: View {
                                         .fontWeight(.regular)
                                 }
                             }
-                            .padding(.leading, 24)
+                            .padding(.leading, 12)
+                            .padding(.leading, item == homeVM.favoriteStoriesData.first ? 12 : 0)
                             .padding(.trailing, item == homeVM.favoriteStoriesData.last ? 24 : 0)
                         }
                     }

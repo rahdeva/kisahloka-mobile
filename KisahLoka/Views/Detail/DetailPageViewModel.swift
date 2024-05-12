@@ -6,15 +6,15 @@
 //
 
 import Foundation
+import SwiftUI
 
-class ExplorePageViewModel: ObservableObject {
-    @Published var columns = [GridItem(.flexible()), GridItem(.flexible()),]
+class DetailPageViewModel: ObservableObject {
+//    @Published var columns = [GridItem(.flexible()), GridItem(.flexible()),]
     
-    @Published var searchKeyword : String = ""
-    @Published var exploreStoriesData: [ExploreStories] = []
-    @Published var exploreResponse: ResponseDataExplore?
+//    @Published var detailStoryData: ExploreStories
+    @Published var detailStoryResponse: ResponseDataDetailStory?
     
-    func getExplore() {
+    func getStoryDetail() {
         guard let url = URL(string: BaseURL.storyExplore) else {
             print("Invalid URL")
             return
@@ -33,19 +33,19 @@ class ExplorePageViewModel: ObservableObject {
                 return
             }
             
-            do {
-                if let homeResponse = try? JSONDecoder().decode(ResponseDataExplore.self, from: data) {
-                    if let explore = homeResponse.data {
-                        DispatchQueue.main.async {
-                            self.exploreStoriesData = explore.stories ?? []
-                        }
-                    } else {
-                        print("No types data available")
-                    }
-                } else {
-                    print("Error decoding JSON")
-                }
-            }
+//            do {
+//                if let detailStoryResponse = try? JSONDecoder().decode(ResponseDataDetailStory.self, from: data) {
+//                    if let detailStory = detailStoryResponse.data {
+//                        DispatchQueue.main.async {
+//                            self.detailStoryData = detailStory.story
+//                        }
+//                    } else {
+//                        print("No types data available")
+//                    }
+//                } else {
+//                    print("Error decoding JSON")
+//                }
+//            }
         }.resume()
     }
 }

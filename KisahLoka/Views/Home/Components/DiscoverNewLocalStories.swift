@@ -34,7 +34,8 @@ struct DiscoverNewLocalStories: View {
                                 ProgressView()
                             }
                             .cornerRadius(12)
-                            .padding(.leading, 24)
+                            .padding(.leading, 12)
+                            .padding(.leading, item == homeVM.highlightStoriesData.first ? 12 : 0)
                             .frame(width: 345, height: 172)
                             .padding(.trailing, item == homeVM.highlightStoriesData.last ? 24 : 0)
                         }

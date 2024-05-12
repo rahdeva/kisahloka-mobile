@@ -35,8 +35,8 @@ class ExplorePageViewModel: ObservableObject {
             }
             
             do {
-                if let homeResponse = try? JSONDecoder().decode(ResponseDataExplore.self, from: data) {
-                    if let explore = homeResponse.data {
+                if let exploreResponse = try? JSONDecoder().decode(ResponseDataExplore.self, from: data) {
+                    if let explore = exploreResponse.data {
                         DispatchQueue.main.async {
                             self.exploreStoriesData = explore.stories ?? []
                         }

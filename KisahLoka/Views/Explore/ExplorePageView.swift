@@ -14,6 +14,7 @@ struct ExplorePageView: View {
         NavigationView{
             ScrollView {
                 ExploreStoriesGrid(exploreVM: exploreVM)
+                    .toolbar(.hidden, for: .tabBar)
             }
             
             .navigationBarTitleDisplayMode(.inline)
@@ -25,6 +26,7 @@ struct ExplorePageView: View {
                 Text("Jelajahi Cerita")
             }
         }
+        .padding(.bottom, 24)
         .onAppear{
             exploreVM.getExplore()
         }

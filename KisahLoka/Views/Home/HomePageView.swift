@@ -44,50 +44,50 @@ struct HomePageView: View {
                                             .foregroundColor(.white)
                                     }
                                 }
-//                            ZStack (alignment: .bottomTrailing){
-//                                
-//                                Rectangle()
-//                                    .foregroundColor(.primaryColor)
-//                                    .frame(height: 108, alignment: .bottomTrailing)
-//                                    .cornerRadius(4)
-//                                
-//                                ZStack(alignment: .bottomTrailing){
-//                                    Image("type-bg")
-//                                        .resizable()
-//                                        .frame(alignment: .bottomTrailing)
-//                                        .opacity(0.75)
-//                                        .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
-//                                        .aspectRatio(contentMode: .fill)
-//                                    
-//                                    Image("type-\(index + 1)")
-//                                        .resizable()
-//                                        .frame(alignment: .bottomTrailing)
-//                                }
-//                                .aspectRatio(contentMode: .fill)
-//                                .frame(width: 100, height: 100, alignment: .bottomTrailing)
-//                                
-//                                VStack(alignment: .leading){
-//                                    Text("JENIS CERITA")
-//                                        .font(.poppinsCaption1)
-//                                        .tracking(0.2)
-//                                        .foregroundColor(.white)
-//                                    
-//                                    Text(type.type_name ?? "Unknown Type")
-//                                        .font(.poppinsBody)
-//                                        .bold()
-//                                        .foregroundColor(.white)
-//                                }
-//                                .padding(.bottom, 50)
-//                                .padding(.trailing, 50)
-//                                
-//                            }
+                            //                            ZStack (alignment: .bottomTrailing){
+                            //
+                            //                                Rectangle()
+                            //                                    .foregroundColor(.primaryColor)
+                            //                                    .frame(height: 108, alignment: .bottomTrailing)
+                            //                                    .cornerRadius(4)
+                            //
+                            //                                ZStack(alignment: .bottomTrailing){
+                            //                                    Image("type-bg")
+                            //                                        .resizable()
+                            //                                        .frame(alignment: .bottomTrailing)
+                            //                                        .opacity(0.75)
+                            //                                        .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
+                            //                                        .aspectRatio(contentMode: .fill)
+                            //
+                            //                                    Image("type-\(index + 1)")
+                            //                                        .resizable()
+                            //                                        .frame(alignment: .bottomTrailing)
+                            //                                }
+                            //                                .aspectRatio(contentMode: .fill)
+                            //                                .frame(width: 100, height: 100, alignment: .bottomTrailing)
+                            //
+                            //                                VStack(alignment: .leading){
+                            //                                    Text("JENIS CERITA")
+                            //                                        .font(.poppinsCaption1)
+                            //                                        .tracking(0.2)
+                            //                                        .foregroundColor(.white)
+                            //
+                            //                                    Text(type.type_name ?? "Unknown Type")
+                            //                                        .font(.poppinsBody)
+                            //                                        .bold()
+                            //                                        .foregroundColor(.white)
+                            //                                }
+                            //                                .padding(.bottom, 50)
+                            //                                .padding(.trailing, 50)
+                            //
+                            //                            }
                             
                         }
                     }
                     .padding(.horizontal, 24)
                 }
+                .padding(.bottom, 24)
             }
-            
             .navigationBarTitleDisplayMode(.inline)
             .searchable(
                 text: $homeVM.searchKeyword,
