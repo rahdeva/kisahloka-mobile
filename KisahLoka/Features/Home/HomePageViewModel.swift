@@ -10,7 +10,9 @@ import SwiftUI
 
 class HomePageViewModel: ObservableObject {
     @Published var gridLayout = [GridItem(.fixed(30)), GridItem(.fixed(30))]
-    @Published var columns = [GridItem(.flexible()), GridItem(.flexible()),]
+    @Published var columns = [
+        GridItem(.flexible(), alignment: .top), GridItem(.flexible()),
+    ]
     
     @Published var searchKeyword : String = ""
     @Published var highlightStoriesData: [HighlightStoriesHome] = []

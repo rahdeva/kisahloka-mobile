@@ -9,7 +9,9 @@ import Foundation
 import SwiftUI
 
 class ExplorePageViewModel: ObservableObject {
-    @Published var columns = [GridItem(.flexible()), GridItem(.flexible()),]
+    @Published var columns = [
+        GridItem(.flexible(), alignment: .top), GridItem(.flexible()),
+    ]
     
     @Published var searchKeyword : String = ""
     @Published var exploreStoriesData: [ExploreStories] = []

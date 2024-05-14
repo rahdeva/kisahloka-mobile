@@ -1,14 +1,14 @@
 //
-//  DetailStory.swift
+//  RandomRecommendation.swift
 //  KisahLoka
 //
-//  Created by MacBook Air on 12/05/24.
+//  Created by MacBook Air on 14/05/24.
 //
 
 import Foundation
 
-struct ResponseDataDetailStory : Codable {
-    let data : DataDetailStory?
+struct ResponseDataRandomRecommendation : Codable {
+    let data : DataRandomRecommendation?
     let error : String?
 
     enum CodingKeys: String, CodingKey {
@@ -19,28 +19,31 @@ struct ResponseDataDetailStory : Codable {
 
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        data = try values.decodeIfPresent(DataDetailStory.self, forKey: .data)
+        data = try values.decodeIfPresent(DataRandomRecommendation.self, forKey: .data)
         error = try values.decodeIfPresent(String.self, forKey: .error)
     }
 
 }
 
-struct DataDetailStory : Codable {
-    let story : DetailStory?
+struct DataRandomRecommendation : Codable {
+    let meta : Meta?
+    let stories : [RandomRecommendation]?
 
     enum CodingKeys: String, CodingKey {
 
-        case story = "story"
+        case meta = "meta"
+        case stories = "stories"
     }
 
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        story = try values.decodeIfPresent(DetailStory.self, forKey: .story)
+        meta = try values.decodeIfPresent(Meta.self, forKey: .meta)
+        stories = try values.decodeIfPresent([RandomRecommendation].self, forKey: .stories)
     }
 
 }
 
-struct DetailStory : Codable {
+struct RandomRecommendation : Codable, Hashable {
     let story_id : Int?
     let type_id : Int?
     let type_name : String?
@@ -48,16 +51,12 @@ struct DetailStory : Codable {
     let origin_name : String?
     let title : String?
     let total_content : Int?
-    let released_date : Date?
+    let released_date : String?
     let thumbnail_image : String?
     let read_count : Int?
     let is_highligthed : Int?
     let is_favorited : Int?
-    let genre_id : [Int]?
     let genre_name : [String]?
-    let synopsis : String?
-    let created_at : String?
-    let updated_at : String?
 
     enum CodingKeys: String, CodingKey {
 
@@ -73,11 +72,7 @@ struct DetailStory : Codable {
         case read_count = "read_count"
         case is_highligthed = "is_highligthed"
         case is_favorited = "is_favorited"
-        case genre_id = "genre_id"
         case genre_name = "genre_name"
-        case synopsis = "synopsis"
-        case created_at = "created_at"
-        case updated_at = "updated_at"
     }
 
     init(from decoder: Decoder) throws {
@@ -89,25 +84,12 @@ struct DetailStory : Codable {
         origin_name = try values.decodeIfPresent(String.self, forKey: .origin_name)
         title = try values.decodeIfPresent(String.self, forKey: .title)
         total_content = try values.decodeIfPresent(Int.self, forKey: .total_content)
-        released_date = try values.decodeIfPresent(String.self, forKey: .released_date).flatMap { DateFormatter.customFormat.date(from: $0) }
+        released_date = try values.decodeIfPresent(String.self, forKey: .released_date)
         thumbnail_image = try values.decodeIfPresent(String.self, forKey: .thumbnail_image)
         read_count = try values.decodeIfPresent(Int.self, forKey: .read_count)
         is_highligthed = try values.decodeIfPresent(Int.self, forKey: .is_highligthed)
         is_favorited = try values.decodeIfPresent(Int.self, forKey: .is_favorited)
-        genre_id = try values.decodeIfPresent([Int].self, forKey: .genre_id)
         genre_name = try values.decodeIfPresent([String].self, forKey: .genre_name)
-        synopsis = try values.decodeIfPresent(String.self, forKey: .synopsis)
-        created_at = try values.decodeIfPresent(String.self, forKey: .created_at)
-        updated_at = try values.decodeIfPresent(String.self, forKey: .updated_at)
     }
 
-}
-
-extension DateFormatter {
-    static let customFormat: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd-MM-yyyy" // Sesuaikan dengan format tanggal yang diberikan
-        formatter.timeZone = TimeZone(secondsFromGMT: 0)
-        return formatter
-    }()
 }

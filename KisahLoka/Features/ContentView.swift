@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var selectedTab: Tabs = .home
+    @Environment(TabBarModel.self) var showTabBar
     
     var body: some View {
         VStack() {
@@ -23,7 +24,9 @@ struct ContentView: View {
                     ProfilePageView()
             }
             Spacer()
-            CustomTabBar(selectedTab: $selectedTab)
+            if showTabBar.show {
+                CustomTabBar(selectedTab: $selectedTab)
+            }
         }
     }
 

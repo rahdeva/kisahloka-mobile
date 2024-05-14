@@ -1,22 +1,29 @@
 //
-//  ExploreStories.swift
+//  AnotherStoriesOnDetail.swift
 //  KisahLoka
 //
-//  Created by MacBook Air on 12/05/24.
+//  Created by MacBook Air on 14/05/24.
 //
 
 import SwiftUI
 
-struct ExploreStoriesGrid: View {
-    @ObservedObject var exploreVM: ExplorePageViewModel
+struct AnotherStoriesOnDetail: View {
+    @ObservedObject var detailVM: DetailPageViewModel
     
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
-            LazyVGrid(columns: exploreVM.columns, spacing: 12) {
-                ForEach(exploreVM.exploreStoriesData, id: \.self) { item in
+        VStack (alignment: .leading){
+            Text("Cerita Lainnya")
+                .font(.poppinsHeadline)
+                .foregroundColor(.slate800)
+                .padding(.top, 8)
+            
+            LazyVGrid(columns: detailVM.columns, spacing: 12) {
+                ForEach(detailVM.anotherStoriesData, id: \.self) { item in
                     NavigationLink(
                         destination: DetailPageView(
-                            storyId: item.story_id!
+                            storyId: item.story_id!,
+                            totalPageStory: item.total_content!,
+                            isBackWithTabBar: false
                         )
                     ){
                         VStack (alignment: .leading){
@@ -44,12 +51,7 @@ struct ExploreStoriesGrid: View {
                     }
                 }
             }
-            .padding(.top, 16)
-            .padding(.horizontal, 24)
+            .padding(.top, 8)
         }
     }
-}
-
-#Preview {
-    ExploreStoriesGrid(exploreVM: ExplorePageViewModel())
 }

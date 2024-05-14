@@ -27,7 +27,7 @@ struct CustomTabBar: View {
                     selectedTab = .home
                 } label: {
                     TabBarButton(
-                        buttonText: "Home",
+                        buttonText: "Beranda",
                         iconActive: "house.fill",
                         iconNonActive: "house",
                         isActive: selectedTab == .home
@@ -38,7 +38,7 @@ struct CustomTabBar: View {
                     selectedTab = .discover
                 } label: {
                     TabBarButton(
-                        buttonText: "Explore",
+                        buttonText: "Jelajahi",
                         iconActive: "safari.fill",
                         iconNonActive: "safari",
                         isActive: selectedTab == .discover
@@ -49,7 +49,7 @@ struct CustomTabBar: View {
                     selectedTab = .bookmark
                 } label: {
                     TabBarButton(
-                        buttonText: "Bookmark",
+                        buttonText: "Penanda",
                         iconActive: "books.vertical.fill",
                         iconNonActive: "books.vertical",
                         isActive: selectedTab == .bookmark
@@ -60,7 +60,7 @@ struct CustomTabBar: View {
                     selectedTab = .profile
                 } label: {
                     TabBarButton(
-                        buttonText: "Profile",
+                        buttonText: "Profil",
                         iconActive: "person.fill",
                         iconNonActive: "person",
                         isActive: selectedTab == .profile

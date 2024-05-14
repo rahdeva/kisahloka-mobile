@@ -53,7 +53,10 @@ struct HighlightStoriesHome : Codable, Hashable {
     let origin_id : Int?
     let origin_name : String?
     let title : String?
+    let total_content : Int?
+    let released_date : String?
     let thumbnail_image : String?
+    let read_count : Int?
     let is_highligthed : Int?
     let is_favorited : Int?
     let created_at : String?
@@ -67,7 +70,10 @@ struct HighlightStoriesHome : Codable, Hashable {
         case origin_id = "origin_id"
         case origin_name = "origin_name"
         case title = "title"
+        case total_content = "total_content"
+        case released_date = "released_date"
         case thumbnail_image = "thumbnail_image"
+        case read_count = "read_count"
         case is_highligthed = "is_highligthed"
         case is_favorited = "is_favorited"
         case created_at = "created_at"
@@ -82,7 +88,10 @@ struct HighlightStoriesHome : Codable, Hashable {
         origin_id = try values.decodeIfPresent(Int.self, forKey: .origin_id)
         origin_name = try values.decodeIfPresent(String.self, forKey: .origin_name)
         title = try values.decodeIfPresent(String.self, forKey: .title)
+        total_content = try values.decodeIfPresent(Int.self, forKey: .total_content)
+        released_date = try values.decodeIfPresent(String.self, forKey: .released_date)
         thumbnail_image = try values.decodeIfPresent(String.self, forKey: .thumbnail_image)
+        read_count = try values.decodeIfPresent(Int.self, forKey: .read_count)
         is_highligthed = try values.decodeIfPresent(Int.self, forKey: .is_highligthed)
         is_favorited = try values.decodeIfPresent(Int.self, forKey: .is_favorited)
         created_at = try values.decodeIfPresent(String.self, forKey: .created_at)
@@ -98,7 +107,10 @@ struct FavoriteStoriesHome: Codable, Hashable {
     let origin_id : Int?
     let origin_name : String?
     let title : String?
+    let total_content : Int?
+    let released_date : String?
     let thumbnail_image : String?
+    let read_count : Int?
     let is_highligthed : Int?
     let is_favorited : Int?
     let created_at : String?
@@ -112,7 +124,10 @@ struct FavoriteStoriesHome: Codable, Hashable {
         case origin_id = "origin_id"
         case origin_name = "origin_name"
         case title = "title"
+        case total_content = "total_content"
+        case released_date = "released_date"
         case thumbnail_image = "thumbnail_image"
+        case read_count = "read_count"
         case is_highligthed = "is_highligthed"
         case is_favorited = "is_favorited"
         case created_at = "created_at"
@@ -127,7 +142,10 @@ struct FavoriteStoriesHome: Codable, Hashable {
         origin_id = try values.decodeIfPresent(Int.self, forKey: .origin_id)
         origin_name = try values.decodeIfPresent(String.self, forKey: .origin_name)
         title = try values.decodeIfPresent(String.self, forKey: .title)
+        total_content = try values.decodeIfPresent(Int.self, forKey: .total_content)
+        released_date = try values.decodeIfPresent(String.self, forKey: .released_date)
         thumbnail_image = try values.decodeIfPresent(String.self, forKey: .thumbnail_image)
+        read_count = try values.decodeIfPresent(Int.self, forKey: .read_count)
         is_highligthed = try values.decodeIfPresent(Int.self, forKey: .is_highligthed)
         is_favorited = try values.decodeIfPresent(Int.self, forKey: .is_favorited)
         created_at = try values.decodeIfPresent(String.self, forKey: .created_at)
