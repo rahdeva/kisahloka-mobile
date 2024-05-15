@@ -11,6 +11,8 @@ struct PostReadingPageView: View {
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     let storyId : Int
     @StateObject var postReadingVM = PostReadingPageViewModel()
+    @EnvironmentObject var navPathExplore: NavPathExplore
+//    @EnvironmentObject var navPathExplore: NavPathExplore
     
     var body: some View {
         GeometryReader{ p in
@@ -56,14 +58,20 @@ struct PostReadingPageView: View {
                     Divider()
                         .frame(height: 1)
                         .shadow(radius: 1)
-                    NavigationLink {
-                        
-                    } label: {
+                    Button (
+                        action: {
+                            print(navPathExplore.navPath)
+                            print(navPathExplore.navPath.count > 0)
+                            if navPathExplore.navPath.count > 0 {
+                                navPathExplore.navPath.removeLast()
+                            }
+                            navPathExplore.navPath = NavigationPath()
+                        }, label: {
                         Text("Jelajahi Cerita Lainnya")
                             .fontWeight(.semibold)
                             .padding(.vertical, 8)
                             .padding(.horizontal, 60)
-                    }
+                    })
                     .padding(.top, 16)
                     .buttonStyle(.borderedProminent)
                     .tint(.primaryColor)

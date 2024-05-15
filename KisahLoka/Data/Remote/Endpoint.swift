@@ -70,6 +70,9 @@ class BaseURL {
     static func bookmarkByID(bookmarkID: Int?) -> String {
         return "\(baseURL)/bookmark/\(bookmarkID ?? 0)"
     }
+    static func bookmarkByUserID(userID: Int?) -> String {
+        return "\(baseURL)/bookmark/user/\(userID ?? 0)"
+    }
     
     // Home
     static let home = "\(baseURL)/home"

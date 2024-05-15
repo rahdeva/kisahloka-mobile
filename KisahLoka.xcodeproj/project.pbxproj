@@ -64,6 +64,10 @@
 		040831B72BF34AB800663028 /* RandomRecommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040831B62BF34AB800663028 /* RandomRecommendation.swift */; };
 		040831BB2BF3513600663028 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040831BA2BF3513600663028 /* TabBar.swift */; };
 		040831BE2BF35C0200663028 /* AnotherRecommendStoriesPostReading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040831BD2BF35C0200663028 /* AnotherRecommendStoriesPostReading.swift */; };
+		040831C02BF36C3F00663028 /* NavPathExplore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040831BF2BF36C3F00663028 /* NavPathExplore.swift */; };
+		040831C22BF43EC600663028 /* BookmarkPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040831C12BF43EC600663028 /* BookmarkPageViewModel.swift */; };
+		040831C52BF4417400663028 /* BookmarkStories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040831C42BF4417400663028 /* BookmarkStories.swift */; };
+		040831C72BF4438600663028 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040831C62BF4438600663028 /* Bookmark.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +142,10 @@
 		040831B62BF34AB800663028 /* RandomRecommendation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomRecommendation.swift; sourceTree = "<group>"; };
 		040831BA2BF3513600663028 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		040831BD2BF35C0200663028 /* AnotherRecommendStoriesPostReading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnotherRecommendStoriesPostReading.swift; sourceTree = "<group>"; };
+		040831BF2BF36C3F00663028 /* NavPathExplore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavPathExplore.swift; sourceTree = "<group>"; };
+		040831C12BF43EC600663028 /* BookmarkPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkPageViewModel.swift; sourceTree = "<group>"; };
+		040831C42BF4417400663028 /* BookmarkStories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkStories.swift; sourceTree = "<group>"; };
+		040831C62BF4438600663028 /* Bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +272,7 @@
 				0408319E2BF0BA5300663028 /* DetailStory.swift */,
 				040831A52BF2043000663028 /* StoryContent.swift */,
 				040831B62BF34AB800663028 /* RandomRecommendation.swift */,
+				040831C62BF4438600663028 /* Bookmark.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -295,6 +304,8 @@
 			isa = PBXGroup;
 			children = (
 				040831422BE4C7F800663028 /* BookmarkPageView.swift */,
+				040831C12BF43EC600663028 /* BookmarkPageViewModel.swift */,
+				040831C32BF4413300663028 /* Components */,
 			);
 			path = Bookmark;
 			sourceTree = "<group>";
@@ -420,6 +431,7 @@
 			isa = PBXGroup;
 			children = (
 				040831BA2BF3513600663028 /* TabBar.swift */,
+				040831BF2BF36C3F00663028 /* NavPathExplore.swift */,
 			);
 			path = EnvironmentModel;
 			sourceTree = "<group>";
@@ -428,6 +440,14 @@
 			isa = PBXGroup;
 			children = (
 				040831BD2BF35C0200663028 /* AnotherRecommendStoriesPostReading.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		040831C32BF4413300663028 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				040831C42BF4417400663028 /* BookmarkStories.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -586,6 +606,7 @@
 				040831B22BF311D300663028 /* PostReadingPageView.swift in Sources */,
 				0408314C2BE5F2CB00663028 /* TextStyles.swift in Sources */,
 				040830FA2BE4B02B00663028 /* KisahLokaApp.swift in Sources */,
+				040831C72BF4438600663028 /* Bookmark.swift in Sources */,
 				0408317D2BEF264300663028 /* Endpoint.swift in Sources */,
 				040831942BF0AD9600663028 /* Explore.swift in Sources */,
 				040831A42BF2038900663028 /* ReadingPageViewModel.swift in Sources */,
@@ -594,6 +615,7 @@
 				040831A62BF2043000663028 /* StoryContent.swift in Sources */,
 				040831832BEF2A8300663028 /* Meta.swift in Sources */,
 				0408314A2BE4E85900663028 /* TabBarButton.swift in Sources */,
+				040831C22BF43EC600663028 /* BookmarkPageViewModel.swift in Sources */,
 				040831BE2BF35C0200663028 /* AnotherRecommendStoriesPostReading.swift in Sources */,
 				0408319B2BF0B3C600663028 /* DetailPageView.swift in Sources */,
 				040831BB2BF3513600663028 /* TabBar.swift in Sources */,
@@ -610,6 +632,7 @@
 				0408318B2BEF592B00663028 /* Home.swift in Sources */,
 				040831282BE4BC8200663028 /* Color.swift in Sources */,
 				040831AC2BF2D80500663028 /* StoriesType.swift in Sources */,
+				040831C52BF4417400663028 /* BookmarkStories.swift in Sources */,
 				0408315F2BE8D95F00663028 /* HomePageViewModel.swift in Sources */,
 				0408319D2BF0B86000663028 /* DetailPageViewModel.swift in Sources */,
 				040831A22BF2015B00663028 /* ReadingPageView.swift in Sources */,
@@ -618,6 +641,7 @@
 				040831622BE8E63D00663028 /* DiscoverNewLocalStories.swift in Sources */,
 				040831B52BF3121100663028 /* PostReadingPageViewModel.swift in Sources */,
 				0408315D2BE8D52E00663028 /* Story.swift in Sources */,
+				040831C02BF36C3F00663028 /* NavPathExplore.swift in Sources */,
 				040831642BE8E79800663028 /* FavoriteStories.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -15,8 +15,8 @@ struct AnotherRecommendStoriesPostReading: View {
             Text("Cocok nih untuk kamu baca juga")
                 .font(.poppinsHeadline)
                 .foregroundColor(.slate800)
-                .padding(.top, 8)
-                .padding(.horizontal, 24)
+                .padding(.top, 12)
+                .padding(.horizontal, 16)
             
             LazyVGrid(columns: postReadingVM.columns, spacing: 12) {
                 ForEach(postReadingVM.anotherStoriesData, id: \.self) { item in
@@ -53,7 +53,7 @@ struct AnotherRecommendStoriesPostReading: View {
                 }
             }
             .padding(.horizontal, 12)
-            .padding(.top, 8)
+//            .padding(.top, 4)
         }
     }
 }

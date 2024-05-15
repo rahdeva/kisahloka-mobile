@@ -25,6 +25,7 @@ struct KisahLokaApp: App {
         WindowGroup {
             ContentView()
                 .environment(TabBarModel())
+                .environmentObject(NavPathExplore())
         }
     }
 }
