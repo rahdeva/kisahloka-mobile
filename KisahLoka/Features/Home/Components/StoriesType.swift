@@ -21,60 +21,75 @@ struct StoriesType: View {
             
             LazyVGrid(columns: homeVM.columns, spacing: 12) {
                 ForEach(Array(homeVM.typesData.enumerated()), id: \.element.type_id) { index, type in
-                    Rectangle()
-                        .foregroundColor(.primaryColor)
-                        .frame(height: 108, alignment: .bottomTrailing)
-                        .cornerRadius(4)
-                        .overlay{
-                            VStack(alignment: .trailing){
-                                Text("JENIS CERITA")
-                                    .font(.poppinsCaption1)
-                                    .tracking(0.2)
-                                    .foregroundColor(.white)
-                                
-                                Text(type.type_name ?? "Unknown Type")
-                                    .font(.poppinsBody)
-                                    .bold()
-                                    .foregroundColor(.white)
-                            }
+//                    Rectangle()
+//                        .foregroundColor(.primaryColor)
+//                        .frame(height: 108, alignment: .bottomTrailing)
+//                        .cornerRadius(4)
+//                        .overlay{
+//                            VStack(alignment: .trailing){
+//                                Text("JENIS CERITA")
+//                                    .font(.poppinsCaption1)
+//                                    .tracking(0.2)
+//                                    .foregroundColor(.white)
+//                                
+//                                Text(type.type_name ?? "Unknown Type")
+//                                    .font(.poppinsBody)
+//                                    .bold()
+//                                    .foregroundColor(.white)
+//                            }
+//                        }
+                    ZStack (alignment: .topLeading){
+                        
+                        Rectangle()
+                            .foregroundColor(.primaryColor)
+                            .frame(height: 108, alignment: .topLeading)
+                            .cornerRadius(4)
+                        
+                        ZStack(alignment: .bottomTrailing){
+                            Rectangle()
+                                .foregroundColor(.primaryColor)
+                                .frame(height: 108, alignment: .bottomTrailing)
+                                .cornerRadius(4)
+                            
+                            Image("type-bg")
+                                .resizable()
+                                .frame(alignment: .bottomTrailing)
+                                .opacity(0.75)
+                                .frame(width: 110, height: 90)
+                                .aspectRatio(contentMode: .fill)
+                            
+                            Image("type-\(index + 1)")
+                                .resizable()
+                                .frame(
+                                    width: index == 0
+                                        ? 120
+                                        : (index == 4
+                                            ? 100
+                                            : 110),
+                                    height: index == 4
+                                        ? 80
+                                        : 90,
+                                    alignment: .bottomTrailing)
+                                .aspectRatio(contentMode: .fill)
                         }
-                    //                            ZStack (alignment: .bottomTrailing){
-                    //
-                    //                                Rectangle()
-                    //                                    .foregroundColor(.primaryColor)
-                    //                                    .frame(height: 108, alignment: .bottomTrailing)
-                    //                                    .cornerRadius(4)
-                    //
-                    //                                ZStack(alignment: .bottomTrailing){
-                    //                                    Image("type-bg")
-                    //                                        .resizable()
-                    //                                        .frame(alignment: .bottomTrailing)
-                    //                                        .opacity(0.75)
-                    //                                        .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
-                    //                                        .aspectRatio(contentMode: .fill)
-                    //
-                    //                                    Image("type-\(index + 1)")
-                    //                                        .resizable()
-                    //                                        .frame(alignment: .bottomTrailing)
-                    //                                }
-                    //                                .aspectRatio(contentMode: .fill)
-                    //                                .frame(width: 100, height: 100, alignment: .bottomTrailing)
-                    //
-                    //                                VStack(alignment: .leading){
-                    //                                    Text("JENIS CERITA")
-                    //                                        .font(.poppinsCaption1)
-                    //                                        .tracking(0.2)
-                    //                                        .foregroundColor(.white)
-                    //
-                    //                                    Text(type.type_name ?? "Unknown Type")
-                    //                                        .font(.poppinsBody)
-                    //                                        .bold()
-                    //                                        .foregroundColor(.white)
-                    //                                }
-                    //                                .padding(.bottom, 50)
-                    //                                .padding(.trailing, 50)
-                    //
-                    //                            }
+                        .aspectRatio(contentMode: .fill)
+                        
+                        VStack(alignment: .leading){
+                            Text("JENIS CERITA")
+                                .font(.poppinsCaption1)
+                                .tracking(0.2)
+                                .foregroundColor(.white)
+                            
+                            Text(type.type_name ?? "Unknown Type")
+                                .font(.poppinsBody)
+                                .bold()
+                                .foregroundColor(.white)
+                                .frame(width: 76, alignment: .leading)
+                        }
+                        .padding(.top, 10)
+                        .padding(.leading, 10)
+                        
+                    }
                     
                 }
             }

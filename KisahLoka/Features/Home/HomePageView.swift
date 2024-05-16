@@ -27,6 +27,9 @@ struct HomePageView: View {
             .toolbar{
                 ToolbarItem(placement: .principal){
                     Image("logo-kisahloka")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: 48)
                 }
             }
         }
