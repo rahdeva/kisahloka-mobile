@@ -61,14 +61,12 @@ struct StoriesType: View {
                             Image("type-\(index + 1)")
                                 .resizable()
                                 .frame(
-                                    width: index == 0
-                                        ? 120
+                                    width: index == 0 || index == 5 || index == 3
+                                        ? 126
                                         : (index == 4
-                                            ? 100
+                                            ? 104
                                             : 110),
-                                    height: index == 4
-                                        ? 80
-                                        : 90,
+                                    height: 90,
                                     alignment: .bottomTrailing)
                                 .aspectRatio(contentMode: .fill)
                         }

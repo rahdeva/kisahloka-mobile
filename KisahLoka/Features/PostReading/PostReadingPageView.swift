@@ -92,6 +92,7 @@ struct PostReadingPageView: View {
                 HStack{
                     Image(systemName: "chevron.backward")
                         .bold()
+                        .foregroundStyle(Color.slate500)
                 }
             }
         )

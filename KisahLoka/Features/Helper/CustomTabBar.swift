@@ -49,7 +49,7 @@ struct CustomTabBar: View {
                     selectedTab = .bookmark
                 } label: {
                     TabBarButton(
-                        buttonText: "Penanda",
+                        buttonText: "Bookmark",
                         iconActive: "books.vertical.fill",
                         iconNonActive: "books.vertical",
                         isActive: selectedTab == .bookmark

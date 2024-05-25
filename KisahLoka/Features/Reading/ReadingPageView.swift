@@ -10,7 +10,6 @@ import SwiftUI
 struct ReadingPageView: View {
     let storyId : Int
     let totalPageStory : Int
-    @State private var sliderValue: Double = 0
     @State private var selectedTab = 0
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     @StateObject var readingVM = ReadingPageViewModel()
@@ -43,7 +42,11 @@ struct ReadingPageView: View {
                                     Image("ill_moral_story")
                                         .offset(x: 24, y: 32)
                                     
-                                    Text(content.content_indo ?? "-")
+                                    Text(
+                                        readingVM.currentLanguage == .indonesian
+                                        ? content.content_indo ?? "-"
+                                        : content.content_eng ?? "-"
+                                    )
                                         .padding(.top, 40)
                                         .padding(.leading, 24)
                                         .padding(.trailing, 32)
@@ -64,11 +67,16 @@ struct ReadingPageView: View {
                                     ProgressView()
                                 }
                                 
-                                Text(content.content_indo ?? "-")
+                                Text(
+                                    readingVM.currentLanguage == .indonesian
+                                    ? content.content_indo ?? "-"
+                                    : content.content_eng ?? "-"
+                                )
                                     .padding(.top, 40)
                                     .padding(.horizontal, 24)
                                     .font(.poppinsFootnote)
                                     .multilineTextAlignment(.center)
+                                    .foregroundStyle(Color.slate800)
                             }
                             .tag(index)
                         }
@@ -86,6 +94,14 @@ struct ReadingPageView: View {
                         in: 0...Double(totalPageStory - 1),
                         step: 1
                     )
+                    .onAppear {
+                        if let thumbImage = UIImage(named: "ic_slider_thumb") {
+                            let thumbSize = CGSize(width: 20, height: 20)
+                            let resizedThumbImage = thumbImage.resized(to: thumbSize)
+                            UISlider.appearance().setThumbImage(resizedThumbImage, for: .normal)
+                        }
+                    }
+                    .accentColor(Color.secondary500)
                     .padding()
                     
                     HStack{
@@ -171,9 +187,58 @@ struct ReadingPageView: View {
                 HStack{
                     Image(systemName: "chevron.backward")
                         .bold()
+                        .foregroundStyle(Color.slate500)
                 }
+            },
+            
+            trailing: HStack{
+                Image(systemName: "textformat.size")
+                    .bold()
+                    .foregroundStyle(Color.slate500)
+                    .padding(.trailing, 4)
+                
+                Image(systemName: "eyeglasses")
+                    .bold()
+                    .foregroundStyle(Color.slate500)
             }
         )
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                HStack{
+                    Menu {
+                        Button {
+                            readingVM.toggleLanguage(newLanguage: .indonesian)
+                        } label: {
+                            Text("Indonesia")
+                        }
+                        Button {
+                            readingVM.toggleLanguage(newLanguage: .english)
+                        } label: {
+                            Text("English")
+                        }
+                    } label: {
+                        HStack {
+                            Image(systemName: "globe")
+                                .bold()
+                                .foregroundStyle(Color.secondary500)
+                            
+                            Text(
+                                readingVM.currentLanguage == .indonesian
+                                ? "Indonesia"
+                                : "English"
+                            )
+                            .font(.poppinsHeadline)
+                            .foregroundStyle(Color.secondary500)
+                            .fontWeight(.semibold)
+                            
+                            Image(systemName: "chevron.down")
+                                .bold()
+                                .foregroundStyle(Color.secondary500)
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 

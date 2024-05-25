@@ -8,9 +8,19 @@
 import Foundation
 import SwiftUI
 
+enum Language {
+    case english
+    case indonesian
+}
+
 class ReadingPageViewModel: ObservableObject {
     @Published var readingStoryData: [StoryContentReading] = []
     @Published var readingStoryResponse: ResponseDataStoryContent?
+    @Published var currentLanguage: Language = .indonesian
+        
+    func toggleLanguage(newLanguage: Language) {
+        self.currentLanguage = newLanguage
+    }
     
     func getStoryContents(storyID: Int) {
         guard let url = URL(string: BaseURL.storyContentByID(storyID: storyID)) else {

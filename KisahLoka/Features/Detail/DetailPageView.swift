@@ -27,12 +27,12 @@ struct DetailPageView: View {
                                 AsyncImage(url: URL(string: detailVM.detailStoryData!.thumbnail_image!)){ image in
                                     image
                                         .resizable()
-                                        .frame(width: p.size.width - 48, height: p.size.width * 0.5)
-                                        .shadow(color: .black, radius: 5)
                                         .cornerRadius(12)
                                 } placeholder: {
                                     ProgressView()
                                 }
+                                .frame(width: p.size.width - 48, height: p.size.width * 0.5)
+//                                .shadow(color: .black, radius: 2)
                                 
                                 VStack{
                                     Text(detailVM.detailStoryData?.origin_name ?? "-")
@@ -170,7 +170,6 @@ struct DetailPageView: View {
                 .cornerRadius(14)
             }
         }
-        .navigationTitle("Detil Cerita")
         .onAppear {
             showTabBar.show = false
             detailVM.getStoryDetail(storyID: storyId)
@@ -189,9 +188,29 @@ struct DetailPageView: View {
                 HStack{
                     Image(systemName: "chevron.backward")
                         .bold()
+                        .foregroundStyle(Color.slate500)
                 }
+            },
+            
+            trailing: HStack{
+                Image(systemName: "bookmark")
+                    .bold()
+                    .foregroundStyle(Color.slate500)
+                    .padding(.trailing, 4)
+                
+                Image(systemName: "square.and.arrow.up")
+                    .bold()
+                    .foregroundStyle(Color.slate500)
             }
         )
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                Text("Detil Cerita")
+                    .font(.poppinsHeadline)
+                    .foregroundStyle(Color.primaryColor)
+                    .fontWeight(.semibold)
+            }
+        }
     }
 }
 

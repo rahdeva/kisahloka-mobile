@@ -21,7 +21,7 @@ struct BookmarkPageView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar{
                 ToolbarItem(placement: .principal) {
-                    Text("Penanda Cerita")
+                    Text("Bookmark")
                         .font(.poppinsTitle3)
                         .fontWeight(.semibold)
                         .foregroundStyle(Color.primaryColor)

@@ -30,6 +30,7 @@ struct HomePageView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(height: 48)
+                        .padding(.vertical, 12)
                 }
             }
         }
