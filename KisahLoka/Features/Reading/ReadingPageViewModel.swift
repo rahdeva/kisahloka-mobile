@@ -13,10 +13,18 @@ enum Language {
     case indonesian
 }
 
+enum FontDiff {
+    case footnote
+    case subHeadline
+    case body
+}
+
 class ReadingPageViewModel: ObservableObject {
     @Published var readingStoryData: [StoryContentReading] = []
     @Published var readingStoryResponse: ResponseDataStoryContent?
     @Published var currentLanguage: Language = .indonesian
+    @Published var fontSetting: FontDiff = .footnote
+    @Published var warmBackground: Bool = false
         
     func toggleLanguage(newLanguage: Language) {
         self.currentLanguage = newLanguage

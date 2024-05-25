@@ -72,6 +72,9 @@
 		040831CC2BF57D6700663028 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040831CB2BF57D6700663028 /* Profile.swift */; };
 		754983922BFF92FD000AEB2E /* EmptyDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754983912BFF92FD000AEB2E /* EmptyDataView.swift */; };
 		756BAFCA2C01B78300755B8C /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756BAFC92C01B78300755B8C /* UIImage.swift */; };
+		756BAFCD2C01D2E100755B8C /* AuthPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756BAFCC2C01D2E100755B8C /* AuthPageView.swift */; };
+		756BAFCF2C01D2EE00755B8C /* AuthPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756BAFCE2C01D2EE00755B8C /* AuthPageViewModel.swift */; };
+		756BAFD22C01E94A00755B8C /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756BAFD12C01E94A00755B8C /* SplashScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +157,9 @@
 		040831CB2BF57D6700663028 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		754983912BFF92FD000AEB2E /* EmptyDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDataView.swift; sourceTree = "<group>"; };
 		756BAFC92C01B78300755B8C /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		756BAFCC2C01D2E100755B8C /* AuthPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPageView.swift; sourceTree = "<group>"; };
+		756BAFCE2C01D2EE00755B8C /* AuthPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPageViewModel.swift; sourceTree = "<group>"; };
+		756BAFD12C01E94A00755B8C /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -428,6 +434,8 @@
 			isa = PBXGroup;
 			children = (
 				040830FB2BE4B02B00663028 /* ContentView.swift */,
+				756BAFD02C01E93300755B8C /* Splash */,
+				756BAFCB2C01D2BC00755B8C /* Authentication */,
 				040831372BE4C74400663028 /* Home */,
 				0408318C2BF0A93600663028 /* Explore */,
 				040831392BE4C75500663028 /* Bookmark */,
@@ -470,6 +478,23 @@
 			children = (
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		756BAFCB2C01D2BC00755B8C /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				756BAFCC2C01D2E100755B8C /* AuthPageView.swift */,
+				756BAFCE2C01D2EE00755B8C /* AuthPageViewModel.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		756BAFD02C01E93300755B8C /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				756BAFD12C01E94A00755B8C /* SplashScreenView.swift */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -622,6 +647,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				040830FC2BE4B02B00663028 /* ContentView.swift in Sources */,
+				756BAFCD2C01D2E100755B8C /* AuthPageView.swift in Sources */,
 				040831922BF0AB5100663028 /* ExplorePageViewModel.swift in Sources */,
 				040831B22BF311D300663028 /* PostReadingPageView.swift in Sources */,
 				0408314C2BE5F2CB00663028 /* TextStyles.swift in Sources */,
@@ -648,7 +674,9 @@
 				040831902BF0AA0100663028 /* ExplorePageView.swift in Sources */,
 				0408319F2BF0BA5300663028 /* DetailStory.swift in Sources */,
 				040831872BEF2C9C00663028 /* Interceptor.swift in Sources */,
+				756BAFD22C01E94A00755B8C /* SplashScreenView.swift in Sources */,
 				754983922BFF92FD000AEB2E /* EmptyDataView.swift in Sources */,
+				756BAFCF2C01D2EE00755B8C /* AuthPageViewModel.swift in Sources */,
 				0408317F2BEF2A0E00663028 /* Response.swift in Sources */,
 				040831C92BF57D3D00663028 /* ProfilePageViewModel.swift in Sources */,
 				040831972BF0AEF100663028 /* ExploreStoriesGrid.swift in Sources */,

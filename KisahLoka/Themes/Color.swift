@@ -302,4 +302,7 @@ extension Color {
     public static let rose800 = Color(UIColor(red: 157/255, green: 10/255, blue: 63/255, alpha: 1))
     public static let rose900 = Color(UIColor(red: 136/255, green: 9/255, blue: 56/255, alpha: 1))
     public static let rose950 = Color(UIColor(red: 76/255, green: 4/255, blue: 28/255, alpha: 1))
+    
+    // Warm
+    public static let warmColor = Color(UIColor(red: 111/255, green: 80/255, blue: 0/255, alpha: 0.24))
 }

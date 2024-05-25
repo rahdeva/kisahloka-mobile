@@ -50,7 +50,14 @@ struct ReadingPageView: View {
                                         .padding(.top, 40)
                                         .padding(.leading, 24)
                                         .padding(.trailing, 32)
-                                        .font(.poppinsFootnote)
+                                        .font(
+                                            readingVM.fontSetting == .footnote
+                                            ? .poppinsFootnote
+                                            : (readingVM.fontSetting == .subHeadline
+                                                ? .poppinsSubheadline
+                                                : .poppinsBody
+                                              )
+                                        )
                                         .multilineTextAlignment(.leading)
                                         .foregroundStyle(Color.sky500)
                                 }
@@ -74,7 +81,14 @@ struct ReadingPageView: View {
                                 )
                                     .padding(.top, 40)
                                     .padding(.horizontal, 24)
-                                    .font(.poppinsFootnote)
+                                    .font(
+                                        readingVM.fontSetting == .footnote
+                                        ? .poppinsFootnote
+                                        : (readingVM.fontSetting == .subHeadline
+                                            ? .poppinsSubheadline
+                                            : .poppinsBody
+                                          )
+                                    )
                                     .multilineTextAlignment(.center)
                                     .foregroundStyle(Color.slate800)
                             }
@@ -83,6 +97,11 @@ struct ReadingPageView: View {
                     }
                     
                 }
+                .background(
+                    readingVM.warmBackground == true
+                    ? Color.warmColor.ignoresSafeArea(edges: .bottom)
+                    : Color.white.ignoresSafeArea(edges: .bottom)
+                )
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                 
                 VStack{
@@ -192,14 +211,32 @@ struct ReadingPageView: View {
             },
             
             trailing: HStack{
-                Image(systemName: "textformat.size")
-                    .bold()
-                    .foregroundStyle(Color.slate500)
-                    .padding(.trailing, 4)
+                Button {
+                    if(readingVM.fontSetting == .footnote){
+                        readingVM.fontSetting = .subHeadline
+                    } else if(readingVM.fontSetting == .subHeadline){
+                        readingVM.fontSetting = .body
+                    } else{
+                        readingVM.fontSetting = .footnote
+                    }
+                } label: {
+                    Image(systemName: "textformat.size")
+                        .bold()
+                        .foregroundStyle(Color.slate500)
+                        .padding(.trailing, 4)
+                }
                 
-                Image(systemName: "eyeglasses")
-                    .bold()
-                    .foregroundStyle(Color.slate500)
+                Button {
+                    readingVM.warmBackground.toggle()
+                } label: {
+                    readingVM.warmBackground == true
+                    ? Image(systemName: "eyeglasses")
+                        .bold()
+                        .foregroundStyle(Color.secondary500)
+                    : Image(systemName: "eyeglasses")
+                        .bold()
+                        .foregroundStyle(Color.slate500)
+                }
             }
         )
         .toolbar {
