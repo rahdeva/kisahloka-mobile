@@ -15,14 +15,15 @@ struct SplashScreenView: View {
     
     var body: some View {
         ZStack{
-            Color.white.ignoresSafeArea()
+            Color.primaryColor.ignoresSafeArea()
             
             Image("img_logo_splash")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 240, height: 240)
+                .frame(width: 200, height: 200)
                 .opacity(imageOpacity)
                 .scaleEffect(scale)
+                .offset(x: -8)
         }
         .opacity(opacity)
         .onAppear{

@@ -13,28 +13,28 @@ struct ContentView: View {
     @Environment(TabBarModel.self) var showTabBar
     
     var body: some View {
-        if !isSplashPresented {
-            AuthPageView()
-        } else{
-            SplashScreenView(isPresented: $isSplashPresented)
-        }
-        
-//        VStack() {
-//            switch selectedTab {
-//                case .home:
-//                    HomePageView()
-//                case .discover:
-//                    ExplorePageView()
-//                case .bookmark:
-//                    BookmarkPageView()
-//                case .profile:
-//                    ProfilePageView()
-//            }
-//            Spacer()
-//            if showTabBar.show {
-//                CustomTabBar(selectedTab: $selectedTab)
-//            }
+//        if !isSplashPresented {
+//            AuthPageView()
+//        } else{
+//            SplashScreenView(isPresented: $isSplashPresented)
 //        }
+        
+        VStack() {
+            switch selectedTab {
+                case .home:
+                    HomePageView()
+                case .discover:
+                    ExplorePageView()
+                case .bookmark:
+                    BookmarkPageView()
+                case .profile:
+                    ProfilePageView()
+            }
+            Spacer()
+            if showTabBar.show {
+                CustomTabBar(selectedTab: $selectedTab)
+            }
+        }
     }
 
 }
