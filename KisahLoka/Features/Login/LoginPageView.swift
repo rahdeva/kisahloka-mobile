@@ -10,6 +10,7 @@ import SwiftUI
 struct LoginPageView: View {
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     @StateObject var loginVM = LoginPageViewModel()
+//    @EnvironmentObject var authManager: AuthManager
     @FocusState private var focus: FormFieldFocusLogin?
     
     var body: some View {
@@ -115,7 +116,9 @@ struct LoginPageView: View {
                 .padding(.bottom, 24)
             
             Button(
-                action: {}
+                action: {
+                    loginVM.signInWithEmail()
+                }
             ) {
                 Text("Masuk")
                     .frame(maxWidth: .infinity)

@@ -79,6 +79,9 @@
 		757A39CE2C020F6D00879829 /* LoginPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757A39CD2C020F6D00879829 /* LoginPageViewModel.swift */; };
 		757A39D02C020F7A00879829 /* RegisterPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757A39CF2C020F7A00879829 /* RegisterPageView.swift */; };
 		757A39D22C020F8400879829 /* RegisterPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757A39D12C020F8400879829 /* RegisterPageViewModel.swift */; };
+		757A39D62C030CE700879829 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757A39D52C030CE700879829 /* AuthManager.swift */; };
+		757A39D92C030DFE00879829 /* AuthMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757A39D82C030DFE00879829 /* AuthMainScreen.swift */; };
+		757A39DB2C030E5E00879829 /* AuthenticatedScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757A39DA2C030E5E00879829 /* AuthenticatedScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,6 +171,9 @@
 		757A39CD2C020F6D00879829 /* LoginPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewModel.swift; sourceTree = "<group>"; };
 		757A39CF2C020F7A00879829 /* RegisterPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageView.swift; sourceTree = "<group>"; };
 		757A39D12C020F8400879829 /* RegisterPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageViewModel.swift; sourceTree = "<group>"; };
+		757A39D52C030CE700879829 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		757A39D82C030DFE00879829 /* AuthMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthMainScreen.swift; sourceTree = "<group>"; };
+		757A39DA2C030E5E00879829 /* AuthenticatedScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -495,6 +501,8 @@
 			children = (
 				756BAFCC2C01D2E100755B8C /* AuthPageView.swift */,
 				756BAFCE2C01D2EE00755B8C /* AuthPageViewModel.swift */,
+				757A39D52C030CE700879829 /* AuthManager.swift */,
+				757A39D72C030DBA00879829 /* Components */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -523,6 +531,15 @@
 				757A39D12C020F8400879829 /* RegisterPageViewModel.swift */,
 			);
 			path = Register;
+			sourceTree = "<group>";
+		};
+		757A39D72C030DBA00879829 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				757A39D82C030DFE00879829 /* AuthMainScreen.swift */,
+				757A39DA2C030E5E00879829 /* AuthenticatedScreen.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -705,12 +722,14 @@
 				0408319F2BF0BA5300663028 /* DetailStory.swift in Sources */,
 				040831872BEF2C9C00663028 /* Interceptor.swift in Sources */,
 				756BAFD22C01E94A00755B8C /* SplashScreenView.swift in Sources */,
+				757A39D92C030DFE00879829 /* AuthMainScreen.swift in Sources */,
 				754983922BFF92FD000AEB2E /* EmptyDataView.swift in Sources */,
 				756BAFCF2C01D2EE00755B8C /* AuthPageViewModel.swift in Sources */,
 				0408317F2BEF2A0E00663028 /* Response.swift in Sources */,
 				040831C92BF57D3D00663028 /* ProfilePageViewModel.swift in Sources */,
 				040831972BF0AEF100663028 /* ExploreStoriesGrid.swift in Sources */,
 				0408318B2BEF592B00663028 /* Home.swift in Sources */,
+				757A39D62C030CE700879829 /* AuthManager.swift in Sources */,
 				040831282BE4BC8200663028 /* Color.swift in Sources */,
 				040831AC2BF2D80500663028 /* StoriesType.swift in Sources */,
 				040831C52BF4417400663028 /* BookmarkStories.swift in Sources */,
@@ -727,6 +746,7 @@
 				040831CC2BF57D6700663028 /* Profile.swift in Sources */,
 				040831C02BF36C3F00663028 /* NavPathExplore.swift in Sources */,
 				040831642BE8E79800663028 /* FavoriteStories.swift in Sources */,
+				757A39DB2C030E5E00879829 /* AuthenticatedScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+class AuthPageViewModel: ObservableObject{
+    @Published var selectedTab: Tabs = .home
+}

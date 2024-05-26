@@ -17,7 +17,7 @@ struct DiscoverNewLocalStories: View {
                 .foregroundColor(.slate800)
                 .padding(.leading, 24)
                 .padding(.bottom, 8)
-                .padding(.top, 8)
+                .padding(.top, 20)
             
             if homeVM.highlightStoriesData.isEmpty{
                 ProgressView()

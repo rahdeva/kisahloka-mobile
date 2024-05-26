@@ -17,7 +17,7 @@ class BookmarkPageViewModel: ObservableObject {
     @Published var bookmarkResponse: ResponseDataBookmark?
     
     func getUserBookmark() {
-        guard let url = URL(string: BaseURL.bookmarkByUserID(userID: 2)) else {
+        guard let url = URL(string: BaseURL.bookmarkByUserID(userID: 1)) else {
             print("Invalid URL")
             return
         }

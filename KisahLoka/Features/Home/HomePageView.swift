@@ -20,17 +20,17 @@ struct HomePageView: View {
                 StoriesType(homeVM: homeVM)
             }
             .navigationBarTitleDisplayMode(.inline)
-            .searchable(
-                text: $homeVM.searchKeyword,
-                placement: .navigationBarDrawer(displayMode: .always)
-            )
+//            .searchable(
+//                text: $homeVM.searchKeyword,
+//                placement: .navigationBarDrawer(displayMode: .always)
+//            )
             .toolbar{
                 ToolbarItem(placement: .principal){
                     Image("logo-kisahloka")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(height: 48)
-                        .padding(.vertical, 12)
+                        .frame(height: 50)
+//                        .padding(.vertical, 20)
                 }
             }
         }

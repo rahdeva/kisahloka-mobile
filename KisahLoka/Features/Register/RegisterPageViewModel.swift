@@ -36,4 +36,25 @@ class RegisterPageViewModel: ObservableObject {
         let endDate = Date()
         return startDate...endDate
     }
+    
+    func signUpWithEmail(){
+        let authManager : AuthManager = AuthManager.init()
+        authManager.createAccount(
+            withEmail: emailInput,
+            password: passwordInput,
+            completion: { error in
+                self.handleAuthenticationResult(error)
+            }
+        )
+    }
+    
+    private func handleAuthenticationResult(_ error: Error?) {
+        if let error = error {
+            print("Sign-up error: \(error.localizedDescription)")
+            // Show error
+        } else {
+            print("Signed up successfully!")
+        }
+        // Show result
+    }
 }
