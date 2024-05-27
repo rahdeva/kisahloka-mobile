@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LoginPageView: View {
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
+    @Environment(\.modelContext) var context
     @StateObject var loginVM = LoginPageViewModel()
 //    @EnvironmentObject var authManager: AuthManager
     @FocusState private var focus: FormFieldFocusLogin?
@@ -48,6 +49,7 @@ struct LoginPageView: View {
                         focus = .password
                     }
                     .focused($focus, equals: FormFieldFocusLogin.email)
+                    .textInputAutocapitalization(.never)
                 
 //                SecureField("Enter your password", text: $loginVM.passwordInput)
 //                    .padding(.horizontal, 24)
@@ -117,7 +119,7 @@ struct LoginPageView: View {
             
             Button(
                 action: {
-                    loginVM.signInWithEmail()
+                    loginVM.signInWithEmail(context: context)
                 }
             ) {
                 Text("Masuk")

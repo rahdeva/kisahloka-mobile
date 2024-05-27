@@ -7,15 +7,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "FBA6975B-BF07-4571-903B-68B4195B8FE6"
+            uuid = "F89BAC6C-80C1-42CA-8ED9-C137B33CA790"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KisahLoka/Features/Authentication/AuthManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "13"
-            endingLineNumber = "13"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "AuthManager"
             landmarkType = "3">
          </BreakpointContent>

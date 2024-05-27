@@ -1,22 +1,16 @@
 import SwiftUI
 
 struct AuthPageView: View {
-    @StateObject private var authManager = AuthManager()
     @StateObject private var authVM = AuthPageViewModel()
+    let isUserLoggedIn : Bool
     
     var body: some View {
         NavigationView {
-            if authManager.isUserLoggedIn {
+            if isUserLoggedIn {
                 AuthenticatedScreen(authVM: authVM)
-                    .environmentObject(authManager)
             } else {
                 AuthMainScreen()
-                    .environmentObject(authManager)
             }
         }
     }
-}
-
-#Preview {
-    AuthPageView()
 }

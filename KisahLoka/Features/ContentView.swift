@@ -9,10 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var isSplashPresented: Bool = true
+    @StateObject private var authManager = AuthManager()
     
     var body: some View {
         if !isSplashPresented {
-            AuthPageView()
+            AuthPageView(isUserLoggedIn: authManager.isUserLoggedIn)
         } else{
             SplashScreenView(isPresented: $isSplashPresented)
         }

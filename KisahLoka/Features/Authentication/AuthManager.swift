@@ -7,12 +7,16 @@
 
 import SwiftUI
 import FirebaseAuth
+import SwiftData
 
 class AuthManager: NSObject, ObservableObject {
 
     // MARK: - Properties
 
     @Published var isUserLoggedIn = false
+//    @Published var currentUser: UserData?
+//    var userData: UserData? { UserData.self }
+//    @Environment(\.modelContext) var context
 
     // MARK: - Initialization
 
@@ -47,6 +51,42 @@ class AuthManager: NSObject, ObservableObject {
             completion(signOutError)
         }
     }
+    
+    // MARK: Save Auth Data
+
+    func saveAuthData(user: User, context: ModelContext) {
+        let newUser = UserData(
+            user_id: user.user_id,
+            uid: user.uid,
+            role_id: user.role_id,
+            email: user.email,
+            name: user.name,
+            birth_date: user.birth_date,
+            gender: user.gender
+        )
+        context.insert(newUser)
+    }
+    
+    // MARK: Get Current User
+    func getCurrentUser(context: ModelContext) -> UserData? {
+        let userDataFetch = FetchDescriptor<UserData>(predicate: nil)
+        do {
+            let userData: [UserData] = try context.fetch(userDataFetch)
+            return userData.first
+        } catch {
+            print("Failed to fetch current user: \(error)")
+            return nil
+        }
+    }
+//
+//    Future<void> saveAuthData({required UserData user, required String token}) async {
+//        await storage.write(StorageName.USERS, user.toJson());
+//        await secureStorage.setToken(value: token);
+//    }
+//
+//    Future<void> changeUserData({required UserData user}) async {
+//        await storage.write(StorageName.USERS, user.toJson());
+//    }
 }
 
 // MARK: - Account Creation and Sign In

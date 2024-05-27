@@ -27,5 +27,6 @@ struct KisahLokaApp: App {
                 .environment(TabBarModel())
                 .environmentObject(NavPathExplore())
         }
+        .modelContainer(for: UserData.self)
     }
 }

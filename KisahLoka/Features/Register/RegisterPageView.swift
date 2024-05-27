@@ -52,6 +52,7 @@ struct RegisterPageView: View {
                             focus = .dateBirth
                         }
                         .focused($focus, equals: FormFieldFocusRegister.email)
+                        .textInputAutocapitalization(.never)
                 }
                 
                 DatePicker(
@@ -202,7 +203,9 @@ struct RegisterPageView: View {
                 .animation(.easeInOut(duration: 0.3), value: registerVM.isSecure2)
                 
                 Button(
-                    action: {}
+                    action: {
+                        registerVM.signUpWithEmail()
+                    }
                 ) {
                     Text("Daftar")
                         .frame(maxWidth: .infinity)

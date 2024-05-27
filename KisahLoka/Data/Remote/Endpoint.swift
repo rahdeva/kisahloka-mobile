@@ -24,9 +24,12 @@ class BaseURL {
     static let baseURL = Environments.getEnvironment()
 
     // User
-    static let user = "\(baseURL)/users"
+    static let user = "\(baseURL)/user"
     static func userByID(userId: Int?) -> String {
-        return "\(baseURL)/users/\(userId ?? 0)"
+        return "\(baseURL)/user/\(userId ?? 0)"
+    }
+    static func userByUID(uid: String?) -> String {
+        return "\(baseURL)/user/uid/\(uid ?? "0")"
     }
 
     // Type

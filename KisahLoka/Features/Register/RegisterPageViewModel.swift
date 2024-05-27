@@ -57,4 +57,96 @@ class RegisterPageViewModel: ObservableObject {
         }
         // Show result
     }
+    
+//    func addUser() {
+//        guard let url = URL(string: BaseURL.user) else {
+//            print("Invalid URL")
+//            return
+//        }
+//        
+//        let session = AppURLSession().getBasicURLSession()
+//        
+//        session.dataTask(with: url) { data, response, error in
+//            if let error = error {
+//                print("Error fetching data: \(error)")
+//                return
+//            }
+//            
+//            guard let data = data else {
+//                print("No data received")
+//                return
+//            }
+//            
+//            do {
+//                if let homeResponse = try? JSONDecoder().decode(ResponseDataHome.self, from: data) {
+//                    if let home = homeResponse.data {
+//                        DispatchQueue.main.async {
+//                            self.typesData = home.story_types ?? []
+//                        }
+//                    } else {
+//                        print("No types data available")
+//                    }
+//                } else {
+//                    print("Error decoding JSON")
+//                }
+//            }
+//        }.resume()
+//    }
+//    
+//    func addUser() {
+//        guard let url = URL(string: BaseURL.user) else {
+//            print("Invalid URL")
+//            return
+//        }
+//        
+//        var request = URLRequest(url: url)
+//        request.httpMethod = "POST"
+//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+//        
+//        let newUser = User(
+//            uid: "17Lv7R0Ly3YLX2TJ6YmO6ScSUeW2",
+//            roleID: 2,
+//            email: "devyahiko@gmail.com",
+//            name: "Yahiko",
+//            birthDate: "2000-05-12T21:04:59Z",
+//            gender: "Male"
+//        )
+//        
+//        do {
+//            let jsonData = try JSONEncoder().encode(newUser)
+//            request.httpBody = jsonData
+//        } catch {
+//            print("Error encoding JSON: \(error)")
+//            return
+//        }
+//        
+//        let session = AppURLSession().getBasicURLSession()
+//        
+//        session.dataTask(with: request) { data, response, error in
+//            if let error = error {
+//                print("Error fetching data: \(error)")
+//                return
+//            }
+//            
+//            guard let data = data else {
+//                print("No data received")
+//                return
+//            }
+//            
+//            do {
+//                if let homeResponse = try? JSONDecoder().decode(ResponseDataHome.self, from: data) {
+//                    if let home = homeResponse.data {
+//                        DispatchQueue.main.async {
+//                            self.typesData = home.story_types ?? []
+//                        }
+//                    } else {
+//                        print("No types data available")
+//                    }
+//                } else {
+//                    print("Error decoding JSON")
+//                }
+//            }
+//        }.resume()
+//    }
+
 }
