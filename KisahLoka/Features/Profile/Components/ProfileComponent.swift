@@ -13,21 +13,66 @@ struct ProfileComponent: View {
     
     var body: some View {
         VStack{
+            if user?.gender == "Male"{
+                Image("img_avatar_male")
+                    .resizable()
+                    .frame(width: 152, height: 180)
+                    .aspectRatio(contentMode: .fit)
+                    .padding(.top, 16)
+            } else {
+                Image("img_avatar_female")
+                    .resizable()
+                    .frame(width: 152, height: 180)
+                    .aspectRatio(contentMode: .fit)
+                    .padding(.top, 16)
+            }
+            
+            
             Text(user?.name ?? "-")
+                .font(.poppinsTitle3)
+                .foregroundStyle(Color.slate800)
+                .padding(.top, 8)
+            
             Text(user?.email ?? "-")
+                .font(.poppinsSubheadline)
+                .foregroundStyle(Color.slate500)
             
             List {
-                HStack {
-                    Text("Username")
-                    Spacer()
-                    TextField("Username", text: $profileVM.username)
-                        .foregroundStyle(.secondary)
-                        .multilineTextAlignment(.trailing)
+                NavigationLink {
+                    Text("Edit Profile")
+                } label: {
+                    Text("Edit Profile")
                 }
                 
-                Toggle(isOn: $profileVM.prefersNotifications) {
-                    Text("Enable Notifications")
+                NavigationLink {
+                    Text("Bahasa")
+                } label: {
+                    Text("Bahasa")
                 }
+                
+                NavigationLink {
+                    Text("Bantuan dan Dukungan")
+                } label: {
+                    Text("Bantuan dan Dukungan")
+                }
+                
+//                Picker("Seasonal Photo", selection: $profileVM.profile.seasonalPhoto) {
+//                    ForEach(Profile.Season.allCases) { season in
+//                        Text(season.rawValue).tag(season)
+//                    }
+//                }
+                
+//                HStack {
+//                    Text("Username")
+//                    Spacer()
+//                    TextField("Username", text: $profileVM.username)
+//                        .foregroundStyle(.secondary)
+//                        .multilineTextAlignment(.trailing)
+//                }
+//                
+//                Toggle(isOn: $profileVM.prefersNotifications) {
+//                    Text("Enable Notifications")
+//                }
             }
             
             Button(
