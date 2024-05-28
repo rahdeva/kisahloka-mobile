@@ -72,6 +72,8 @@
 		040831CC2BF57D6700663028 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040831CB2BF57D6700663028 /* Profile.swift */; };
 		754983922BFF92FD000AEB2E /* EmptyDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754983912BFF92FD000AEB2E /* EmptyDataView.swift */; };
 		7569D40F2C05957400A954AB /* LogoLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7569D40E2C05957400A954AB /* LogoLoading.swift */; };
+		7569D4152C05BF7A00A954AB /* ShimmerBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7569D4142C05BF7A00A954AB /* ShimmerBox.swift */; };
+		7569D4172C05C13600A954AB /* Shimmer in Frameworks */ = {isa = PBXBuildFile; productRef = 7569D4162C05C13600A954AB /* Shimmer */; };
 		756BAFCA2C01B78300755B8C /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756BAFC92C01B78300755B8C /* UIImage.swift */; };
 		756BAFCD2C01D2E100755B8C /* AuthPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756BAFCC2C01D2E100755B8C /* AuthPageView.swift */; };
 		756BAFCF2C01D2EE00755B8C /* AuthPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756BAFCE2C01D2EE00755B8C /* AuthPageViewModel.swift */; };
@@ -170,6 +172,7 @@
 		040831CB2BF57D6700663028 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		754983912BFF92FD000AEB2E /* EmptyDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDataView.swift; sourceTree = "<group>"; };
 		7569D40E2C05957400A954AB /* LogoLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoLoading.swift; sourceTree = "<group>"; };
+		7569D4142C05BF7A00A954AB /* ShimmerBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerBox.swift; sourceTree = "<group>"; };
 		756BAFC92C01B78300755B8C /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		756BAFCC2C01D2E100755B8C /* AuthPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPageView.swift; sourceTree = "<group>"; };
 		756BAFCE2C01D2EE00755B8C /* AuthPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPageViewModel.swift; sourceTree = "<group>"; };
@@ -197,6 +200,7 @@
 				0408316D2BEE047F00663028 /* FirebaseCrashlytics in Frameworks */,
 				040831692BEE047F00663028 /* FirebaseAnalytics in Frameworks */,
 				0408316B2BEE047F00663028 /* FirebaseAuth in Frameworks */,
+				7569D4172C05C13600A954AB /* Shimmer in Frameworks */,
 				040831752BEE047F00663028 /* FirebaseStorage in Frameworks */,
 				040831712BEE047F00663028 /* FirebaseFirestore in Frameworks */,
 				0408316F2BEE047F00663028 /* FirebaseDynamicLinks in Frameworks */,
@@ -227,6 +231,7 @@
 				040831092BE4B02D00663028 /* KisahLokaTests */,
 				040831132BE4B02D00663028 /* KisahLokaUITests */,
 				040830F72BE4B02B00663028 /* Products */,
+				7569D4112C05BC0800A954AB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -373,6 +378,7 @@
 				040831A92BF25B6100663028 /* LabelAlignment.swift */,
 				754983912BFF92FD000AEB2E /* EmptyDataView.swift */,
 				7569D40E2C05957400A954AB /* LogoLoading.swift */,
+				7569D4142C05BF7A00A954AB /* ShimmerBox.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -506,6 +512,13 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		7569D4112C05BC0800A954AB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		756BAFC62C01B0B400755B8C /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -592,6 +605,7 @@
 				040831702BEE047F00663028 /* FirebaseFirestore */,
 				040831722BEE047F00663028 /* FirebaseMessaging */,
 				040831742BEE047F00663028 /* FirebaseStorage */,
+				7569D4162C05C13600A954AB /* Shimmer */,
 			);
 			productName = KisahLoka;
 			productReference = 040830F62BE4B02B00663028 /* KisahLoka.app */;
@@ -667,6 +681,7 @@
 			mainGroup = 040830ED2BE4B02B00663028;
 			packageReferences = (
 				040831672BEE047F00663028 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				7569D4102C05BB5800A954AB /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */,
 			);
 			productRefGroup = 040830F72BE4B02B00663028 /* Products */;
 			projectDirPath = "";
@@ -761,6 +776,7 @@
 				040831AC2BF2D80500663028 /* StoriesType.swift in Sources */,
 				040831C52BF4417400663028 /* BookmarkStories.swift in Sources */,
 				0408315F2BE8D95F00663028 /* HomePageViewModel.swift in Sources */,
+				7569D4152C05BF7A00A954AB /* ShimmerBox.swift in Sources */,
 				0408319D2BF0B86000663028 /* DetailPageViewModel.swift in Sources */,
 				757A39D02C020F7A00879829 /* RegisterPageView.swift in Sources */,
 				757A39DF2C03703B00879829 /* DetailUser.swift in Sources */,
@@ -1120,6 +1136,14 @@
 				minimumVersion = 10.25.0;
 			};
 		};
+		7569D4102C05BB5800A954AB /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/markiv/SwiftUI-Shimmer.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1157,6 +1181,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 040831672BEE047F00663028 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		7569D4162C05C13600A954AB /* Shimmer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7569D4102C05BB5800A954AB /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */;
+			productName = Shimmer;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

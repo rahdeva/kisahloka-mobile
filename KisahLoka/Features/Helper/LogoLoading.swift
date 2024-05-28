@@ -23,7 +23,7 @@ struct LogoLoading: View {
                     self.isAnimating = true
                 }
                 .animation(
-                    Animation.linear(duration: 3)
+                    Animation.linear(duration: 0.5)
                         .repeatForever(autoreverses: false),
                     value: isAnimating
                 )

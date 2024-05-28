@@ -19,8 +19,10 @@ class HomePageViewModel: ObservableObject {
     @Published var favoriteStoriesData: [FavoriteStoriesHome] = []
     @Published var typesData: [StoryTypesHome] = []
     @Published var homeResponse: ResponseDataHome?
+    @Published var isLoading : Bool = false
     
     func getHome() {
+        isLoading = true
         guard let url = URL(string: BaseURL.home) else {
             print("Invalid URL")
             return
@@ -31,11 +33,17 @@ class HomePageViewModel: ObservableObject {
         session.dataTask(with: url) { data, response, error in
             if let error = error {
                 print("Error fetching data: \(error)")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                    self.isLoading = false
+                }
                 return
             }
             
             guard let data = data else {
                 print("No data received")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                    self.isLoading = false
+                }
                 return
             }
             
@@ -46,12 +54,23 @@ class HomePageViewModel: ObservableObject {
                             self.highlightStoriesData = home.highlight_stories ?? []
                             self.favoriteStoriesData = home.favorite_stories ?? []
                             self.typesData = home.story_types ?? []
+                            
+                            // Ensure isLoading is true for at least 1.5 seconds
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                                self.isLoading = false
+                            }
                         }
                     } else {
                         print("No types data available")
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                            self.isLoading = false
+                        }
                     }
                 } else {
                     print("Error decoding JSON")
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                        self.isLoading = false
+                    }
                 }
             }
         }.resume()

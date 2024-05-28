@@ -17,12 +17,7 @@ struct SplashScreenView: View {
     
     var body: some View {
         ZStack{
-//            Color.primaryColor.ignoresSafeArea()
-            
             Image("img_bg_splash")
-//                .resizable()
-//                .frame(maxWidth: .infinity, maxHeight: .infinity)
-//                .aspectRatio(contentMode: .fit)
                 .ignoresSafeArea()
             
             VStack{

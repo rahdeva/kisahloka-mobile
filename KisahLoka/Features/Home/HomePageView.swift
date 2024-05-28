@@ -33,6 +33,7 @@ struct HomePageView: View {
 //                        .padding(.vertical, 20)
                 }
             }
+//            .edgesIgnoringSafeArea(.all)
         }
         .onAppear{
             homeVM.getHome()
