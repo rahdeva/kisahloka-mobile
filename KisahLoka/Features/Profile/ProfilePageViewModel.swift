@@ -12,6 +12,7 @@ class ProfilePageViewModel: ObservableObject {
     @Published var prefersNotifications: Bool = false
     let authManager : AuthManager = AuthManager.init()
     @Published var detailUserResponse: ResponseDataUserDetail?
+    @Published var language: String = ""
     
     func signOut(){
         authManager.signOut { error in

@@ -14,6 +14,8 @@ struct DetailPageView: View {
     @StateObject var detailVM = DetailPageViewModel()
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     @Environment(TabBarModel.self) var showTabBar
+    @Environment(\.modelContext) var context
+    @StateObject var authManager = AuthManager()
     
     var body: some View {
         VStack{
@@ -210,6 +212,9 @@ struct DetailPageView: View {
                     .foregroundStyle(Color.primaryColor)
                     .fontWeight(.semibold)
             }
+        }
+        .onAppear(){
+            let user = authManager.getCurrentUser(context: context)
         }
     }
 }

@@ -20,8 +20,10 @@ class LoginPageViewModel: ObservableObject {
     @Published var isSecure: Bool = true
     @Published var detailUserData: User?
     @Published var detailUserResponse: ResponseDataUserDetail?
+    @Published var isLoading = false
     
     func signInWithEmail(context: ModelContext) {
+        isLoading = true
         let authManager: AuthManager = AuthManager.init()
         authManager.signInWithEmail(
             withEmail: emailInput,
@@ -59,6 +61,7 @@ class LoginPageViewModel: ObservableObject {
                                 )
                             }
                         }
+                        self.isLoading = false
                     }
                 }
             }

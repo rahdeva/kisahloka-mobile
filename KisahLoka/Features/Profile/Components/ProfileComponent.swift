@@ -61,18 +61,6 @@ struct ProfileComponent: View {
 //                        Text(season.rawValue).tag(season)
 //                    }
 //                }
-                
-//                HStack {
-//                    Text("Username")
-//                    Spacer()
-//                    TextField("Username", text: $profileVM.username)
-//                        .foregroundStyle(.secondary)
-//                        .multilineTextAlignment(.trailing)
-//                }
-//                
-//                Toggle(isOn: $profileVM.prefersNotifications) {
-//                    Text("Enable Notifications")
-//                }
             }
             
             Button(
