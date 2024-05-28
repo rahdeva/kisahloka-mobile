@@ -74,6 +74,9 @@
 		7569D40F2C05957400A954AB /* LogoLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7569D40E2C05957400A954AB /* LogoLoading.swift */; };
 		7569D4152C05BF7A00A954AB /* ShimmerBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7569D4142C05BF7A00A954AB /* ShimmerBox.swift */; };
 		7569D4172C05C13600A954AB /* Shimmer in Frameworks */ = {isa = PBXBuildFile; productRef = 7569D4162C05C13600A954AB /* Shimmer */; };
+		7569D4192C05F85C00A954AB /* GenresChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7569D4182C05F85B00A954AB /* GenresChip.swift */; };
+		7569D41B2C05F8C600A954AB /* StoryDetailInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7569D41A2C05F8C600A954AB /* StoryDetailInformation.swift */; };
+		7569D41D2C05F93500A954AB /* DetailShimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7569D41C2C05F93500A954AB /* DetailShimmer.swift */; };
 		756BAFCA2C01B78300755B8C /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756BAFC92C01B78300755B8C /* UIImage.swift */; };
 		756BAFCD2C01D2E100755B8C /* AuthPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756BAFCC2C01D2E100755B8C /* AuthPageView.swift */; };
 		756BAFCF2C01D2EE00755B8C /* AuthPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756BAFCE2C01D2EE00755B8C /* AuthPageViewModel.swift */; };
@@ -173,6 +176,9 @@
 		754983912BFF92FD000AEB2E /* EmptyDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDataView.swift; sourceTree = "<group>"; };
 		7569D40E2C05957400A954AB /* LogoLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoLoading.swift; sourceTree = "<group>"; };
 		7569D4142C05BF7A00A954AB /* ShimmerBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerBox.swift; sourceTree = "<group>"; };
+		7569D4182C05F85B00A954AB /* GenresChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresChip.swift; sourceTree = "<group>"; };
+		7569D41A2C05F8C600A954AB /* StoryDetailInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDetailInformation.swift; sourceTree = "<group>"; };
+		7569D41C2C05F93500A954AB /* DetailShimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailShimmer.swift; sourceTree = "<group>"; };
 		756BAFC92C01B78300755B8C /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		756BAFCC2C01D2E100755B8C /* AuthPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPageView.swift; sourceTree = "<group>"; };
 		756BAFCE2C01D2EE00755B8C /* AuthPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPageViewModel.swift; sourceTree = "<group>"; };
@@ -453,6 +459,9 @@
 			isa = PBXGroup;
 			children = (
 				040831AE2BF2D8F000663028 /* AnotherStoriesOnDetail.swift */,
+				7569D4182C05F85B00A954AB /* GenresChip.swift */,
+				7569D41A2C05F8C600A954AB /* StoryDetailInformation.swift */,
+				7569D41C2C05F93500A954AB /* DetailShimmer.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -740,6 +749,7 @@
 				040830FA2BE4B02B00663028 /* KisahLokaApp.swift in Sources */,
 				040831C72BF4438600663028 /* Bookmark.swift in Sources */,
 				0408317D2BEF264300663028 /* Endpoint.swift in Sources */,
+				7569D41B2C05F8C600A954AB /* StoryDetailInformation.swift in Sources */,
 				040831942BF0AD9600663028 /* Explore.swift in Sources */,
 				040831A42BF2038900663028 /* ReadingPageViewModel.swift in Sources */,
 				040831452BE4C80C00663028 /* ProfilePageView.swift in Sources */,
@@ -751,6 +761,7 @@
 				040831C22BF43EC600663028 /* BookmarkPageViewModel.swift in Sources */,
 				040831BE2BF35C0200663028 /* AnotherRecommendStoriesPostReading.swift in Sources */,
 				0408319B2BF0B3C600663028 /* DetailPageView.swift in Sources */,
+				7569D4192C05F85C00A954AB /* GenresChip.swift in Sources */,
 				040831BB2BF3513600663028 /* TabBar.swift in Sources */,
 				040831AA2BF25B6100663028 /* LabelAlignment.swift in Sources */,
 				756BAFCA2C01B78300755B8C /* UIImage.swift in Sources */,
@@ -776,6 +787,7 @@
 				040831AC2BF2D80500663028 /* StoriesType.swift in Sources */,
 				040831C52BF4417400663028 /* BookmarkStories.swift in Sources */,
 				0408315F2BE8D95F00663028 /* HomePageViewModel.swift in Sources */,
+				7569D41D2C05F93500A954AB /* DetailShimmer.swift in Sources */,
 				7569D4152C05BF7A00A954AB /* ShimmerBox.swift in Sources */,
 				0408319D2BF0B86000663028 /* DetailPageViewModel.swift in Sources */,
 				757A39D02C020F7A00879829 /* RegisterPageView.swift in Sources */,

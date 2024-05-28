@@ -30,11 +30,11 @@ struct ExploreStoriesGrid: View {
                                 AsyncImage(url: URL(string: item.thumbnail_image!)){ image in
                                     image.resizable()
                                 } placeholder: {
-                                    ProgressView()
+                                    ShimmerBox()
                                 }
                                 .cornerRadius(4)
                                 .frame(width: 167, height: 107)
-                                .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+                                .aspectRatio(contentMode: .fill)
                                 
                                 Text(item.origin_name ?? "-")
                                     .font(.poppinsCaption2)

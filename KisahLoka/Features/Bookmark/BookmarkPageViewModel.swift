@@ -15,10 +15,15 @@ class BookmarkPageViewModel: ObservableObject {
     
     @Published var bookmarkStoriesData: [Bookmark] = []
     @Published var bookmarkResponse: ResponseDataBookmark?
+    @Published var isLoading : Bool = false
     
     func getUserBookmark() {
-        guard let url = URL(string: BaseURL.bookmarkByUserID(userID: 1)) else {
+        isLoading = true
+        guard let url = URL(string: BaseURL.bookmarkByUserID(userID: 2)) else {
             print("Invalid URL")
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                self.isLoading = false
+            }
             return
         }
         
@@ -27,11 +32,17 @@ class BookmarkPageViewModel: ObservableObject {
         session.dataTask(with: url) { data, response, error in
             if let error = error {
                 print("Error fetching data: \(error)")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                    self.isLoading = false
+                }
                 return
             }
             
             guard let data = data else {
                 print("No data received")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                    self.isLoading = false
+                }
                 return
             }
             
@@ -40,13 +51,21 @@ class BookmarkPageViewModel: ObservableObject {
                     if let bookmark = bookmarkResponse.data {
                         DispatchQueue.main.async {
                             self.bookmarkStoriesData = bookmark.bookmarks ?? []
-                            print(self.bookmarkStoriesData )
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                                self.isLoading = false
+                            }
                         }
                     } else {
                         print("No types data available")
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                            self.isLoading = false
+                        }
                     }
                 } else {
                     print("Error decoding JSON")
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                        self.isLoading = false
+                    }
                 }
             }
         }.resume()

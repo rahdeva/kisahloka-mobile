@@ -24,11 +24,10 @@ struct ReadingPageView: View {
                                 AsyncImage(url: URL(string: content.image!)){ image in
                                     image
                                         .resizable()
-                                        .frame(width: p.size.width - 48, height: p.size.width * 0.5)
-                                        
                                 } placeholder: {
-                                    ProgressView()
+                                    ShimmerBox()
                                 }
+                                .frame(width: p.size.width - 48, height: p.size.width * 0.5)
                                 .blur(radius: 4)
                                 
                                 Rectangle()
@@ -68,11 +67,11 @@ struct ReadingPageView: View {
                                 AsyncImage(url: URL(string: content.image!)){ image in
                                     image
                                         .resizable()
-                                        .frame(width: p.size.width - 48, height: p.size.width * 0.5)
-                                        .shadow(color: .black, radius: 2)
                                 } placeholder: {
-                                    ProgressView()
+                                    ShimmerBox()
                                 }
+                                .frame(width: p.size.width - 48, height: p.size.width * 0.5)
+                                .shadow(color: .black, radius: 2)
                                 
                                 Text(
                                     readingVM.currentLanguage == .indonesian
