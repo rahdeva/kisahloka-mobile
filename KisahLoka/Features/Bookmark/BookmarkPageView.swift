@@ -32,6 +32,9 @@ struct BookmarkPageView: View {
         .onAppear{
             bookmarkVM.getUserBookmark()
         }
+        .refreshable{
+            bookmarkVM.getUserBookmark()
+        }
     }
 }
 

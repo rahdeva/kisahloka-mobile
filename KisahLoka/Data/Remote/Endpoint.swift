@@ -58,7 +58,9 @@ class BaseURL {
     
     // Story
     static let story = "\(baseURL)/story"
-    static let storyExplore = "\(baseURL)/story_preview"
+    static func storyExplore(searchKeyword: String?) -> String {
+        return "\(baseURL)/story_preview?keyword=\(searchKeyword ?? "")"
+    }
     static func storyByID(storyID: Int?) -> String {
         return "\(baseURL)/story/\(storyID ?? 0)"
     }

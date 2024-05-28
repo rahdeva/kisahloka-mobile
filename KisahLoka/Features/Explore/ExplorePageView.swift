@@ -37,6 +37,13 @@ struct ExplorePageView: View {
         .onAppear{
             exploreVM.getExplore()
         }
+        .onChange(of: exploreVM.searchKeyword) {
+            exploreVM.getExplore()
+        }
+        .refreshable {
+            exploreVM.searchKeyword = ""
+            exploreVM.getExplore()
+        }
     }
 }
 

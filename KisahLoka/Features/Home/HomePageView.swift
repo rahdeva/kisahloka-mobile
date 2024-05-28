@@ -38,7 +38,9 @@ struct HomePageView: View {
         .onAppear{
             homeVM.getHome()
         }
-        
+        .refreshable {
+            homeVM.getHome()
+        }
     }
 }
 

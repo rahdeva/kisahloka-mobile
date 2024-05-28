@@ -75,6 +75,10 @@ struct DetailPageView: View {
             detailVM.getStoryDetail(storyID: storyId)
             detailVM.getAnotherStories(storyID: storyId)
         }
+        .refreshable{
+            detailVM.getStoryDetail(storyID: storyId)
+            detailVM.getAnotherStories(storyID: storyId)
+        }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(
             leading: Button(

@@ -15,12 +15,13 @@ class ExplorePageViewModel: ObservableObject {
     
     @Published var searchKeyword : String = ""
     @Published var exploreStoriesData: [ExploreStories] = []
+//    @Published var exploreStoriesDataSearchResult: [ExploreStories] = []
     @Published var exploreResponse: ResponseDataExplore?
     @Published var isLoading : Bool = false
     
     func getExplore() {
         isLoading = true
-        guard let url = URL(string: BaseURL.storyExplore) else {
+        guard let url = URL(string: BaseURL.storyExplore(searchKeyword: searchKeyword)) else {
             print("Invalid URL")
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                 self.isLoading = false
