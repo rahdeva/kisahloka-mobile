@@ -61,6 +61,9 @@ class BaseURL {
     static func storyExplore(searchKeyword: String?) -> String {
         return "\(baseURL)/story_preview?keyword=\(searchKeyword ?? "")"
     }
+    static func storyTypeExplore(searchKeyword: String?, type_id: Int?) -> String {
+        return "\(baseURL)/story_preview?keyword=\(searchKeyword ?? "")&type_id=\(type_id ?? 0)"
+    }
     static func storyByID(storyID: Int?) -> String {
         return "\(baseURL)/story/\(storyID ?? 0)"
     }

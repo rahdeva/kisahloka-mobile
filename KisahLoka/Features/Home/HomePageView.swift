@@ -20,20 +20,14 @@ struct HomePageView: View {
                 StoriesType(homeVM: homeVM)
             }
             .navigationBarTitleDisplayMode(.inline)
-//            .searchable(
-//                text: $homeVM.searchKeyword,
-//                placement: .navigationBarDrawer(displayMode: .always)
-//            )
             .toolbar{
                 ToolbarItem(placement: .principal){
                     Image("logo-kisahloka")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(height: 50)
-//                        .padding(.vertical, 20)
                 }
             }
-//            .edgesIgnoringSafeArea(.all)
         }
         .onAppear{
             homeVM.getHome()
@@ -41,6 +35,7 @@ struct HomePageView: View {
         .refreshable {
             homeVM.getHome()
         }
+//        .padding(.top, -20)
     }
 }
 

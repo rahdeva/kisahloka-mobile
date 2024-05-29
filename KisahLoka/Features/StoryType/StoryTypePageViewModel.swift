@@ -1,26 +1,29 @@
 //
-//  HomePageViewModel.swift
+//  StoryTypePageViewModel.swift
 //  KisahLoka
 //
-//  Created by MacBook Air on 06/05/24.
+//  Created by Ni Made Elza Ayu Wismayani Asak on 29/05/24.
 //
 
 import Foundation
 import SwiftUI
 
-class ExplorePageViewModel: ObservableObject {
+class StoryTypePageViewModel: ObservableObject {
     @Published var columns = [
         GridItem(.flexible(), alignment: .top), GridItem(.flexible()),
     ]
     
     @Published var searchKeyword : String = ""
-    @Published var exploreStoriesData: [ExploreStories] = []
-    @Published var exploreResponse: ResponseDataExplore?
+    @Published var storyTypeStoriesData: [ExploreStories] = []
+    @Published var storyTypeResponse: ResponseDataExplore?
     @Published var isLoading : Bool = false
     
-    func getExplore() {
+    func getStoryTypeStories(type_id: Int?) {
         isLoading = true
-        guard let url = URL(string: BaseURL.storyExplore(searchKeyword: searchKeyword)) else {
+        guard let url = URL(string: BaseURL.storyTypeExplore(
+            searchKeyword: searchKeyword,
+            type_id: type_id
+        )) else {
             print("Invalid URL")
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                 self.isLoading = false
@@ -51,7 +54,7 @@ class ExplorePageViewModel: ObservableObject {
                 if let exploreResponse = try? JSONDecoder().decode(ResponseDataExplore.self, from: data) {
                     if let explore = exploreResponse.data {
                         DispatchQueue.main.async {
-                            self.exploreStoriesData = explore.stories ?? []
+                            self.storyTypeStoriesData = explore.stories ?? []
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                                 self.isLoading = false
                             }
