@@ -28,6 +28,7 @@ struct StoryTypePageView: View {
             placement: .navigationBarDrawer(displayMode: .always)
         )
         .onAppear{
+            showTabBar.show = false
             storyTypeVM.getStoryTypeStories(type_id: type_id)
         }
         .onChange(of: storyTypeVM.searchKeyword) {

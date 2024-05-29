@@ -39,9 +39,13 @@ struct ProfileComponent: View {
             
             List {
                 NavigationLink {
-                    Text("Edit Profile")
+                    EditProfile(
+                        profileVM: profileVM,
+                        isBackWithTabBar: true,
+                        user: user
+                    )
                 } label: {
-                    Text("Edit Profile")
+                    Text("Ubah Profil")
                 }
                 
                 NavigationLink {

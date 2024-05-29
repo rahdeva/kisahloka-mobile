@@ -101,7 +101,7 @@ struct StoryDetailInformation: View {
                     font: UIFont.systemFont(ofSize: 13, weight: .regular)
                 )
                 .font(.poppinsFootnote)
-                .foregroundColor(.slate800)
+                .foregroundStyle(Color.slate500)
             }
             .padding(.bottom, 8)
         }

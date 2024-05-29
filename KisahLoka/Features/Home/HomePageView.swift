@@ -28,14 +28,13 @@ struct HomePageView: View {
                         .frame(height: 50)
                 }
             }
+            .onAppear{
+                homeVM.getHome()
+            }
+            .refreshable {
+                homeVM.getHome()
+            }
         }
-        .onAppear{
-            homeVM.getHome()
-        }
-        .refreshable {
-            homeVM.getHome()
-        }
-//        .padding(.top, -20)
     }
 }
 

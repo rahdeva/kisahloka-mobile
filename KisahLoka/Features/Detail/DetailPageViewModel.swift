@@ -17,6 +17,7 @@ class DetailPageViewModel: ObservableObject {
     @Published var anotherStoriesData: [RandomRecommendation] = []
     @Published var anotherStoriesResponse: ResponseDataRandomRecommendation?
     @Published var isLoading : Bool = false
+    @Published var isBookmark : Bool = false
     
     func formatDateToString(date: Date) -> String {
         let dateFormatter = DateFormatter()
@@ -24,9 +25,12 @@ class DetailPageViewModel: ObservableObject {
         return dateFormatter.string(from: date)
     }
     
-    func getStoryDetail(storyID: Int) {
+    func getStoryDetail(storyID: Int, user : UserData?) {
         isLoading = true
-        guard let url = URL(string: BaseURL.storyByID(storyID: storyID)) else {
+        guard let url = URL(string: BaseURL.storyByIDWithUID(
+            storyID: storyID,
+            uid: user?.uid
+        )) else {
             print("Invalid URL")
             return
         }
@@ -49,6 +53,9 @@ class DetailPageViewModel: ObservableObject {
                     if let detailStory = detailStoryResponse.data {
                         DispatchQueue.main.async {
                             self.detailStoryData = detailStory.story
+                            if self.detailStoryData?.is_bookmark == 1 {
+                                self.isBookmark = true
+                            }
                         }
                     } else {
                         print("No types data available")
@@ -109,6 +116,89 @@ class DetailPageViewModel: ObservableObject {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                         self.isLoading = false
                     }
+                }
+            }
+        }.resume()
+    }
+    
+    func addBookmark(user: UserData?, storyID: Int) {
+        guard let url = URL(string: BaseURL.bookmark) else {
+            print("Invalid URL")
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let bookmarkRequest = BookmarkRequest(
+            user_id: user?.user_id,
+            uid: user?.uid,
+            story_id: storyID
+        )
+        
+        do {
+            let jsonData = try JSONEncoder().encode(bookmarkRequest)
+            request.httpBody = jsonData
+        } catch {
+            print("Error encoding JSON: \(error)")
+            return
+        }
+        
+        let session = URLSession.shared
+        session.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("Error adding bookmark: \(error)")
+                return
+            }
+            
+            guard let data = data else {
+                print("No data received")
+                return
+            }
+            
+            do {
+                if let bookmarkResponse = try? JSONDecoder().decode(ResponseAddBookmark.self, from: data) {
+                    DispatchQueue.main.async {
+                        self.isBookmark = true
+                        print("Bookmark added successfully: \(bookmarkResponse)")
+                    }
+                } else {
+                    print("Error decoding JSON response")
+                }
+            }
+        }.resume()
+    }
+    
+    func deleteBookmark(bookmarkID: Int?) {
+        guard let url = URL(string: BaseURL.bookmarkByID(bookmarkID: bookmarkID)) else {
+            print("Invalid URL")
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "DELETE"
+        
+        let session = URLSession.shared
+        session.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("Error deleting bookmark: \(error)")
+                return
+            }
+            
+            guard let data = data else {
+                print("No data received")
+                return
+            }
+            
+            do {
+                if let bookmarkResponse = try? JSONDecoder().decode(ResponseDeleteBookmark.self, from: data) {
+                    DispatchQueue.main.async {
+                        self.isBookmark = false
+                        print("Bookmark deleted successfully: \(bookmarkResponse)")
+                    }
+                } else {
+                    print("Error decoding JSON response")
                 }
             }
         }.resume()

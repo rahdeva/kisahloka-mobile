@@ -72,11 +72,17 @@ struct DetailPageView: View {
         }
         .onAppear {
             showTabBar.show = false
-            detailVM.getStoryDetail(storyID: storyId)
+            detailVM.getStoryDetail(
+                storyID: storyId,
+                user: authManager.getCurrentUser(context: context)
+            )
             detailVM.getAnotherStories(storyID: storyId)
         }
         .refreshable{
-            detailVM.getStoryDetail(storyID: storyId)
+            detailVM.getStoryDetail(
+                storyID: storyId,
+                user: authManager.getCurrentUser(context: context)
+            )
             detailVM.getAnotherStories(storyID: storyId)
         }
         .navigationBarBackButtonHidden(true)
@@ -97,10 +103,35 @@ struct DetailPageView: View {
             },
             
             trailing: HStack{
-                Image(systemName: "bookmark")
-                    .bold()
-                    .foregroundStyle(Color.slate500)
-                    .padding(.trailing, 4)
+                if detailVM.isBookmark {
+                    Button(
+                        action: {
+                            detailVM.deleteBookmark(
+                                bookmarkID: detailVM.detailStoryData?.bookmark_id
+                            )
+                        }
+                    ){
+                        Image(systemName: "bookmark.fill")
+                            .bold()
+                            .foregroundStyle(Color.secondary500)
+                            .padding(.trailing, 4)
+                    }
+                } else {
+                    Button(
+                        action: {
+                            detailVM.addBookmark(
+                                user: authManager.getCurrentUser(context: context),
+                                storyID: storyId
+                            )
+                        }
+                    ){
+                        Image(systemName: "bookmark")
+                            .bold()
+                            .foregroundStyle(Color.slate500)
+                            .padding(.trailing, 4)
+                    }
+                }
+                
                 
                 Image(systemName: "square.and.arrow.up")
                     .bold()

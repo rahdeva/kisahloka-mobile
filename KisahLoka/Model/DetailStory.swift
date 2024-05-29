@@ -58,6 +58,8 @@ struct DetailStory : Codable {
     let synopsis : String?
     let created_at : String?
     let updated_at : String?
+    let is_bookmark : Int?
+    let bookmark_id : Int?
 
     enum CodingKeys: String, CodingKey {
 
@@ -78,6 +80,8 @@ struct DetailStory : Codable {
         case synopsis = "synopsis"
         case created_at = "created_at"
         case updated_at = "updated_at"
+        case is_bookmark = "is_bookmark"
+        case bookmark_id = "bookmark_id"
     }
 
     init(from decoder: Decoder) throws {
@@ -99,6 +103,8 @@ struct DetailStory : Codable {
         synopsis = try values.decodeIfPresent(String.self, forKey: .synopsis)
         created_at = try values.decodeIfPresent(String.self, forKey: .created_at)
         updated_at = try values.decodeIfPresent(String.self, forKey: .updated_at)
+        is_bookmark = try values.decodeIfPresent(Int.self, forKey: .is_bookmark)
+        bookmark_id = try values.decodeIfPresent(Int.self, forKey: .bookmark_id)
     }
 
 }

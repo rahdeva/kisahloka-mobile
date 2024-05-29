@@ -17,9 +17,9 @@ class BookmarkPageViewModel: ObservableObject {
     @Published var bookmarkResponse: ResponseDataBookmark?
     @Published var isLoading : Bool = false
     
-    func getUserBookmark() {
+    func getUserBookmark(user: UserData?) {
         isLoading = true
-        guard let url = URL(string: BaseURL.bookmarkByUserID(userID: 2)) else {
+        guard let url = URL(string: BaseURL.bookmarkByUserID(userID: user?.user_id)) else {
             print("Invalid URL")
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                 self.isLoading = false
@@ -66,6 +66,39 @@ class BookmarkPageViewModel: ObservableObject {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                         self.isLoading = false
                     }
+                }
+            }
+        }.resume()
+    }
+    
+    func deleteBookmark(bookmarkID: Int?) {
+        guard let url = URL(string: BaseURL.bookmarkByID(bookmarkID: bookmarkID)) else {
+            print("Invalid URL")
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "DELETE"
+        
+        let session = URLSession.shared
+        session.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("Error deleting bookmark: \(error)")
+                return
+            }
+            
+            guard let data = data else {
+                print("No data received")
+                return
+            }
+            
+            do {
+                if let bookmarkResponse = try? JSONDecoder().decode(ResponseDeleteBookmark.self, from: data) {
+                    DispatchQueue.main.async {
+                        print("Bookmark deleted successfully: \(bookmarkResponse)")
+                    }
+                } else {
+                    print("Error decoding JSON response")
                 }
             }
         }.resume()

@@ -16,9 +16,13 @@ struct AuthMainScreen: View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack {
-                Text("Perpustakaan Lengkap Cerita Nusantara")
-                    .font(.poppinsTitle2)
-                    .bold()
+                Image("img_logo_text_white")
+                    .resizable()
+                    .frame(width: 290, height: 73)
+                    .padding(.bottom, 16)
+                
+                Text("Perpustakaan Lengkap\nCerita Nusantara")
+                    .font(.poppinsSubheadline)
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 16)
@@ -52,11 +56,18 @@ struct AuthMainScreen: View {
                 }
                 .padding(.bottom, 16)
                 
-                Text("Lanjutkan sebagai Guest")
-                    .font(.poppinsSubheadline)
-                    .bold()
-                    .foregroundColor(.white)
-                    .underline()
+                HStack{
+                    Image(systemName: "person.circle")
+                        .foregroundStyle(.white)
+                        .font(.poppinsSubheadline)
+                        .fontWeight(.semibold)
+                    
+                    Text("Masuk sebagai Guest")
+                        .font(.poppinsSubheadline)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.white)
+                        .underline()
+                }
             }
             .padding(.top, 56)
             .padding(.bottom, 100)

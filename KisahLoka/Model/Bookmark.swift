@@ -47,6 +47,7 @@ struct DataBookmark : Codable {
 struct Bookmark : Codable, Hashable {
     let bookmark_id : Int?
     let user_id : Int?
+    let uid : String?
     let story_id : Int?
     let created_at : String?
     let updated_at : String?
@@ -59,6 +60,7 @@ struct Bookmark : Codable, Hashable {
 
         case bookmark_id = "bookmark_id"
         case user_id = "user_id"
+        case uid = "uid"
         case story_id = "story_id"
         case created_at = "created_at"
         case updated_at = "updated_at"
@@ -72,6 +74,7 @@ struct Bookmark : Codable, Hashable {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         bookmark_id = try values.decodeIfPresent(Int.self, forKey: .bookmark_id)
         user_id = try values.decodeIfPresent(Int.self, forKey: .user_id)
+        uid = try values.decodeIfPresent(String.self, forKey: .uid)
         story_id = try values.decodeIfPresent(Int.self, forKey: .story_id)
         created_at = try values.decodeIfPresent(String.self, forKey: .created_at)
         updated_at = try values.decodeIfPresent(String.self, forKey: .updated_at)

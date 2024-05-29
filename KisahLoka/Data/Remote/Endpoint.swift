@@ -67,6 +67,9 @@ class BaseURL {
     static func storyByID(storyID: Int?) -> String {
         return "\(baseURL)/story/\(storyID ?? 0)"
     }
+    static func storyByIDWithUID(storyID: Int?, uid: String?) -> String {
+        return "\(baseURL)/story/\(storyID ?? 0)?uid=\(uid ?? "")"
+    }
     static func storyContentByID(storyID: Int?) -> String {
         return "\(baseURL)/story/contents/\(storyID ?? 0)"
     }

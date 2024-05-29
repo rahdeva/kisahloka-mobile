@@ -9,12 +9,15 @@ import SwiftUI
 
 struct BookmarkPageView: View {
     @StateObject var bookmarkVM = BookmarkPageViewModel()
+    let isUserLoggedIn : Bool
+    let user : UserData?
     
     var body: some View {
         NavigationStack() {
             ScrollView(showsIndicators: false){
                 BookmarkStories(
-                    bookmarkVM: bookmarkVM
+                    bookmarkVM: bookmarkVM,
+                    user: user
                 )
                 .padding(.bottom, 24)
             }
@@ -30,14 +33,10 @@ struct BookmarkPageView: View {
             }
         }
         .onAppear{
-            bookmarkVM.getUserBookmark()
+            bookmarkVM.getUserBookmark(user: user)
         }
         .refreshable{
-            bookmarkVM.getUserBookmark()
+            bookmarkVM.getUserBookmark(user: user)
         }
     }
-}
-
-#Preview {
-    BookmarkPageView()
 }

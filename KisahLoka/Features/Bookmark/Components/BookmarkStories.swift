@@ -9,6 +9,7 @@ import SwiftUI
 
 struct BookmarkStories: View {
     @ObservedObject var bookmarkVM: BookmarkPageViewModel
+    let user : UserData?
     
     var body: some View {
         if !bookmarkVM.isLoading {
@@ -47,6 +48,7 @@ struct BookmarkStories: View {
                                                     .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
                                                     .foregroundColor(.slate800)
                                                     .fontWeight(.regular)
+                                                    .fixedSize(horizontal: false, vertical: true)
                                                 Text(bookmark.origin_name ?? "-")
                                                     .font(.poppinsCaption2)
                                                     .foregroundColor(.secondary500)
@@ -55,10 +57,17 @@ struct BookmarkStories: View {
                                             
                                             Spacer()
                                             
-                                            Image(systemName: "bookmark.fill")
-                                                .resizable()
-                                                .frame(width: 16, height: 18)
-                                                .foregroundStyle(Color.secondary500)
+                                            Button(
+                                                action: {
+                                                    bookmarkVM.deleteBookmark(bookmarkID: bookmark.bookmark_id)
+                                                    bookmarkVM.getUserBookmark(user: user)
+                                                }
+                                            ){
+                                                Image(systemName: "bookmark.fill")
+                                                    .resizable()
+                                                    .frame(width: 16, height: 18)
+                                                    .foregroundStyle(Color.secondary500)
+                                            }
                                         }
                                         
                                         Rectangle()

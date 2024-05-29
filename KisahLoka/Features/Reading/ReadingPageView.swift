@@ -58,7 +58,7 @@ struct ReadingPageView: View {
                                               )
                                         )
                                         .multilineTextAlignment(.leading)
-                                        .foregroundStyle(Color.sky500)
+                                        .foregroundStyle(Color.sky800)
                                 }
                             }
                             .tag(index)
@@ -96,11 +96,11 @@ struct ReadingPageView: View {
                     }
                     
                 }
-                .background(
-                    readingVM.warmBackground == true
-                    ? Color.warmColor.ignoresSafeArea(edges: .bottom)
-                    : Color.white.ignoresSafeArea(edges: .bottom)
-                )
+//                .background(
+//                    readingVM.warmBackground == true
+//                    ? Color.warmColor.ignoresSafeArea(edges: .bottom)
+//                    : Color.white.ignoresSafeArea(edges: .bottom)
+//                )
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                 
                 VStack{
@@ -195,6 +195,11 @@ struct ReadingPageView: View {
                 readingVM.getStoryContents(storyID: storyId)
             }
         }
+        .background(
+            readingVM.warmBackground == true
+            ? Color.warmColor.ignoresSafeArea(edges: .bottom)
+            : Color.white.ignoresSafeArea(edges: .bottom)
+        )
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(
             leading: Button(
@@ -205,6 +210,9 @@ struct ReadingPageView: View {
                 HStack{
                     Image(systemName: "chevron.backward")
                         .bold()
+                        .foregroundStyle(Color.slate500)
+                    
+                    Text("Kembali")
                         .foregroundStyle(Color.slate500)
                 }
             },

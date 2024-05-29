@@ -21,7 +21,10 @@ struct AuthenticatedScreen: View {
                 case .discover:
                     ExplorePageView()
                 case .bookmark:
-                    BookmarkPageView()
+                    BookmarkPageView(
+                        isUserLoggedIn: authManager.isUserLoggedIn,
+                        user: authManager.getCurrentUser(context: context)
+                    )
                 case .profile:
                     ProfilePageView(
                         isUserLoggedIn: authManager.isUserLoggedIn,
