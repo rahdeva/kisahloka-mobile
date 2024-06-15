@@ -20,12 +20,15 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct KisahLokaApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @State var languageSettings = LanguageSetting()
     
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environment(TabBarModel())
                 .environmentObject(NavPathExplore())
+                .environment(languageSettings)
+                .environment(\.locale, languageSettings.locale)
         }
         .modelContainer(for: UserData.self)
     }

@@ -16,6 +16,7 @@ enum Tabs : Int{
 
 struct CustomTabBar: View {
     @Binding var selectedTab: Tabs
+    @Environment(LanguageSetting.self) var languageSettings
     
     var body: some View {
         VStack {
@@ -27,7 +28,10 @@ struct CustomTabBar: View {
                     selectedTab = .home
                 } label: {
                     TabBarButton(
-                        buttonText: "Beranda",
+                        buttonText:
+                            languageSettings.locale == Locale(identifier: "id")
+                            ? "Beranda"
+                            : "Home",
                         iconActive: "house.fill",
                         iconNonActive: "house",
                         isActive: selectedTab == .home
@@ -38,7 +42,10 @@ struct CustomTabBar: View {
                     selectedTab = .discover
                 } label: {
                     TabBarButton(
-                        buttonText: "Jelajahi",
+                        buttonText:
+                            languageSettings.locale == Locale(identifier: "id")
+                            ? "Jelajahi"
+                            : "Explore",
                         iconActive: "safari.fill",
                         iconNonActive: "safari",
                         isActive: selectedTab == .discover
@@ -49,7 +56,10 @@ struct CustomTabBar: View {
                     selectedTab = .bookmark
                 } label: {
                     TabBarButton(
-                        buttonText: "Bookmark",
+                        buttonText: 
+                            languageSettings.locale == Locale(identifier: "id")
+                            ? "Bookmark"
+                            : "Bookmark",
                         iconActive: "books.vertical.fill",
                         iconNonActive: "books.vertical",
                         isActive: selectedTab == .bookmark
@@ -60,7 +70,10 @@ struct CustomTabBar: View {
                     selectedTab = .profile
                 } label: {
                     TabBarButton(
-                        buttonText: "Profil",
+                        buttonText: 
+                            languageSettings.locale == Locale(identifier: "id")
+                            ? "Profil"
+                            : "Profile",
                         iconActive: "person.fill",
                         iconNonActive: "person",
                         isActive: selectedTab == .profile

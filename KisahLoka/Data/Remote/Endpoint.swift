@@ -7,7 +7,7 @@ class Environments {
 //    static let LOCAL = "http://192.168.0.158:4000/api/v1" // Wifi Kost
 //    static let LOCAL = "http://192.168.0.113:4000/api/v1" // Wifi Kogu
 //    static let LOCAL = "http://172.20.10.2:4000/api/v1" // Hotspot
-    static let LOCAL = "http://192.168.1.14:4000/api/v1" // Home
+    static let LOCAL = "http://192.168.1.19:4000/api/v1" // Home
 
     static var currentEnvironment = Environments.LOCAL
 

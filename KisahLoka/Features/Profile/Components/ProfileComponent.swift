@@ -10,6 +10,7 @@ import SwiftUI
 struct ProfileComponent: View {
     @ObservedObject var profileVM: ProfilePageViewModel
     let user : UserData?
+    @Environment(LanguageSetting.self) var languageSettings
     
     var body: some View {
         VStack{
@@ -48,12 +49,41 @@ struct ProfileComponent: View {
                     Text("Ubah Profil")
                 }
                 
-                NavigationLink {
+                HStack{
                     Text("Bahasa")
-                } label: {
-                    Text("Bahasa")
+                    Spacer()
+                    Menu {
+                        Button {
+                            if languageSettings.locale == Locale(identifier: "en"){
+                                languageSettings.locale = Locale(identifier: "id")
+                            }
+                        } label: {
+                            Text("Indonesia")
+                        }
+                        Button {
+                            if languageSettings.locale == Locale(identifier: "id"){
+                                languageSettings.locale = Locale(identifier: "en")
+                            }
+                        } label: {
+                            Text("English")
+                        }
+                    } label: {
+                        HStack {
+                            Text(
+                                languageSettings.locale == Locale(identifier: "id")
+                                ? "Indonesia"
+                                : "English"
+                            )
+                            .font(.poppinsSubheadline)
+                            .foregroundStyle(Color.slate800)
+                            
+                            Image(systemName: "chevron.up.chevron.down")
+                                .foregroundStyle(Color.slate800)
+                        }
+                    }
                 }
                 
+//                languageSettings.locale = Locale(identifier: "zh-Hans")
                 NavigationLink {
                     Text("Bantuan dan Dukungan")
                 } label: {

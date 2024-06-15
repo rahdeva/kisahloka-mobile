@@ -58,7 +58,7 @@ struct RegisterPageView: View {
                 DatePicker(
                     "Tanggal Lahir",
                     selection: $registerVM.birthDate,
-                    in: registerVM.dateRange,
+                    in: registerVM.dateRange, 
                     displayedComponents: .date
                 )
                 .frame(maxWidth: .infinity)

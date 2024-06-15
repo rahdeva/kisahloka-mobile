@@ -15,7 +15,8 @@ struct BookmarkStories: View {
         if !bookmarkVM.isLoading {
                 if(bookmarkVM.bookmarkStoriesData.isEmpty){
                     EmptyDataView(
-                        text: "Kamu belum memiliki cerita favorit nih yuk jelajahi cerita baru!"
+                        text: "Kamu belum memiliki cerita favorit nih yuk jelajahi cerita baru!",
+                        searchIll: false
                     )
                     .padding(.top, 150)
                 } else{

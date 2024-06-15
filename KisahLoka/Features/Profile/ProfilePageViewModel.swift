@@ -13,11 +13,29 @@ class ProfilePageViewModel: ObservableObject {
     let authManager : AuthManager = AuthManager.init()
     @Published var detailUserResponse: ResponseDataUserDetail?
     @Published var language: String = ""
+    @Published var nameInput: String = ""
+    @Published var birthDateInput : Date = Date()
+    @Published var isPopUpShow = false
+    
+    var dateRange: ClosedRange<Date> {
+        let startDate = Calendar.current.date(from: DateComponents(year: 1900))!
+        let endDate = Date()
+        return startDate...endDate
+    }
     
     func signOut(){
         authManager.signOut { error in
             if let error = error {
                 print("Sign-out error: \(error.localizedDescription)")
+                // Show error
+            }
+        }
+    }
+    
+    func sendResetPassword(email: String?){
+        authManager.sendResetPassword(email: email ?? ""){ error in
+            if let error = error {
+                print("Send Reset Password error: \(error.localizedDescription)")
                 // Show error
             }
         }

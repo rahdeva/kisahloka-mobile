@@ -21,6 +21,19 @@ class LoginPageViewModel: ObservableObject {
     @Published var detailUserData: User?
     @Published var detailUserResponse: ResponseDataUserDetail?
     @Published var isLoading = false
+    @Published var isResetPasswordSheet = false
+    @Published var emailResetInput: String = ""
+    @Published var isPopUpShow = false
+    let authManager : AuthManager = AuthManager.init()
+    
+    func sendResetPassword(email: String?){
+        authManager.sendResetPassword(email: email ?? ""){ error in
+            if let error = error {
+                print("Send Reset Password error: \(error.localizedDescription)")
+                // Show error
+            }
+        }
+    }
     
     func signInWithEmail(context: ModelContext) {
         isLoading = true

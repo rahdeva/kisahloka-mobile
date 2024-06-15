@@ -70,12 +70,19 @@
 		040831C72BF4438600663028 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040831C62BF4438600663028 /* Bookmark.swift */; };
 		040831C92BF57D3D00663028 /* ProfilePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040831C82BF57D3D00663028 /* ProfilePageViewModel.swift */; };
 		040831CC2BF57D6700663028 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040831CB2BF57D6700663028 /* Profile.swift */; };
+		752299242C1D340200A781D1 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 752299232C1D340200A781D1 /* Localizable.xcstrings */; };
+		752299282C1D535800A781D1 /* LanguageSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752299272C1D535800A781D1 /* LanguageSetting.swift */; };
 		754983922BFF92FD000AEB2E /* EmptyDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754983912BFF92FD000AEB2E /* EmptyDataView.swift */; };
 		755A97792C06D49F00187DB4 /* StoryTypePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755A97782C06D49F00187DB4 /* StoryTypePageView.swift */; };
 		755A977B2C06D4B800187DB4 /* StoryTypePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755A977A2C06D4B800187DB4 /* StoryTypePageViewModel.swift */; };
 		755A977E2C06D52500187DB4 /* StoryTypeStoriesGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755A977D2C06D52500187DB4 /* StoryTypeStoriesGrid.swift */; };
 		755A97802C06DEFE00187DB4 /* EditProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755A977F2C06DEFE00187DB4 /* EditProfile.swift */; };
 		755A97842C0729E200187DB4 /* AddDeleteBookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755A97832C0729E200187DB4 /* AddDeleteBookmark.swift */; };
+		755A97872C076A9900187DB4 /* ResetPasswordSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755A97862C076A9900187DB4 /* ResetPasswordSheet.swift */; };
+		755A978A2C07720000187DB4 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 755A97892C07720000187DB4 /* PopupView */; };
+		755A978C2C07726F00187DB4 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755A978B2C07726F00187DB4 /* PopUpView.swift */; };
+		755A978F2C07787600187DB4 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 755A978E2C07787600187DB4 /* Lottie */; };
+		755A97912C07788700187DB4 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755A97902C07788700187DB4 /* LottieView.swift */; };
 		7569D40F2C05957400A954AB /* LogoLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7569D40E2C05957400A954AB /* LogoLoading.swift */; };
 		7569D4152C05BF7A00A954AB /* ShimmerBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7569D4142C05BF7A00A954AB /* ShimmerBox.swift */; };
 		7569D4172C05C13600A954AB /* Shimmer in Frameworks */ = {isa = PBXBuildFile; productRef = 7569D4162C05C13600A954AB /* Shimmer */; };
@@ -178,12 +185,17 @@
 		040831C62BF4438600663028 /* Bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
 		040831C82BF57D3D00663028 /* ProfilePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewModel.swift; sourceTree = "<group>"; };
 		040831CB2BF57D6700663028 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		752299232C1D340200A781D1 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		752299272C1D535800A781D1 /* LanguageSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSetting.swift; sourceTree = "<group>"; };
 		754983912BFF92FD000AEB2E /* EmptyDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDataView.swift; sourceTree = "<group>"; };
 		755A97782C06D49F00187DB4 /* StoryTypePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTypePageView.swift; sourceTree = "<group>"; };
 		755A977A2C06D4B800187DB4 /* StoryTypePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTypePageViewModel.swift; sourceTree = "<group>"; };
 		755A977D2C06D52500187DB4 /* StoryTypeStoriesGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTypeStoriesGrid.swift; sourceTree = "<group>"; };
 		755A977F2C06DEFE00187DB4 /* EditProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfile.swift; sourceTree = "<group>"; };
 		755A97832C0729E200187DB4 /* AddDeleteBookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDeleteBookmark.swift; sourceTree = "<group>"; };
+		755A97862C076A9900187DB4 /* ResetPasswordSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordSheet.swift; sourceTree = "<group>"; };
+		755A978B2C07726F00187DB4 /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
+		755A97902C07788700187DB4 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		7569D40E2C05957400A954AB /* LogoLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoLoading.swift; sourceTree = "<group>"; };
 		7569D4142C05BF7A00A954AB /* ShimmerBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerBox.swift; sourceTree = "<group>"; };
 		7569D4182C05F85B00A954AB /* GenresChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresChip.swift; sourceTree = "<group>"; };
@@ -215,7 +227,9 @@
 				040831732BEE047F00663028 /* FirebaseMessaging in Frameworks */,
 				0408316D2BEE047F00663028 /* FirebaseCrashlytics in Frameworks */,
 				040831692BEE047F00663028 /* FirebaseAnalytics in Frameworks */,
+				755A978A2C07720000187DB4 /* PopupView in Frameworks */,
 				0408316B2BEE047F00663028 /* FirebaseAuth in Frameworks */,
+				755A978F2C07787600187DB4 /* Lottie in Frameworks */,
 				7569D4172C05C13600A954AB /* Shimmer in Frameworks */,
 				040831752BEE047F00663028 /* FirebaseStorage in Frameworks */,
 				040831712BEE047F00663028 /* FirebaseFirestore in Frameworks */,
@@ -267,6 +281,7 @@
 				040831362BE4C2E700663028 /* Info.plist */,
 				040831652BEE035700663028 /* GoogleService-Info.plist */,
 				040830F92BE4B02B00663028 /* KisahLokaApp.swift */,
+				752299232C1D340200A781D1 /* Localizable.xcstrings */,
 				040830FD2BE4B02C00663028 /* Assets.xcassets */,
 				040830FF2BE4B02C00663028 /* Preview Content */,
 				040831252BE4BC3600663028 /* Resources */,
@@ -396,6 +411,8 @@
 				754983912BFF92FD000AEB2E /* EmptyDataView.swift */,
 				7569D40E2C05957400A954AB /* LogoLoading.swift */,
 				7569D4142C05BF7A00A954AB /* ShimmerBox.swift */,
+				755A978B2C07726F00187DB4 /* PopUpView.swift */,
+				755A97902C07788700187DB4 /* LottieView.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -513,6 +530,7 @@
 			children = (
 				040831BA2BF3513600663028 /* TabBar.swift */,
 				040831BF2BF36C3F00663028 /* NavPathExplore.swift */,
+				752299272C1D535800A781D1 /* LanguageSetting.swift */,
 			);
 			path = EnvironmentModel;
 			sourceTree = "<group>";
@@ -547,6 +565,14 @@
 			isa = PBXGroup;
 			children = (
 				755A977D2C06D52500187DB4 /* StoryTypeStoriesGrid.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		755A97852C076A8900187DB4 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				755A97862C076A9900187DB4 /* ResetPasswordSheet.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -589,6 +615,7 @@
 			children = (
 				757A39CB2C020F6200879829 /* LoginPageView.swift */,
 				757A39CD2C020F6D00879829 /* LoginPageViewModel.swift */,
+				755A97852C076A8900187DB4 /* Components */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -646,6 +673,8 @@
 				040831722BEE047F00663028 /* FirebaseMessaging */,
 				040831742BEE047F00663028 /* FirebaseStorage */,
 				7569D4162C05C13600A954AB /* Shimmer */,
+				755A97892C07720000187DB4 /* PopupView */,
+				755A978E2C07787600187DB4 /* Lottie */,
 			);
 			productName = KisahLoka;
 			productReference = 040830F62BE4B02B00663028 /* KisahLoka.app */;
@@ -712,16 +741,19 @@
 			};
 			buildConfigurationList = 040830F12BE4B02B00663028 /* Build configuration list for PBXProject "KisahLoka" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = id;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				id,
 			);
 			mainGroup = 040830ED2BE4B02B00663028;
 			packageReferences = (
 				040831672BEE047F00663028 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				7569D4102C05BB5800A954AB /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */,
+				755A97882C0771F400187DB4 /* XCRemoteSwiftPackageReference "PopupView" */,
+				755A978D2C07786A00187DB4 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 040830F72BE4B02B00663028 /* Products */;
 			projectDirPath = "";
@@ -745,6 +777,7 @@
 				040831342BE4C25900663028 /* Poppins-Regular.ttf in Resources */,
 				040831312BE4C25900663028 /* Poppins-Medium.ttf in Resources */,
 				040831322BE4C25900663028 /* Poppins-Bold.ttf in Resources */,
+				752299242C1D340200A781D1 /* Localizable.xcstrings in Resources */,
 				040831352BE4C25900663028 /* Poppins-SemiBold.ttf in Resources */,
 				040831302BE4C25900663028 /* Poppins-ExtraBold.ttf in Resources */,
 				040830FE2BE4B02C00663028 /* Assets.xcassets in Resources */,
@@ -782,6 +815,7 @@
 				0408317D2BEF264300663028 /* Endpoint.swift in Sources */,
 				7569D41B2C05F8C600A954AB /* StoryDetailInformation.swift in Sources */,
 				040831942BF0AD9600663028 /* Explore.swift in Sources */,
+				755A97872C076A9900187DB4 /* ResetPasswordSheet.swift in Sources */,
 				040831A42BF2038900663028 /* ReadingPageViewModel.swift in Sources */,
 				040831452BE4C80C00663028 /* ProfilePageView.swift in Sources */,
 				040831482BE4CB3500663028 /* CustomTabBar.swift in Sources */,
@@ -797,6 +831,7 @@
 				7569D4192C05F85C00A954AB /* GenresChip.swift in Sources */,
 				040831BB2BF3513600663028 /* TabBar.swift in Sources */,
 				040831AA2BF25B6100663028 /* LabelAlignment.swift in Sources */,
+				752299282C1D535800A781D1 /* LanguageSetting.swift in Sources */,
 				756BAFCA2C01B78300755B8C /* UIImage.swift in Sources */,
 				040831B72BF34AB800663028 /* RandomRecommendation.swift in Sources */,
 				757A39CE2C020F6D00879829 /* LoginPageViewModel.swift in Sources */,
@@ -823,6 +858,7 @@
 				040831C52BF4417400663028 /* BookmarkStories.swift in Sources */,
 				0408315F2BE8D95F00663028 /* HomePageViewModel.swift in Sources */,
 				7569D41D2C05F93500A954AB /* DetailShimmer.swift in Sources */,
+				755A978C2C07726F00187DB4 /* PopUpView.swift in Sources */,
 				7569D4152C05BF7A00A954AB /* ShimmerBox.swift in Sources */,
 				0408319D2BF0B86000663028 /* DetailPageViewModel.swift in Sources */,
 				757A39D02C020F7A00879829 /* RegisterPageView.swift in Sources */,
@@ -835,6 +871,7 @@
 				040831622BE8E63D00663028 /* DiscoverNewLocalStories.swift in Sources */,
 				757A39E62C0440DB00879829 /* UserData.swift in Sources */,
 				040831B52BF3121100663028 /* PostReadingPageViewModel.swift in Sources */,
+				755A97912C07788700187DB4 /* LottieView.swift in Sources */,
 				757A39D22C020F8400879829 /* RegisterPageViewModel.swift in Sources */,
 				757A39E22C037E1900879829 /* NotAuthenticatedProfile.swift in Sources */,
 				0408315D2BE8D52E00663028 /* Story.swift in Sources */,
@@ -1184,6 +1221,22 @@
 				minimumVersion = 10.25.0;
 			};
 		};
+		755A97882C0771F400187DB4 /* XCRemoteSwiftPackageReference "PopupView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/PopupView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.9.2;
+			};
+		};
+		755A978D2C07786A00187DB4 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.4.3;
+			};
+		};
 		7569D4102C05BB5800A954AB /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/markiv/SwiftUI-Shimmer.git";
@@ -1229,6 +1282,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 040831672BEE047F00663028 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		755A97892C07720000187DB4 /* PopupView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 755A97882C0771F400187DB4 /* XCRemoteSwiftPackageReference "PopupView" */;
+			productName = PopupView;
+		};
+		755A978E2C07787600187DB4 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 755A978D2C07786A00187DB4 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 		7569D4162C05C13600A954AB /* Shimmer */ = {
 			isa = XCSwiftPackageProductDependency;

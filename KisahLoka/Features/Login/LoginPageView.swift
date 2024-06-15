@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PopupView
 
 struct LoginPageView: View {
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
@@ -96,13 +97,19 @@ struct LoginPageView: View {
                     .animation(.easeInOut(duration: 0.3), value: loginVM.isSecure)
                 }
                 
-                Text("Lupa Password?")
-                    .frame(maxWidth: .infinity, alignment: .trailing)
-                    .font(.poppinsFootnote)
-                    .fontWeight(.semibold)
-                    .foregroundStyle(Color.slate500)
-                    .padding(.top, 8)
-                    .padding(.bottom, 24)
+                Button(
+                    action: {
+                        loginVM.isResetPasswordSheet = true
+                    }
+                ){
+                    Text("Lupa Kata Sandi?")
+                        .frame(maxWidth: .infinity, alignment: .trailing)
+                        .font(.poppinsFootnote)
+                        .fontWeight(.semibold)
+                        .foregroundStyle(Color.slate500)
+                        .padding(.top, 8)
+                        .padding(.bottom, 24)
+                }
                 
                 Button(
                     action: {
@@ -157,6 +164,30 @@ struct LoginPageView: View {
             if loginVM.isLoading {
                 LogoLoading()
             }
+        }
+        .sheet(
+            isPresented: $loginVM.isResetPasswordSheet,
+            onDismiss: {
+                loginVM.emailResetInput = ""
+            }
+        ) {
+            ResetPasswordSheet(loginVM: loginVM)
+//                .presentationDetents([.medium])
+                .presentationDetents([.height(320)])
+        }
+        .popup(isPresented: $loginVM.isPopUpShow) {
+            PopUpView(
+                title: "Cek Email",
+                subtitle: "Kami sudah mengirimkan Link Reset Password Baru ke Email kamu.\nSilakan cek Email kamu ya!",
+                isEmail: true,
+                onClose: {
+                    loginVM.isPopUpShow = false
+                }
+            )
+        } customize: {
+            $0
+            .closeOnTap(false)
+            .backgroundColor(.black.opacity(0.4))
         }
     }
 }

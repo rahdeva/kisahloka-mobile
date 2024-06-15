@@ -78,6 +78,16 @@ class AuthManager: NSObject, ObservableObject {
             return nil
         }
     }
+    
+    func sendResetPassword(email: String, completion: @escaping (Error?) -> Void) {
+        Auth.auth().sendPasswordReset(withEmail: email) { error in
+            if let error = error {
+                completion(error)
+            } else {
+                completion(nil)
+            }
+        }
+    }
 //
 //    Future<void> saveAuthData({required UserData user, required String token}) async {
 //        await storage.write(StorageName.USERS, user.toJson());

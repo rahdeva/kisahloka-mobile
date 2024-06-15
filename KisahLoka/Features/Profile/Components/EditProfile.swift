@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PopupView
 
 struct EditProfile: View {
     @ObservedObject var profileVM: ProfilePageViewModel
@@ -31,13 +32,49 @@ struct EditProfile: View {
             }
             
             List {
-                Text("Nama")
+                HStack{
+                    Text("Nama")
+                        .font(.poppinsBody)
+                        .foregroundStyle(Color.slate800)
+                    Spacer()
+                    TextField("Nama", text: $profileVM.nameInput)
+                        .foregroundStyle(Color.slate800)
+                        .multilineTextAlignment(.trailing)
+                }
                 
-                Text("Reset Password")
+                HStack{
+                    Text("Reset Password")
+                        .font(.poppinsBody)
+                        .foregroundStyle(Color.slate800)
+                    Spacer()
+                    
+                    Button(
+                        action: {
+                            profileVM.sendResetPassword(email: user?.email)
+                            profileVM.isPopUpShow = true
+                        }
+                    ){
+                        Text("Kirim")
+                            .font(.poppinsBody)
+                            .foregroundStyle(Color.slate800)
+                            .padding(.vertical, 4)
+                            .padding(.horizontal, 12)
+                            .background(Color(UIColor.systemGray5))
+                            .cornerRadius(4)
+                    }
+                }
                 
-                Text("Tanggal Lahir")
+                DatePicker(
+                    selection: $profileVM.birthDateInput,
+                    in: profileVM.dateRange,
+                    displayedComponents: .date
+                ) {
+                    Text("Tanggal Lahir")
+                }
                 
                 Text("Jenis Kelamin")
+                    .font(.poppinsBody)
+                    .foregroundStyle(Color.slate800)
             }
             
             Spacer()
@@ -94,6 +131,20 @@ struct EditProfile: View {
                     .foregroundStyle(Color.primaryColor)
                     .accessibilityAddTraits(.isHeader)
             }
+        }
+        .popup(isPresented: $profileVM.isPopUpShow) {
+            PopUpView(
+                title: "Cek Email",
+                subtitle: "Kami sudah mengirimkan Link Reset Password Baru ke Email kamu.\nSilakan cek Email kamu ya!",
+                isEmail: true,
+                onClose: {
+                    profileVM.isPopUpShow = false
+                }
+            )
+        } customize: {
+            $0
+            .closeOnTap(false)
+            .backgroundColor(.black.opacity(0.4))
         }
     }
 }

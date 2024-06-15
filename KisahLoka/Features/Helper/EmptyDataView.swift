@@ -9,16 +9,25 @@ import SwiftUI
 
 struct EmptyDataView: View {
     let text: String
+    let searchIll: Bool
     
     var body: some View {
         VStack(alignment: .center){
             Spacer()
             
-            Image("img_empty")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 150, height: 150)
-                .padding(.bottom, 28)
+            if searchIll {
+                Image("img_ill_empty_search")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 200, height: 150)
+                    .padding(.bottom, 28)
+            } else {
+                Image("img_empty")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 150, height: 150)
+                    .padding(.bottom, 28)
+            }
             
             Text(text)
                 .font(.poppinsBody)

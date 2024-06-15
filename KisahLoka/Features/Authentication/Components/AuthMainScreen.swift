@@ -19,7 +19,7 @@ struct AuthMainScreen: View {
                 Image("img_logo_text_white")
                     .resizable()
                     .frame(width: 290, height: 73)
-                    .padding(.bottom, 16)
+                    .padding(.vertical, 10)
                 
                 Text("Perpustakaan Lengkap\nCerita Nusantara")
                     .font(.poppinsSubheadline)
