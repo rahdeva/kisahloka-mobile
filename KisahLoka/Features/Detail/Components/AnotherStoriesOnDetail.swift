@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AnotherStoriesOnDetail: View {
     @ObservedObject var detailVM: DetailPageViewModel
+    @Binding var navPath: NavigationPath
     
     var body: some View {
         VStack (alignment: .leading){
@@ -32,7 +33,8 @@ struct AnotherStoriesOnDetail: View {
                             destination: DetailPageView(
                                 storyId: item.story_id!,
                                 totalPageStory: item.total_content!,
-                                isBackWithTabBar: false
+                                isBackWithTabBar: false,
+                                navPath: $navPath
                             )
                         ){
                             VStack (alignment: .leading){

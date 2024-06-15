@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FavoriteStories: View {
     @ObservedObject var homeVM: HomePageViewModel
+    @Binding var navPath: NavigationPath
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -35,7 +36,8 @@ struct FavoriteStories: View {
                                 destination: DetailPageView(
                                     storyId: item.story_id!,
                                     totalPageStory: item.total_content!,
-                                    isBackWithTabBar: true
+                                    isBackWithTabBar: true,
+                                    navPath: $navPath
                                 )
                             ){
                                 VStack {
@@ -97,6 +99,6 @@ struct FavoriteStories: View {
     }
 }
 
-#Preview {
-    FavoriteStories(homeVM: HomePageViewModel())
-}
+//#Preview {
+//    FavoriteStories(homeVM: HomePageViewModel())
+//}

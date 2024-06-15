@@ -12,6 +12,7 @@ struct PostReadingPageView: View {
     let storyId : Int
     @StateObject var postReadingVM = PostReadingPageViewModel()
     @EnvironmentObject var navPathExplore: NavPathExplore
+    @Binding var navPath: NavigationPath
 //    @EnvironmentObject var navPathExplore: NavPathExplore
     
     var body: some View {
@@ -49,7 +50,10 @@ struct PostReadingPageView: View {
                             .offset(x: 110, y: -45)
                     }
                     
-                    AnotherRecommendStoriesPostReading(postReadingVM: postReadingVM)
+                    AnotherRecommendStoriesPostReading(
+                        postReadingVM: postReadingVM,
+                        navPath: $navPath
+                    )
                 }
                 
                 Spacer()
@@ -60,12 +64,16 @@ struct PostReadingPageView: View {
                         .shadow(radius: 1)
                     Button (
                         action: {
-                            print(navPathExplore.navPath)
-                            print(navPathExplore.navPath.count > 0)
-                            if navPathExplore.navPath.count > 0 {
-                                navPathExplore.navPath.removeLast()
-                            }
-                            navPathExplore.navPath = NavigationPath()
+//                            print(navPathExplore.navPath)
+//                            print(navPathExplore.navPath.count > 0)
+//                            if navPathExplore.navPath.count > 0 {
+//                                navPathExplore.navPath.removeLast()
+//                            }
+//                            navPathExplore.navPath = NavigationPath()
+                            navPath.removeLast(navPath.count)
+                            print(navPath)
+                            print(navPath.count)
+                            navPath = NavigationPath()
                         }, label: {
                         Text("Jelajahi Cerita Lainnya")
                             .fontWeight(.semibold)

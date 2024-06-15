@@ -9,6 +9,7 @@ import SwiftUI
 
 struct StoryTypeStoriesGrid: View {
     @ObservedObject var storyTypeVM: StoryTypePageViewModel
+    @Binding var navPath: NavigationPath
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
@@ -38,7 +39,8 @@ struct StoryTypeStoriesGrid: View {
                                 destination: DetailPageView(
                                     storyId: item.story_id!,
                                     totalPageStory: item.total_content!,
-                                    isBackWithTabBar: true
+                                    isBackWithTabBar: true,
+                                    navPath: $navPath
                                 )
                             ){
                                 VStack (alignment: .leading){

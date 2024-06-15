@@ -10,6 +10,7 @@ import SwiftUI
 struct ReadingPageView: View {
     let storyId : Int
     let totalPageStory : Int
+    @Binding var navPath: NavigationPath
     @State private var selectedTab = 0
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     @StateObject var readingVM = ReadingPageViewModel()
@@ -96,11 +97,11 @@ struct ReadingPageView: View {
                     }
                     
                 }
-//                .background(
-//                    readingVM.warmBackground == true
-//                    ? Color.warmColor.ignoresSafeArea(edges: .bottom)
-//                    : Color.white.ignoresSafeArea(edges: .bottom)
-//                )
+                .background(
+                    readingVM.warmBackground == true
+                    ? Color.warmColor.ignoresSafeArea(edges: .bottom)
+                    : Color.white.ignoresSafeArea(edges: .bottom)
+                )
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                 
                 VStack{
@@ -157,7 +158,8 @@ struct ReadingPageView: View {
                         if selectedTab == totalPageStory - 1 {
                             NavigationLink(
                                 destination: PostReadingPageView(
-                                    storyId: storyId
+                                    storyId: storyId,
+                                    navPath: $navPath
                                 )
                             ){
                                 HStack{
@@ -195,11 +197,11 @@ struct ReadingPageView: View {
                 readingVM.getStoryContents(storyID: storyId)
             }
         }
-        .background(
-            readingVM.warmBackground == true
-            ? Color.warmColor.ignoresSafeArea(edges: .bottom)
-            : Color.white.ignoresSafeArea(edges: .bottom)
-        )
+//        .background(
+//            readingVM.warmBackground == true
+//            ? Color.warmColor.ignoresSafeArea(edges: .bottom)
+//            : Color.white.ignoresSafeArea(edges: .bottom)
+//        )
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(
             leading: Button(

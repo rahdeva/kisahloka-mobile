@@ -10,12 +10,14 @@ import SwiftUI
 struct ExplorePageView: View {
     @StateObject var exploreVM = ExplorePageViewModel()
     @EnvironmentObject var navPathExplore: NavPathExplore
+    @State var navPathOnExplore = NavigationPath()
     
     var body: some View {
-        NavigationStack(path: $navPathExplore.navPath) {
+        NavigationStack(path: $navPathOnExplore) {
             ScrollView(showsIndicators: false){
                 ExploreStoriesGrid(
-                    exploreVM: exploreVM
+                    exploreVM: exploreVM,
+                    navPath: $navPathOnExplore
                 )
                 .padding(.bottom, 24)
             }

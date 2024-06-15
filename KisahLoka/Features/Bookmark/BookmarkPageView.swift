@@ -11,9 +11,10 @@ struct BookmarkPageView: View {
     @StateObject var bookmarkVM = BookmarkPageViewModel()
     let isUserLoggedIn : Bool
     let user : UserData?
+    @State var navPathOnBookmark = NavigationPath()
     
     var body: some View {
-        NavigationStack() {
+        NavigationStack(path: $navPathOnBookmark){
             ScrollView(showsIndicators: false){
                 if(bookmarkVM.isGuest){
                     HStack{
@@ -47,7 +48,8 @@ struct BookmarkPageView: View {
                 
                 BookmarkStories(
                     bookmarkVM: bookmarkVM,
-                    user: user
+                    user: user,
+                    navPath: $navPathOnBookmark
                 )
                 .padding(.bottom, 24)
             }

@@ -14,11 +14,13 @@ struct StoryTypePageView: View {
     let isBackWithTabBar : Bool
     let type_id: Int?
     let type_name: String?
+    @Binding var navPath: NavigationPath
     
     var body: some View {
         ScrollView(showsIndicators: false){
             StoryTypeStoriesGrid(
-                storyTypeVM: storyTypeVM
+                storyTypeVM: storyTypeVM,
+                navPath: $navPath
             )
             .padding(.bottom, 24)
         }

@@ -10,6 +10,7 @@ import SwiftUI
 struct BookmarkStories: View {
     @ObservedObject var bookmarkVM: BookmarkPageViewModel
     let user : UserData?
+    @Binding var navPath: NavigationPath
     
     var body: some View {
         if !bookmarkVM.isLoading {
@@ -27,7 +28,8 @@ struct BookmarkStories: View {
                                     destination: DetailPageView(
                                         storyId: bookmark.story_id!,
                                         totalPageStory: bookmark.total_content!,
-                                        isBackWithTabBar: true
+                                        isBackWithTabBar: true,
+                                        navPath: $navPath
                                     )
                                 ){
                                     VStack (alignment: .leading){

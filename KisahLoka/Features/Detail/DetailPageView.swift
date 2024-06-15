@@ -11,6 +11,7 @@ struct DetailPageView: View {
     let storyId : Int
     let totalPageStory : Int
     let isBackWithTabBar : Bool
+    @Binding var navPath: NavigationPath
     @StateObject var detailVM = DetailPageViewModel()
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     @Environment(TabBarModel.self) var showTabBar
@@ -35,7 +36,10 @@ struct DetailPageView: View {
                                 GenresChip(detailVM: detailVM)
                                     .padding(.horizontal, 24)
                                 
-                                AnotherStoriesOnDetail(detailVM: detailVM)
+                                AnotherStoriesOnDetail(
+                                    detailVM: detailVM,
+                                    navPath: $navPath
+                                )
                                     .padding(.horizontal, 24)
                             }
                             .padding(.top, 16)
@@ -55,7 +59,8 @@ struct DetailPageView: View {
                     NavigationLink {
                         ReadingPageView(
                             storyId: storyId,
-                            totalPageStory: totalPageStory
+                            totalPageStory: totalPageStory,
+                            navPath: $navPath
                         )
                     } label: {
                         Text("Baca Cerita")

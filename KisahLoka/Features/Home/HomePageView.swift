@@ -9,15 +9,25 @@ import SwiftUI
 
 struct HomePageView: View {
     @StateObject var homeVM = HomePageViewModel()
+    @State var navPathOnHome = NavigationPath()
     
     var body: some View {
-        NavigationView{
+        NavigationStack(path: $navPathOnHome){
             ScrollView(showsIndicators: false){
-                DiscoverNewLocalStories(homeVM: homeVM)
+                DiscoverNewLocalStories(
+                    homeVM: homeVM,
+                    navPath: $navPathOnHome
+                )
                 
-                FavoriteStories(homeVM: homeVM)
+                FavoriteStories(
+                    homeVM: homeVM,
+                    navPath: $navPathOnHome
+                )
                 
-                StoriesType(homeVM: homeVM)
+                StoriesType(
+                    homeVM: homeVM,
+                    navPath: $navPathOnHome
+                )
             }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar{

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct StoriesType: View {
     @ObservedObject var homeVM: HomePageViewModel
+    @Binding var navPath: NavigationPath
     
     var body: some View {
         VStack (alignment: .leading){
@@ -34,7 +35,8 @@ struct StoriesType: View {
                             destination: StoryTypePageView(
                                 isBackWithTabBar: true,
                                 type_id: type.type_id,
-                                type_name: type.type_name
+                                type_name: type.type_name,
+                                navPath: $navPath
                             )
                         ){
                             ZStack (alignment: .topLeading){

@@ -10,6 +10,7 @@ import Shimmer
 
 struct DiscoverNewLocalStories: View { 
     @ObservedObject var homeVM: HomePageViewModel
+    @Binding var navPath: NavigationPath
     
     var body: some View {
         VStack (alignment: .leading){
@@ -36,7 +37,8 @@ struct DiscoverNewLocalStories: View {
                                 destination: DetailPageView(
                                     storyId: item.story_id!,
                                     totalPageStory: item.total_content!,
-                                    isBackWithTabBar: true
+                                    isBackWithTabBar: true,
+                                    navPath: $navPath
                                 )
                             ){
                                 AsyncImage(url: URL(string: item.thumbnail_image!)){ image in
@@ -72,6 +74,6 @@ struct DiscoverNewLocalStories: View {
     }
 }
 
-#Preview {
-    DiscoverNewLocalStories(homeVM: HomePageViewModel())
-}
+//#Preview {
+//    DiscoverNewLocalStories(homeVM: HomePageViewModel())
+//}
