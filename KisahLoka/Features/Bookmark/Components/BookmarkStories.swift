@@ -18,7 +18,7 @@ struct BookmarkStories: View {
                         text: "Kamu belum memiliki cerita favorit nih yuk jelajahi cerita baru!",
                         searchIll: false
                     )
-                    .padding(.top, 150)
+                    .padding(.top, user?.email == nil ? 100 : 150)
                 } else{
                     GeometryReader{ p in
                         VStack {

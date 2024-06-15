@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct AuthMainScreen: View {
+    @Environment(\.modelContext) var context
+    @StateObject var authVM = AuthPageViewModel()
+    
     var body: some View {
         ZStack {
             Image("img_bg_auth")
@@ -56,17 +59,23 @@ struct AuthMainScreen: View {
                 }
                 .padding(.bottom, 16)
                 
-                HStack{
-                    Image(systemName: "person.circle")
-                        .foregroundStyle(.white)
-                        .font(.poppinsSubheadline)
-                        .fontWeight(.semibold)
-                    
-                    Text("Masuk sebagai Guest")
-                        .font(.poppinsSubheadline)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.white)
-                        .underline()
+                Button(
+                    action: {
+                        authVM.signInAnonymous(context: context)
+                    }
+                ){
+                    HStack{
+                        Image(systemName: "person.circle")
+                            .foregroundStyle(.white)
+                            .font(.poppinsSubheadline)
+                            .fontWeight(.semibold)
+                        
+                        Text("Masuk sebagai Guest")
+                            .font(.poppinsSubheadline)
+                            .fontWeight(.semibold)
+                            .foregroundColor(.white)
+                            .underline()
+                    }
                 }
             }
             .padding(.top, 56)

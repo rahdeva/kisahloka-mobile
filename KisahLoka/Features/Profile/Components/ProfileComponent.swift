@@ -11,6 +11,7 @@ struct ProfileComponent: View {
     @ObservedObject var profileVM: ProfilePageViewModel
     let user : UserData?
     @Environment(LanguageSetting.self) var languageSettings
+    @Environment(\.modelContext) var context
     
     var body: some View {
         VStack{
@@ -20,8 +21,14 @@ struct ProfileComponent: View {
                     .frame(width: 152, height: 180)
                     .aspectRatio(contentMode: .fit)
                     .padding(.top, 16)
-            } else {
+            } else if user?.gender == "Female" {
                 Image("img_avatar_female")
+                    .resizable()
+                    .frame(width: 152, height: 180)
+                    .aspectRatio(contentMode: .fit)
+                    .padding(.top, 16)
+            } else {
+                Image("img_avatar_guest")
                     .resizable()
                     .frame(width: 152, height: 180)
                     .aspectRatio(contentMode: .fit)
@@ -29,24 +36,58 @@ struct ProfileComponent: View {
             }
             
             
-            Text(user?.name ?? "-")
+            Text(user?.name ?? "Guest")
                 .font(.poppinsTitle3)
                 .foregroundStyle(Color.slate800)
                 .padding(.top, 8)
             
-            Text(user?.email ?? "-")
-                .font(.poppinsSubheadline)
-                .foregroundStyle(Color.slate500)
+            if(user?.email != nil){
+                Text(user?.email ?? "-")
+                    .font(.poppinsSubheadline)
+                    .foregroundStyle(Color.slate500)
+            } else {
+                VStack{
+                    Text("Lengkapi data berikut agar akun **Guest**\nini bisa menjadi akunmu dan\ndata tersimpan secara online")
+                        .font(.poppinsCaption1)
+                        .foregroundStyle(.red)
+                        .multilineTextAlignment(.center)
+                    
+                    NavigationLink {
+                        GuestRegisterPageView(
+                            isBackWithTabBar: true,
+                            user: user
+                        )
+                    } label: {
+                        HStack{
+                            Text("Lengkapi data diri")
+                            Spacer()
+                            Image(systemName: "chevron.forward")
+                                .foregroundStyle(Color.slate300)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 12)
+                        .padding(.horizontal, 16)
+                        .background(Color.secondary500)
+                        .foregroundStyle(Color.white)
+                        .cornerRadius(10)
+                    }
+                    .padding(.horizontal, 22)
+                    .padding(.top, 4)
+                }
+                .padding(.top, 1)
+            }
             
             List {
-                NavigationLink {
-                    EditProfile(
-                        profileVM: profileVM,
-                        isBackWithTabBar: true,
-                        user: user
-                    )
-                } label: {
-                    Text("Ubah Profil")
+                if(user?.email != nil){
+                    NavigationLink {
+                        EditProfile(
+                            profileVM: profileVM,
+                            isBackWithTabBar: true,
+                            user: user
+                        )
+                    } label: {
+                        Text("Ubah Profil")
+                    }
                 }
                 
                 HStack{
@@ -99,7 +140,7 @@ struct ProfileComponent: View {
             
             Button(
                 action: {
-                    profileVM.signOut()
+                    profileVM.signOut(context: context)
                 }
             ) {
                 Text("Keluar")

@@ -1,21 +1,25 @@
 //
-//  RegisterPageView.swift
+//  GuestRegisterPageView.swift
 //  KisahLoka
 //
-//  Created by Ni Made Elza Ayu Wismayani Asak on 25/05/24.
+//  Created by Ni Made Elza Ayu Wismayani Asak on 15/06/24.
 //
 
 import SwiftUI
 
-struct RegisterPageView: View {
+struct GuestRegisterPageView: View {
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
-    @StateObject var registerVM = RegisterPageViewModel()
-    @FocusState private var focus: FormFieldFocusRegister?
+    @StateObject var guestRegisterVM = GuestRegisterPageViewModel()
+    @FocusState private var focus: FormFieldFocusGuestRegister?
     @Environment(\.modelContext) var context
+    let isBackWithTabBar : Bool
+    let user : UserData?
+    @Environment(TabBarModel.self) var showTabBar
+    @ObservedObject var authVM = AuthPageViewModel()
     
     var body: some View {
         VStack{
-            Text("Buat Akun Baru\nIsi Data dengan Lengkap")
+            Text("Lengkapi\nData Anda")
                 .font(.poppinsTitle3)
                 .bold()
                 .foregroundStyle(Color.primaryColor)
@@ -23,7 +27,7 @@ struct RegisterPageView: View {
                 .padding(.bottom, 32)
             
             VStack (spacing: 16){
-                TextField("Nama", text: $registerVM.nameInput)
+                TextField("Nama", text: $guestRegisterVM.nameInput)
                     .padding(.horizontal, 24)
                     .padding(.vertical, 16)
                     .border(Color.slate300, width: 2.5)
@@ -33,13 +37,13 @@ struct RegisterPageView: View {
                     .font(.poppinsSubheadline)
                     .foregroundStyle(Color.slate800)
                     .onSubmit {
-                        print(registerVM.nameInput)
+                        print(guestRegisterVM.nameInput)
                         focus = .email
                     }
-                    .focused($focus, equals: FormFieldFocusRegister.name)
+                    .focused($focus, equals: FormFieldFocusGuestRegister.name)
                 
                 VStack (spacing: 16){
-                    TextField("Email", text: $registerVM.emailInput)
+                    TextField("Email", text: $guestRegisterVM.emailInput)
                         .padding(.horizontal, 24)
                         .padding(.vertical, 16)
                         .border(Color.slate300, width: 2.5)
@@ -49,17 +53,17 @@ struct RegisterPageView: View {
                         .font(.poppinsSubheadline)
                         .foregroundStyle(Color.slate800)
                         .onSubmit {
-                            print(registerVM.emailInput)
+                            print(guestRegisterVM.emailInput)
                             focus = .dateBirth
                         }
-                        .focused($focus, equals: FormFieldFocusRegister.email)
+                        .focused($focus, equals: FormFieldFocusGuestRegister.email)
                         .textInputAutocapitalization(.never)
                 }
                 
                 DatePicker(
                     "Tanggal Lahir",
-                    selection: $registerVM.birthDate,
-                    in: registerVM.dateRange, 
+                    selection: $guestRegisterVM.birthDate,
+                    in: guestRegisterVM.dateRange,
                     displayedComponents: .date
                 )
                 .frame(maxWidth: .infinity)
@@ -71,9 +75,9 @@ struct RegisterPageView: View {
                 .tint(Color.slate500)
                 .font(.poppinsSubheadline)
                 .foregroundStyle(Color.slate800)
-                .focused($focus, equals: FormFieldFocusRegister.dateBirth)
+                .focused($focus, equals: FormFieldFocusGuestRegister.dateBirth)
                 .onSubmit {
-                    print(registerVM.birthDate)
+                    print(guestRegisterVM.birthDate)
                     focus = .gender
                 }
                 
@@ -82,19 +86,19 @@ struct RegisterPageView: View {
                     Spacer()
                     Menu {
                         Button {
-                            registerVM.genderInput = .male
+                            guestRegisterVM.genderInput = .male
                         } label: {
                             Text("Laki-laki")
                         }
                         Button {
-                            registerVM.genderInput = .female
+                            guestRegisterVM.genderInput = .female
                         } label: {
                             Text("Perempuan")
                         }
                     } label: {
                         HStack {
                             Text(
-                                registerVM.genderInput == Gender.male
+                                guestRegisterVM.genderInput == Gender.male
                                 ? "Laki-laki"
                                 : "Perempuan"
                             )
@@ -115,11 +119,11 @@ struct RegisterPageView: View {
                 .tint(Color.slate500)
                 .font(.poppinsSubheadline)
                 .foregroundStyle(Color.slate800)
-                .focused($focus, equals: FormFieldFocusRegister.gender)
+                .focused($focus, equals: FormFieldFocusGuestRegister.gender)
                 
                 ZStack(alignment: .trailing){
-                    if registerVM.isSecure{
-                        SecureField("Kata Sandi", text: $registerVM.passwordInput)
+                    if guestRegisterVM.isSecure{
+                        SecureField("Kata Sandi", text: $guestRegisterVM.passwordInput)
                             .padding(.horizontal, 24)
                             .padding(.vertical, 17)
                             .border(Color.slate300, width: 2.5)
@@ -129,12 +133,12 @@ struct RegisterPageView: View {
                             .font(.poppinsSubheadline)
                             .foregroundStyle(Color.slate800)
                             .onSubmit {
-                                print(registerVM.passwordInput)
+                                print(guestRegisterVM.passwordInput)
                             }
-                            .focused($focus, equals: FormFieldFocusRegister.password)
+                            .focused($focus, equals: FormFieldFocusGuestRegister.password)
                         
                     }else{
-                        TextField("Kata Sandi", text: $registerVM.passwordInput)
+                        TextField("Kata Sandi", text: $guestRegisterVM.passwordInput)
                             .padding(.horizontal, 24)
                             .padding(.vertical, 16)
                             .border(Color.slate300, width: 2.5)
@@ -144,25 +148,25 @@ struct RegisterPageView: View {
                             .font(.poppinsSubheadline)
                             .foregroundStyle(Color.slate800)
                             .onSubmit {
-                                print(registerVM.passwordInput)
+                                print(guestRegisterVM.passwordInput)
                             }
-                            .focused($focus, equals: FormFieldFocusRegister.password)
+                            .focused($focus, equals: FormFieldFocusGuestRegister.password)
                     }
                     
                     Button(action: {
-                        registerVM.isSecure.toggle()
+                        guestRegisterVM.isSecure.toggle()
                     }, label: {
-                        Image(systemName: !registerVM.isSecure ? "eye.fill" : "eye.slash.fill" )
+                        Image(systemName: !guestRegisterVM.isSecure ? "eye.fill" : "eye.slash.fill" )
                             .foregroundColor(.gray)
                             .padding()
                     })
                     
                 }
-                .animation(.easeInOut(duration: 0.3), value: registerVM.isSecure)
+                .animation(.easeInOut(duration: 0.3), value: guestRegisterVM.isSecure)
                 
                 ZStack(alignment: .trailing){
-                    if registerVM.isSecure2{
-                        SecureField("Konfirmasi Kata Sandi", text: $registerVM.confirmPasswordInput)
+                    if guestRegisterVM.isSecure2{
+                        SecureField("Konfirmasi Kata Sandi", text: $guestRegisterVM.confirmPasswordInput)
                             .padding(.horizontal, 24)
                             .padding(.vertical, 17)
                             .border(Color.slate300, width: 2.5)
@@ -172,12 +176,12 @@ struct RegisterPageView: View {
                             .font(.poppinsSubheadline)
                             .foregroundStyle(Color.slate800)
                             .onSubmit {
-                                print(registerVM.confirmPasswordInput)
+                                print(guestRegisterVM.confirmPasswordInput)
                             }
-                            .focused($focus, equals: FormFieldFocusRegister.confirmPassword)
+                            .focused($focus, equals: FormFieldFocusGuestRegister.confirmPassword)
                         
                     }else{
-                        TextField("Konfirmasi Kata Sandi", text: $registerVM.confirmPasswordInput)
+                        TextField("Konfirmasi Kata Sandi", text: $guestRegisterVM.confirmPasswordInput)
                             .padding(.horizontal, 24)
                             .padding(.vertical, 16)
                             .border(Color.slate300, width: 2.5)
@@ -187,25 +191,33 @@ struct RegisterPageView: View {
                             .font(.poppinsSubheadline)
                             .foregroundStyle(Color.slate800)
                             .onSubmit {
-                                print(registerVM.confirmPasswordInput)
+                                print(guestRegisterVM.confirmPasswordInput)
                             }
-                            .focused($focus, equals: FormFieldFocusRegister.confirmPassword)
+                            .focused($focus, equals: FormFieldFocusGuestRegister.confirmPassword)
                     }
                     
                     Button(action: {
-                        registerVM.isSecure2.toggle()
+                        guestRegisterVM.isSecure2.toggle()
                     }, label: {
-                        Image(systemName: !registerVM.isSecure2 ? "eye.fill" : "eye.slash.fill" )
+                        Image(systemName: !guestRegisterVM.isSecure2 ? "eye.fill" : "eye.slash.fill" )
                             .foregroundColor(.gray)
                             .padding()
                     })
                     
                 }
-                .animation(.easeInOut(duration: 0.3), value: registerVM.isSecure2)
+                .animation(.easeInOut(duration: 0.3), value: guestRegisterVM.isSecure2)
                 
                 Button(
                     action: {
-                        registerVM.signUpWithEmail(context: context)
+                        guestRegisterVM.linkAnonymousWithEmail(
+                            userData: user,
+                            context: context
+                        )
+                        if isBackWithTabBar {
+                            showTabBar.show = true
+                        }
+                        self.mode.wrappedValue.dismiss()
+                        authVM.selectedTab = .home
                     }
                 ) {
                     Text("Daftar")
@@ -219,28 +231,19 @@ struct RegisterPageView: View {
                 }
                 
                 Spacer()
-                
-                HStack{
-                    Text("Sudah mempunyai akun?")
-                        .font(.poppinsSubheadline)
-                        .foregroundColor(Color.slate800)
-                    NavigationLink(destination: LoginPageView()) {
-                        Text("Masuk")
-                            .font(.poppinsSubheadline)
-                            .fontWeight(.semibold)
-                            .foregroundColor(Color.secondary500)
-                    }
-                }
-                .padding(.bottom, 40)
             }
             .onAppear{
-                focus = FormFieldFocusRegister.name
+                showTabBar.show = false
+                focus = FormFieldFocusGuestRegister.name
             }
             .padding(.horizontal, 24)
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(
                 leading: Button(
                     action : {
+                        if isBackWithTabBar {
+                            showTabBar.show = true
+                        }
                         self.mode.wrappedValue.dismiss()
                     }
                 ){

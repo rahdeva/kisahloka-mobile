@@ -435,6 +435,9 @@
         }
       }
     },
+    "Kamu masih menggunakan akun **Guest**, Ayo daftarkan akun ini agar cerita yang kamu sudah tandai tersimpan secara online." : {
+
+    },
     "Kata Sandi" : {
       "localizations" : {
         "en" : {
@@ -541,6 +544,15 @@
           }
         }
       }
+    },
+    "Lengkapi\nData Anda" : {
+
+    },
+    "Lengkapi data berikut agar akun **Guest**\nini bisa menjadi akunmu dan\ndata tersimpan secara online" : {
+
+    },
+    "Lengkapi data diri" : {
+
     },
     "Lupa Kata Sandi?" : {
       "localizations" : {

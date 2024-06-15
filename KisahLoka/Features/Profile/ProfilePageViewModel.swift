@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftData
 
 class ProfilePageViewModel: ObservableObject {
     @Published var username: String = ""
@@ -23,8 +24,8 @@ class ProfilePageViewModel: ObservableObject {
         return startDate...endDate
     }
     
-    func signOut(){
-        authManager.signOut { error in
+    func signOut(context: ModelContext){
+        authManager.signOut(context: context){ error in
             if let error = error {
                 print("Sign-out error: \(error.localizedDescription)")
                 // Show error

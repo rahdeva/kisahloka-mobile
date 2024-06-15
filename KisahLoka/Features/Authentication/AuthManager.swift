@@ -14,6 +14,7 @@ class AuthManager: NSObject, ObservableObject {
     // MARK: - Properties
 
     @Published var isUserLoggedIn = false
+    
 //    @Published var currentUser: UserData?
 //    var userData: UserData? { UserData.self }
 //    @Environment(\.modelContext) var context
@@ -43,9 +44,11 @@ class AuthManager: NSObject, ObservableObject {
 
     /// Signs out the current user.
     /// - Parameter completion: Closure called upon completion with an optional error.
-    func signOut(completion: @escaping (Error?) -> Void) {
+    func signOut(context: ModelContext, completion: @escaping (Error?) -> Void) {
         do {
             try Auth.auth().signOut()
+            // Clear local user data
+            clearLocalUserData(context: context)
             completion(nil)
         } catch let signOutError as NSError {
             completion(signOutError)
@@ -55,6 +58,7 @@ class AuthManager: NSObject, ObservableObject {
     // MARK: Save Auth Data
 
     func saveAuthData(user: User, context: ModelContext) {
+        clearLocalUserData(context: context)
         let newUser = UserData(
             user_id: user.user_id,
             uid: user.uid,
@@ -64,6 +68,50 @@ class AuthManager: NSObject, ObservableObject {
             birth_date: user.birth_date,
             gender: user.gender
         )
+        if let userID = newUser.user_id {
+            print("Current UserID: \(userID)")
+        } else {
+            print("User ID is nil")
+        }
+
+        if let userUID = newUser.uid {
+            print("Current UserUID: \(userUID)")
+        } else {
+            print("User UID is nil")
+        }
+        
+        if let email = newUser.email {
+            print("Current Email: \(email)")
+        } else {
+            print("User Email is nil")
+        }
+        context.insert(newUser)
+    }
+    
+    func saveAuthDataAnonymous(user: UserData, context: ModelContext) {
+        let newUser = UserData(
+            user_id: user.user_id,
+            uid: user.uid,
+            role_id: user.role_id
+        )
+        if let userID = newUser.user_id {
+            print("Current UserID: \(userID)")
+        } else {
+            print("User ID is nil")
+        }
+
+        if let userUID = newUser.uid {
+            print("Current UserUID: \(userUID)")
+        } else {
+            print("User UID is nil")
+        }
+        
+        if let email = newUser.email {
+            print("Current Email: \(email)")
+        } else {
+            print("User Email is nil")
+        }
+        
         context.insert(newUser)
     }
     
@@ -72,6 +120,22 @@ class AuthManager: NSObject, ObservableObject {
         let userDataFetch = FetchDescriptor<UserData>(predicate: nil)
         do {
             let userData: [UserData] = try context.fetch(userDataFetch)
+            if let userID = userData.first?.user_id {
+                print("Current UserID: \(userID)")
+            } else {
+                print("User ID is nil")
+            }
+
+            if let userUID = userData.first?.uid {
+                print("Current UserUID: \(userUID)")
+            } else {
+                print("User UID is nil")
+            }
+            if let email = userData.first?.email {
+                print("Current Email: \(email)")
+            } else {
+                print("User Email is nil")
+            }
             return userData.first
         } catch {
             print("Failed to fetch current user: \(error)")
@@ -86,6 +150,20 @@ class AuthManager: NSObject, ObservableObject {
             } else {
                 completion(nil)
             }
+        }
+    }
+    
+    func clearLocalUserData(context: ModelContext) {
+        let fetchRequest = FetchDescriptor<UserData>(predicate: nil)
+        do {
+            let userData = try context.fetch(fetchRequest)
+            for user in userData {
+                context.delete(user)
+            }
+            // Save changes to the context
+            try context.save()
+        } catch {
+            print("Failed to clear local user data: \(error)")
         }
     }
 //
@@ -129,6 +207,18 @@ extension AuthManager {
     ///   - completion: Closure called upon completion with an optional error.
     func signInWithEmail(withEmail email: String, password: String, completion: @escaping (Error?) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+            if let error = error {
+                completion(error)
+            } else {
+                completion(nil)
+            }
+        }
+    }
+    
+    // MARK: Sign In Anonymously
+
+    func signInAnonymously(completion: @escaping (Error?) -> Void) {
+        Auth.auth().signInAnonymously { authResult, error in
             if let error = error {
                 completion(error)
             } else {

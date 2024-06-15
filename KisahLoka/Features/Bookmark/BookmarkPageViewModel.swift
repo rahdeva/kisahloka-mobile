@@ -16,6 +16,7 @@ class BookmarkPageViewModel: ObservableObject {
     @Published var bookmarkStoriesData: [Bookmark] = []
     @Published var bookmarkResponse: ResponseDataBookmark?
     @Published var isLoading : Bool = false
+    @Published var isGuest : Bool = false
     
     func getUserBookmark(user: UserData?) {
         isLoading = true

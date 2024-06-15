@@ -9,7 +9,7 @@ import Foundation
 import FirebaseAuth
 import SwiftData
 
-enum FormFieldFocusRegister {
+enum FormFieldFocusGuestRegister{
     case name
     case email
     case dateBirth
@@ -18,12 +18,12 @@ enum FormFieldFocusRegister {
     case confirmPassword
 }
 
-enum Gender {
+enum GuestGender {
     case male
     case female
 }
 
-class RegisterPageViewModel: ObservableObject {
+class GuestRegisterPageViewModel: ObservableObject {
     @Published var nameInput: String = ""
     @Published var emailInput: String = ""
     @Published var passwordInput: String = ""
@@ -40,7 +40,7 @@ class RegisterPageViewModel: ObservableObject {
         return startDate...endDate
     }
     
-    func signUpWithEmail(context: ModelContext) {
+    func linkAnonymousWithEmail(userData: UserData?, context: ModelContext) {
         isLoading = true
         let authManager = AuthManager()
         
@@ -53,19 +53,21 @@ class RegisterPageViewModel: ObservableObject {
         
         if nameInput != "" && emailInput != "" && passwordInput != "" && confirmPasswordInput != "" && passwordInput == confirmPasswordInput {
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
             let dateString = dateFormatter.string(from: birthDate)
             
-            authManager.createAccount(withEmail: emailInput, password: passwordInput) { error in
-                if let error = error {
-                    self.handleAuthenticationResult(error)
-                    self.isLoading = false
-                } else {
-                    if let user = Auth.auth().currentUser {
+            if let user = Auth.auth().currentUser {
+                let credential = EmailAuthProvider.credential(withEmail: self.emailInput, password: self.passwordInput)
+                user.link(with: credential) { authResult, error in
+                    if let error = error {
+                        self.handleAuthenticationResult(error)
+                        self.isLoading = false
+                    } else {
                         let uid = user.uid
                         print("User signed in with UID: \(uid)")
-                        self.addUser(
-                            uid: uid, 
+                        self.editUser(
+                            user_id: userData?.user_id,
+                            uid: uid,
                             email: self.emailInput,
                             name: self.nameInput,
                             birthDate: dateString,
@@ -104,7 +106,16 @@ class RegisterPageViewModel: ObservableObject {
         // Show result
     }
     
-    func addUser(uid: String, email: String, name: String, birthDate: String, gender: String, completion: @escaping (Error?) -> Void) {
+    func editUser(
+        user_id: Int?,
+        uid: String,
+        email: String,
+        name: String,
+        birthDate: String,
+        gender: String,
+        completion: @escaping (Error?) -> Void
+    ) {
+        print(birthDate)
         guard let url = URL(string: BaseURL.user) else {
             print("Invalid URL")
             completion(NSError(domain: "URL Error", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"]))
@@ -112,10 +123,18 @@ class RegisterPageViewModel: ObservableObject {
         }
         
         var request = URLRequest(url: url)
-        request.httpMethod = "POST"
+        request.httpMethod = "PUT"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        let userRequest = UserRequest(uid: uid, role_id: 2, email: email, name: name, birth_date: birthDate, gender: gender)
+        let userRequest = UserRequestEdit(
+            user_id: user_id,
+            uid: uid,
+            role_id: 2,
+            email: email,
+            name: name,
+            birth_date: birthDate,
+            gender: gender
+        )
         
         do {
             let jsonData = try JSONEncoder().encode(userRequest)
@@ -141,8 +160,8 @@ class RegisterPageViewModel: ObservableObject {
             }
             
             do {
-                if let addUserResponse = try? JSONDecoder().decode(ResponseAddUser.self, from: data) {
-                    print("User added successfully: \(addUserResponse)")
+                if let editUserResponse = try? JSONDecoder().decode(ResponseEditUser.self, from: data) {
+                    print("User edit successfully: \(editUserResponse)")
                     completion(nil)
                 } else {
                     print("Error decoding JSON response")
