@@ -173,7 +173,7 @@
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Cerita Favorit"
+            "value" : "Cerita Terfavorit"
           }
         }
       }
@@ -436,7 +436,14 @@
       }
     },
     "Kamu masih menggunakan akun **Guest**, Ayo daftarkan akun ini agar cerita yang kamu sudah tandai tersimpan secara online." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You still use **Guest** account. Register to save your data online."
+          }
+        }
+      }
     },
     "Kata Sandi" : {
       "localizations" : {
@@ -546,13 +553,34 @@
       }
     },
     "Lengkapi\nData Anda" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fill your data"
+          }
+        }
+      }
     },
     "Lengkapi data berikut agar akun **Guest**\nini bisa menjadi akunmu dan\ndata tersimpan secara online" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fill your data to Link your **Guest** account to permanent acount to save your data online"
+          }
+        }
+      }
     },
     "Lengkapi data diri" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fill your data"
+          }
+        }
+      }
     },
     "Lupa Kata Sandi?" : {
       "localizations" : {
